@@ -63,7 +63,7 @@ export default function Timeline() {
       <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
 
       {/* Timeline Events */}
-      <div className="space-y-16">
+      <div className="space-y-8 sm:space-y-12">
         {events.map((event, index) => (
           <motion.div
             key={event.year}
@@ -76,18 +76,18 @@ export default function Timeline() {
           >
             <div className={`w-5/12 ${event.side === "left" ? "text-right pr-8" : "pl-8"}`}>
               <div
-                className={`bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border ${
+                className={`bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg watercolor-hover border ${
                   event.color === "gradient"
                     ? "bg-gradient-to-br from-watercolor-ochre to-watercolor-umber border-white/50"
                     : `border-${event.color}/20 dark:border-gray-700`
                 }`}
                 data-testid={`timeline-event-${event.year}`}
               >
-                <h3 className="font-poppins font-semibold text-xl text-gray-800 dark:text-white mb-2">
+                <h3 className="font-poppins font-semibold text-lg sm:text-xl text-gray-800 dark:text-white mb-2">
                   {event.title}
                 </h3>
                 <p
-                  className={`font-medium mb-2 ${
+                  className={`font-medium mb-2 text-lg ${
                     event.color === "gradient" ? "text-gray-700" : `text-${event.color}`
                   }`}
                 >
@@ -98,7 +98,7 @@ export default function Timeline() {
                     event.color === "gradient"
                       ? "text-gray-700"
                       : "text-gray-600 dark:text-gray-300"
-                  }`}
+                  } text-sm sm:text-base`}
                 >
                   {event.description}
                 </p>
