@@ -259,7 +259,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.email")}</p>
-                      <p className="font-medium text-gray-800 dark:text-white">m.rutkowski@artystyka.pl</p>
+                      <p className="font-medium text-gray-800 dark:text-white">Zbyszior52@wp.pl</p>
                     </div>
                   </div>
 
@@ -269,7 +269,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.phone")}</p>
-                      <p className="font-medium text-gray-800 dark:text-white">+48 123 456 789</p>
+                      <p className="font-medium text-gray-800 dark:text-white">600 252 658</p>
                     </div>
                   </div>
 
@@ -280,8 +280,8 @@ export default function Contact() {
                     <div>
                       <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.atelier")}</p>
                       <p className="font-medium text-gray-800 dark:text-white">
-                        ul. Artystyczna 15<br />
-                        31-000 Kraków
+                        Radom<br />
+                        Polska
                       </p>
                     </div>
                   </div>
