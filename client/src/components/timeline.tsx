@@ -113,7 +113,7 @@ export default function Timeline() {
             </div>
             
             {/* Timeline dot - positioned differently on mobile vs desktop */}
-            <div className="absolute left-2 md:relative md:left-0 md:w-2/12 md:flex md:justify-center w-auto flex justify-center mt-2">
+            <div className="absolute left-3.5 md:relative md:left-0 md:w-2/12 md:flex md:justify-center w-auto flex justify-center mt-2">
               <div
                 className={`w-4 h-4 md:w-6 md:h-6 rounded-full border-4 border-white dark:border-gray-800 shadow-lg ${
                   event.color === "gradient"
