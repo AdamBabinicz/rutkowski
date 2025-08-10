@@ -85,6 +85,7 @@ export default {
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
         poppins: ["var(--font-poppins)"],
+        playfair: ["var(--font-playfair)"],
       },
       keyframes: {
         "accordion-down": {

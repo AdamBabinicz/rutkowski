@@ -40,8 +40,9 @@
   --font-serif: 'Georgia', serif;
   --font-mono: 'Menlo', monospace;
   --font-poppins: 'Poppins', sans-serif;
+  --font-playfair: 'Playfair Display', serif;
   --radius: 1rem;
-  
+
   /* Artist watercolor palette - earthy, natural tones with improved contrast */
   --watercolor-blue: hsl(210, 35%, 85%);
   --watercolor-blue-deep: hsl(210, 45%, 55%);
@@ -98,8 +99,8 @@
   --font-serif: 'Georgia', serif;
   --font-mono: 'Menlo', monospace;
   --font-poppins: 'Poppins', sans-serif;
-  --radius: 1rem;
-  
+  --font-playfair: 'Playfair Display', serif;
+
   /* Dark mode artist watercolor palette with improved contrast */
   --watercolor-blue: hsl(210, 35%, 85%);
   --watercolor-blue-deep: hsl(210, 45%, 65%);
@@ -133,12 +134,12 @@
   .watercolor-hover {
     @apply transition-all duration-300;
   }
-  
+
   .watercolor-hover:hover {
     @apply -translate-y-0.5 shadow-lg;
     filter: saturate(1.1) brightness(1.02);
   }
-  
+
   .dark .watercolor-hover:hover {
     @apply shadow-white/5;
   }
@@ -147,7 +148,7 @@
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
   }
-  
+
   .dark .glass-effect {
     background: rgba(45, 55, 72, 0.3);
   }
@@ -160,23 +161,23 @@
   .dark .text-muted-foreground {
     color: hsl(45, 25%, 90%) !important;
   }
-  
+
   .dark .text-gray-600 {
     color: hsl(45, 20%, 85%) !important;
   }
-  
+
   .dark .text-gray-500 {
     color: hsl(45, 25%, 90%) !important;
   }
-  
+
   .dark .text-gray-700 {
     color: hsl(45, 30%, 95%) !important;
   }
-  
+
   .dark .text-gray-300 {
     color: hsl(45, 30%, 95%) !important;
   }
-  
+
   /* Poprawki dla Badge w motywie ciemnym */
   .dark .bg-watercolor-sage {
     background-color: hsl(85, 30%, 25%) !important;
