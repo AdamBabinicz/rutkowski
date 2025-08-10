@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "gallery": "Gallery",
+    "about": "About Artist",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Discover the World",
+    "subtitle": "of Artistic Poetry",
+    "description": "Immerse yourself in an extraordinary collection of artist's works, where each painting tells its own story",
+    "cta": "Start Your Journey"
+  },
+  "filter": {
+    "title": "Filter Collection",
+    "year": "Year",
+    "allYears": "All years",
+    "theme": "Theme",
+    "allThemes": "All themes",
+    "technique": "Technique",
+    "allTechniques": "All techniques",
+    "search": "Search",
+    "searchPlaceholder": "Search artworks..."
+  },
+  "themes": {
+    "natura": "Nature",
+    "portret": "Portrait",
+    "abstrakcja": "Abstract",
+    "pejzaz": "Landscape",
+    "kwiaty": "Flowers",
+    "woda": "Water"
+  },
+  "techniques": {
+    "akwarela": "Watercolor",
+    "olej": "Oil",
+    "akryl": "Acrylic",
+    "pastel": "Pastel"
+  },
+  "about": {
+    "title": "Artistic Journey",
+    "description": "Discover the fascinating story of an artist whose work transcends conventional boundaries"
+  },
+  "timeline": {
+    "firstSteps": "First Steps",
+    "firstExhibition": "First Exhibition",
+    "breakthrough": "Artistic Breakthrough",
+    "international": "International Recognition",
+    "present": "Present"
+  },
+  "artwork": {
+    "details": "Technical Details",
+    "dimensions": "Dimensions",
+    "technique": "Technique",
+    "substrate": "Substrate",
+    "status": "Status",
+    "available": "Available",
+    "sold": "Sold",
+    "tags": "Tags",
+    "description": "Description",
+    "story": "Creation Story",
+    "addToFavorites": "Add to favorites",
+    "share": "Share"
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "description": "Have questions about artworks, want to commission a portrait, or simply talk about art? Contact me!",
+    "form": {
+      "title": "Write to me",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "subject": "Subject",
+      "selectSubject": "Select subject",
+      "message": "Message",
+      "messagePlaceholder": "Describe your inquiry details...",
+      "privacy": "I agree to the processing of my personal data in accordance with",
+      "privacyPolicy": "privacy policy",
+      "submit": "Send Message",
+      "success": "Message sent successfully!",
+      "error": "An error occurred while sending the message."
+    },
+    "subjects": {
+      "purchase": "Artwork purchase",
+      "commission": "Portrait commission",
+      "exhibition": "Exhibition",
+      "general": "General inquiry",
+      "press": "Media"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Phone",
+      "atelier": "Atelier",
+      "hours": "Visit hours"
+    }
+  },
+  "footer": {
+    "description": "Discover the extraordinary world of painting through works full of emotion and masterful artistic craftsmanship.",
+    "navigation": "Navigation",
+    "categories": "Categories",
+    "contact": "Contact",
+    "copyright": "© 2024 Rutkowski's Creative Atlas. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms",
+    "cookies": "Cookies"
+  },
+  "404": {
+    "title": "Page Not Found",
+    "description": "Sorry, but the page you are looking for does not exist. It may have been moved or deleted.",
+    "goHome": "Return to Gallery",
+    "goBack": "Go Back"
+  },
+  "loading": "Loading...",
+  "error": "An error occurred"
+}

@@ -1,0 +1,141 @@
+[
+  {
+    "id": "1",
+    "title": "Poranek w Tatrach",
+    "titleEn": "Morning in the Tatras",
+    "titleFr": "Matin dans les Tatras",
+    "year": 2023,
+    "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900",
+      "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "70 × 50 cm",
+    "technique": "akwarela",
+    "tags": ["natura", "pejzaz", "góry", "mgła"],
+    "dominantColor": "#E8F4FD",
+    "description": "Ten mglisty poranek w Tatrach to jedna z moich najbardziej osobistych prac. Powstała podczas trzydniowego pobytu w schronisku, gdzie każdy świt przynosił nowe odkrycie kolorów i światła. Delikatne przejścia między błękitem nieba a ciepłymi tonami pierwszych promieni słońca zostały uchwycone w technice mokro-na-mokro, co pozwoliło na naturalne rozlewanie się pigmentów.",
+    "descriptionEn": "This misty morning in the Tatras is one of my most personal works. It was created during a three-day stay at a mountain hut, where each dawn brought new discoveries of colors and light. The delicate transitions between the blue of the sky and the warm tones of the first sun rays were captured using the wet-on-wet technique, allowing for natural pigment bleeding.",
+    "descriptionFr": "Ce matin brumeux dans les Tatras est l'une de mes œuvres les plus personnelles. Elle a été créée lors d'un séjour de trois jours dans un refuge de montagne, où chaque aube apportait de nouvelles découvertes de couleurs et de lumière. Les transitions délicates entre le bleu du ciel et les tons chauds des premiers rayons du soleil ont été capturées en utilisant la technique humide sur humide, permettant un saignement naturel des pigments.",
+    "story": "Wstałem o piątej rano, żeby złapać ten moment, gdy mgła powoli unosi się z doliny. Miałem ze sobą tylko małą palętę i blok akwarelowy. To dzieło powstało w ciągu 45 minut, w całkowitym skupieniu na chwili. Do dziś pamiętam zapach sosnowego lasu i chłód poranka.",
+    "storyEn": "I got up at five in the morning to catch that moment when the fog slowly rises from the valley. I only had a small palette and a watercolor pad with me. This work was created in 45 minutes, in complete focus on the moment. I still remember the smell of the pine forest and the morning chill.",
+    "storyFr": "Je me suis levé à cinq heures du matin pour saisir ce moment où le brouillard s'élève lentement de la vallée. Je n'avais avec moi qu'une petite palette et un bloc d'aquarelle. Cette œuvre a été créée en 45 minutes, dans une concentration totale sur l'instant. Je me souviens encore de l'odeur de la forêt de pins et de la fraîcheur matinale.",
+    "available": 1,
+    "price": 250000
+  },
+  {
+    "id": "2",
+    "title": "Babcia Maria",
+    "titleEn": "Grandma Maria",
+    "titleFr": "Grand-mère Maria",
+    "year": 2022,
+    "imageUrl": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "60 × 40 cm",
+    "technique": "akwarela",
+    "tags": ["portret", "rodzina", "emocje"],
+    "dominantColor": "#F0E6FF",
+    "description": "Portret wykonany z pamięci, ukazujący ciepło i mądrość mojej babci. Każda zmarszczka na jej twarzy opowiada historię życia pełnego miłości i poświęcenia. Użyłem ciepłych tonów sepii i ochry, by podkreślić jej łagodny charakter.",
+    "descriptionEn": "A portrait created from memory, showing the warmth and wisdom of my grandmother. Every wrinkle on her face tells a story of a life full of love and sacrifice. I used warm sepia and ochre tones to emphasize her gentle character.",
+    "descriptionFr": "Un portrait créé de mémoire, montrant la chaleur et la sagesse de ma grand-mère. Chaque ride sur son visage raconte l'histoire d'une vie pleine d'amour et de sacrifice. J'ai utilisé des tons chauds de sépia et d'ocre pour souligner son caractère doux.",
+    "story": "Babcia Maria była inspiracją dla całej mojej twórczości portretowej. Ten obraz namalowałem po jej śmierci, z fotografii i wspomnień. To była pierwsza praca, przy której naprawdę płakałem podczas malowania.",
+    "storyEn": "Grandma Maria was the inspiration for my entire portrait work. I painted this picture after her death, from photographs and memories. It was the first work where I truly cried while painting.",
+    "storyFr": "Grand-mère Maria était l'inspiration de tout mon travail de portrait. J'ai peint ce tableau après sa mort, à partir de photographies et de souvenirs. C'était la première œuvre où j'ai vraiment pleuré en peignant.",
+    "available": 0,
+    "price": 180000
+  },
+  {
+    "id": "3",
+    "title": "Przepływ",
+    "titleEn": "Flow",
+    "titleFr": "Flux",
+    "year": 2023,
+    "imageUrl": "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "100 × 80 cm",
+    "technique": "akryl",
+    "tags": ["abstrakcja", "ekspresja", "ruch"],
+    "dominantColor": "#E8F5E8",
+    "description": "Spontaniczny wyraz emocji poprzez płynne formy i dinamiczne przejścia kolorów. Ta abstrakcyjna kompozycja powstała w jednym rzucie, bez wstępnych szkiców, jako czysty strumień świadomości przeniesiony na płótno.",
+    "descriptionEn": "A spontaneous expression of emotions through fluid forms and dynamic color transitions. This abstract composition was created in one go, without preliminary sketches, as a pure stream of consciousness transferred to canvas.",
+    "descriptionFr": "Une expression spontanée d'émotions à travers des formes fluides et des transitions de couleurs dynamiques. Cette composition abstraite a été créée d'un trait, sans esquisses préliminaires, comme un pur flux de conscience transféré sur toile.",
+    "story": "To było jedno z tych popołudni, gdy emocje wzięły górę nad techniką. Stanąłem przed pustym płótnem i po prostu pozwoliłem farbom płynąć. Nie myślałem o kompozycji czy kolorach - tylko czułem.",
+    "storyEn": "It was one of those afternoons when emotions took over technique. I stood in front of an empty canvas and just let the paints flow. I didn't think about composition or colors - I just felt.",
+    "storyFr": "C'était un de ces après-midis où les émotions ont pris le dessus sur la technique. Je me suis tenu devant une toile vide et j'ai simplement laissé les peintures couler. Je ne pensais pas à la composition ou aux couleurs - je ne faisais que ressentir.",
+    "available": 1,
+    "price": 420000
+  },
+  {
+    "id": "4",
+    "title": "Jesienne Złoto",
+    "titleEn": "Autumn Gold",
+    "titleFr": "Or d'Automne",
+    "year": 2021,
+    "imageUrl": "https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "80 × 60 cm",
+    "technique": "olej",
+    "tags": ["pejzaz", "jesień", "drzewa"],
+    "dominantColor": "#FFE6D9",
+    "description": "Ciepłe barwy polskiej jesieni w pełnej krasie. Każdy liść został namalowany z uwagą na detale, tworząc mozaikę złotych i pomarańczowych tonów. To hymn na cześć przemijania i piękna natury.",
+    "descriptionEn": "The warm colors of Polish autumn in full glory. Each leaf was painted with attention to detail, creating a mosaic of gold and orange tones. This is a hymn to transience and the beauty of nature.",
+    "descriptionFr": "Les couleurs chaudes de l'automne polonais dans toute leur gloire. Chaque feuille a été peinte avec une attention aux détails, créant une mosaïque de tons dorés et oranges. C'est un hymne à la fugacité et à la beauté de la nature.",
+    "story": "Spacerując po lesie w okolicach Krakowa, zostałem oczarowany grą światła przebijającego się przez kolorowe liście. Wróciłem do tego miejsca codziennie przez tydzień, obserwując zmiany i robiąc szkice.",
+    "storyEn": "Walking through the forest around Krakow, I was enchanted by the play of light breaking through the colorful leaves. I returned to this place every day for a week, observing changes and making sketches.",
+    "storyFr": "En me promenant dans la forêt autour de Cracovie, j'ai été enchanté par le jeu de lumière qui perçait à travers les feuilles colorées. Je suis retourné à cet endroit tous les jours pendant une semaine, observant les changements et faisant des croquis.",
+    "available": 1,
+    "price": 320000
+  },
+  {
+    "id": "5",
+    "title": "Lustro Nieba",
+    "titleEn": "Mirror of Sky",
+    "titleFr": "Miroir du Ciel",
+    "year": 2022,
+    "imageUrl": "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "90 × 70 cm",
+    "technique": "akwarela",
+    "tags": ["woda", "refleksja", "spokój"],
+    "dominantColor": "#E8F4FD",
+    "description": "Spokojne wody jeziora odbijające nieskończoność nieba. Praca powstała w technice mokro-na-mokro, co pozwoliło na uchwycenie naturalnych refleksów i subtelnych przejść tonalnych między niebem a wodą.",
+    "descriptionEn": "Calm lake waters reflecting the infinity of the sky. The work was created using the wet-on-wet technique, which allowed for capturing natural reflections and subtle tonal transitions between sky and water.",
+    "descriptionFr": "Les eaux calmes du lac reflétant l'infinité du ciel. L'œuvre a été créée en utilisant la technique humide sur humide, ce qui a permis de capturer les reflets naturels et les transitions tonales subtiles entre le ciel et l'eau.",
+    "story": "To jezioro odkryłem przypadkiem podczas wędrówki po Bieszczadach. Było wczesne rano, bez wiatru, woda była idealnie gładka. Siedziałem tam dwie godziny, po prostu patrząc, zanim w ogóle wyjąłem pędzle.",
+    "storyEn": "I discovered this lake by accident while hiking in the Bieszczady Mountains. It was early morning, no wind, the water was perfectly smooth. I sat there for two hours, just looking, before I even took out my brushes.",
+    "storyFr": "J'ai découvert ce lac par hasard en randonnant dans les montagnes Bieszczady. C'était tôt le matin, sans vent, l'eau était parfaitement lisse. Je me suis assis là pendant deux heures, juste à regarder, avant même de sortir mes pinceaux.",
+    "available": 1,
+    "price": 280000
+  },
+  {
+    "id": "6",
+    "title": "Kwitnący Ogród",
+    "titleEn": "Blooming Garden",
+    "titleFr": "Jardin en Fleurs",
+    "year": 2023,
+    "imageUrl": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600",
+    "imageUrls": [
+      "https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900"
+    ],
+    "dimensions": "70 × 50 cm",
+    "technique": "pastel",
+    "tags": ["kwiaty", "natura", "kolory"],
+    "dominantColor": "#F0E6FF",
+    "description": "Eksplozja kolorów wiosennych kwiatów w pełnym rozkwicie. Delikatna technika pastelu pozwoliła na uchwycenie miękkości płatków i subtelnych przejść kolorystycznych. To celebracja życia i odnowy natury.",
+    "descriptionEn": "An explosion of colors of spring flowers in full bloom. The delicate pastel technique allowed for capturing the softness of petals and subtle color transitions. This is a celebration of life and nature's renewal.",
+    "descriptionFr": "Une explosion de couleurs de fleurs printanières en pleine floraison. La technique délicate du pastel a permis de capturer la douceur des pétales et les transitions de couleurs subtiles. C'est une célébration de la vie et du renouveau de la nature.",
+    "story": "W ogrodzie botanicznym w Krakowie odkryłem ten zakątek pełen kolorowych kwiatów. Było to jak natura sama pokazywała mi swoją paletę kolorów. Malowałem przez trzy dni, próbując uchwycić tę różnorodność.",
+    "storyEn": "In the botanical garden in Krakow, I discovered this corner full of colorful flowers. It was like nature itself was showing me its color palette. I painted for three days, trying to capture this diversity.",
+    "storyFr": "Dans le jardin botanique de Cracovie, j'ai découvert ce coin plein de fleurs colorées. C'était comme si la nature elle-même me montrait sa palette de couleurs. J'ai peint pendant trois jours, essayant de capturer cette diversité.",
+    "available": 1,
+    "price": 200000
+  }
+]

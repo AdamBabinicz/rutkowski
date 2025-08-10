@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "gallery": "Galeria",
+    "about": "O Artyście",
+    "contact": "Kontakt",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Odkryj Świat",
+    "subtitle": "Malarskiej Poezji",
+    "description": "Zanurz się w niezwykłej kolekcji dzieł artysty, gdzie każdy obraz opowiada własną historię",
+    "cta": "Rozpocznij Podróż"
+  },
+  "filter": {
+    "title": "Filtruj Kolekcję",
+    "year": "Rok",
+    "allYears": "Wszystkie lata",
+    "theme": "Temat",
+    "allThemes": "Wszystkie tematy",
+    "technique": "Technika",
+    "allTechniques": "Wszystkie techniki",
+    "search": "Szukaj",
+    "searchPlaceholder": "Szukaj dzieł..."
+  },
+  "themes": {
+    "natura": "Natura",
+    "portret": "Portret",
+    "abstrakcja": "Abstrakcja",
+    "pejzaz": "Pejzaż",
+    "kwiaty": "Kwiaty",
+    "woda": "Woda"
+  },
+  "techniques": {
+    "akwarela": "Akwarela",
+    "olej": "Olej",
+    "akryl": "Akryl",
+    "pastel": "Pastel"
+  },
+  "about": {
+    "title": "Podróż Artystyczna",
+    "description": "Poznaj fascynującą historię artysty, którego twórczość przekracza granice konwencji"
+  },
+  "timeline": {
+    "firstSteps": "Pierwsze Kroki",
+    "firstExhibition": "Pierwsza Wystawa",
+    "breakthrough": "Przełom Artystyczny",
+    "international": "Uznanie Międzynarodowe",
+    "present": "Współczesność"
+  },
+  "artwork": {
+    "details": "Szczegóły Techniczne",
+    "dimensions": "Wymiary",
+    "technique": "Technika",
+    "substrate": "Podłoże",
+    "status": "Status",
+    "available": "Dostępne",
+    "sold": "Sprzedane",
+    "tags": "Tagi",
+    "description": "Opis",
+    "story": "Historia Powstania",
+    "addToFavorites": "Dodaj do ulubionych",
+    "share": "Udostępnij"
+  },
+  "contact": {
+    "title": "Nawiążmy Kontakt",
+    "description": "Masz pytania o dzieła, chcesz zamówić portret lub po prostu porozmawiać o sztuce? Skontaktuj się ze mną!",
+    "form": {
+      "title": "Napisz do mnie",
+      "firstName": "Imię",
+      "lastName": "Nazwisko",
+      "email": "Email",
+      "subject": "Temat",
+      "selectSubject": "Wybierz temat",
+      "message": "Wiadomość",
+      "messagePlaceholder": "Opisz szczegóły swojego zapytania...",
+      "privacy": "Zgadzam się na przetwarzanie moich danych osobowych zgodnie z",
+      "privacyPolicy": "polityką prywatności",
+      "submit": "Wyślij Wiadomość",
+      "success": "Wiadomość została wysłana pomyślnie!",
+      "error": "Wystąpił błąd podczas wysyłania wiadomości."
+    },
+    "subjects": {
+      "purchase": "Zakup dzieła",
+      "commission": "Zlecenie portret",
+      "exhibition": "Wystawa",
+      "general": "Ogólne pytanie",
+      "press": "Media"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Telefon",
+      "atelier": "Atelier",
+      "hours": "Godziny wizyty"
+    }
+  },
+  "footer": {
+    "description": "Odkrywaj niezwykły świat malarstwa poprzez dzieła pełne emocji i mistrzowskiego rzemiosła artystycznego.",
+    "navigation": "Nawigacja",
+    "categories": "Kategorie",
+    "contact": "Kontakt",
+    "copyright": "© 2024 Atlas Twórczości Rutkowskiego. Wszystkie prawa zastrzeżone.",
+    "privacy": "Polityka Prywatności",
+    "terms": "Regulamin",
+    "cookies": "Cookies"
+  },
+  "404": {
+    "title": "Strona Nie Została Znaleziona",
+    "description": "Przepraszamy, ale szukana przez Ciebie strona nie istnieje. Być może została przeniesiona lub usunięta.",
+    "goHome": "Wróć do Galerii",
+    "goBack": "Cofnij"
+  },
+  "loading": "Ładowanie...",
+  "error": "Wystąpił błąd"
+}

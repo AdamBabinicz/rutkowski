@@ -1,0 +1,114 @@
+{
+  "nav": {
+    "gallery": "Galerie",
+    "about": "À propos de l'Artiste",
+    "contact": "Contact",
+    "blog": "Blog"
+  },
+  "hero": {
+    "title": "Découvrez le Monde",
+    "subtitle": "de la Poésie Picturale",
+    "description": "Plongez-vous dans une collection extraordinaire d'œuvres d'artiste, où chaque tableau raconte sa propre histoire",
+    "cta": "Commencer le Voyage"
+  },
+  "filter": {
+    "title": "Filtrer la Collection",
+    "year": "Année",
+    "allYears": "Toutes les années",
+    "theme": "Thème",
+    "allThemes": "Tous les thèmes",
+    "technique": "Technique",
+    "allTechniques": "Toutes les techniques",
+    "search": "Rechercher",
+    "searchPlaceholder": "Rechercher des œuvres..."
+  },
+  "themes": {
+    "natura": "Nature",
+    "portret": "Portrait",
+    "abstrakcja": "Abstrait",
+    "pejzaz": "Paysage",
+    "kwiaty": "Fleurs",
+    "woda": "Eau"
+  },
+  "techniques": {
+    "akwarela": "Aquarelle",
+    "olej": "Huile",
+    "akryl": "Acrylique",
+    "pastel": "Pastel"
+  },
+  "about": {
+    "title": "Parcours Artistique",
+    "description": "Découvrez l'histoire fascinante d'un artiste dont l'œuvre transcende les frontières conventionnelles"
+  },
+  "timeline": {
+    "firstSteps": "Premiers Pas",
+    "firstExhibition": "Première Exposition",
+    "breakthrough": "Percée Artistique",
+    "international": "Reconnaissance Internationale",
+    "present": "Présent"
+  },
+  "artwork": {
+    "details": "Détails Techniques",
+    "dimensions": "Dimensions",
+    "technique": "Technique",
+    "substrate": "Support",
+    "status": "Statut",
+    "available": "Disponible",
+    "sold": "Vendu",
+    "tags": "Étiquettes",
+    "description": "Description",
+    "story": "Histoire de la Création",
+    "addToFavorites": "Ajouter aux favoris",
+    "share": "Partager"
+  },
+  "contact": {
+    "title": "Connectons-nous",
+    "description": "Vous avez des questions sur les œuvres, vous voulez commander un portrait ou simplement parler d'art ? Contactez-moi !",
+    "form": {
+      "title": "Écrivez-moi",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "subject": "Sujet",
+      "selectSubject": "Sélectionnez le sujet",
+      "message": "Message",
+      "messagePlaceholder": "Décrivez les détails de votre demande...",
+      "privacy": "J'accepte le traitement de mes données personnelles conformément à",
+      "privacyPolicy": "politique de confidentialité",
+      "submit": "Envoyer le Message",
+      "success": "Message envoyé avec succès !",
+      "error": "Une erreur s'est produite lors de l'envoi du message."
+    },
+    "subjects": {
+      "purchase": "Achat d'œuvre",
+      "commission": "Commission de portrait",
+      "exhibition": "Exposition",
+      "general": "Question générale",
+      "press": "Médias"
+    },
+    "info": {
+      "email": "Email",
+      "phone": "Téléphone",
+      "atelier": "Atelier",
+      "hours": "Heures de visite"
+    }
+  },
+  "footer": {
+    "description": "Découvrez le monde extraordinaire de la peinture à travers des œuvres pleines d'émotion et d'artisanat artistique magistral.",
+    "navigation": "Navigation",
+    "categories": "Catégories",
+    "contact": "Contact",
+    "copyright": "© 2024 Atlas Créatif de Rutkowski. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions",
+    "cookies": "Cookies"
+  },
+  "404": {
+    "title": "Page Non Trouvée",
+    "description": "Désolé, mais la page que vous cherchez n'existe pas. Elle a peut-être été déplacée ou supprimée.",
+    "goHome": "Retourner à la Galerie",
+    "goBack": "Retour"
+  },
+  "loading": "Chargement...",
+  "error": "Une erreur s'est produite"
+}

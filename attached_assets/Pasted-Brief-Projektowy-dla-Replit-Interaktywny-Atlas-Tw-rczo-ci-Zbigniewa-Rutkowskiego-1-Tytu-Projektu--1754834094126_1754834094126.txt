@@ -1,0 +1,102 @@
+Brief Projektowy dla Replit: Interaktywny Atlas Twórczości Zbigniewa Rutkowskiego
+1. Tytuł Projektu
+Interaktywny Atlas Twórczości Zbigniewa Rutkowskiego
+
+2. Wprowadzenie i Główna Koncepcja
+Celem projektu jest stworzenie nowoczesnej, interaktywnej aplikacji internetowej (SPA) dla artysty akwarelisty, Zbigniewa Jana Rutkowskiego.
+Zamiast statycznego portfolio, powstanie dynamiczne narzędzie do eksploracji dorobku, które pozwoli użytkownikowi filtrować prace według czasu, tematyki i kontekstu wystaw.
+
+Zastosujemy narracyjną formę prezentacji, w której kolekcja stanie się opowieścią o niemal 50 latach twórczości. Unikalna droga edukacyjna (Państwowe Ognisko Plastyczne w Radomiu, dyplom „Za wybitne osiągnięcia”) zostanie wyeksponowana jako fundament pasji.
+
+3. Kluczowe informacje o artyście
+(bez zmian – pozostają wszystkie szczegóły biograficzne, osiągnięcia i filozofia twórcza z Twojej wersji briefu)
+
+4. Inspiracje i przeniesione dobre praktyki z poprzedniego projektu
+Tryb Jasny/Ciemny – useContext + localStorage, zapamiętywanie preferencji użytkownika.
+
+Wielojęzyczność – react-i18next z plikami .json (PL, EN, FR), obejmująca interfejs, opisy prac i biografię.
+
+SEO i Open Graph – react-helmet-async z meta opisami, danymi strukturalnymi JSON-LD, canonical URL i tagami og:* dla social mediów.
+
+Dostępność (a11y) – aria-labels, focus management dla modali, kontrast zgodny z WCAG, skip link na górze strony.
+
+Lazy-loading obrazów – loading="lazy" + srcset dla responsywności.
+
+Animacje – framer-motion dla płynnych przejść między sekcjami i efektów pojawiania się treści.
+
+Fallback formatów obrazów – główny format .avif, z automatycznym fallbackiem do .webp dla kompatybilności.
+
+Loader i strona 404 – spójny z motywem akwareli.
+
+Scroll to top on route change – dla lepszej nawigacji.
+
+Formularz kontaktowy – Netlify Forms z walidacją HTML5.
+
+5. Struktura projektu (usprawniona)
+css
+Kopiuj
+Edytuj
+/public
+  └── favicons/ (z RealFaviconGenerator)
+  └── index.html
+/src
+  ├── assets/images/ (format .avif + fallback .webp)
+  ├── components/
+  │   ├── Navbar.jsx        // menu z dropdownami i selektorem języka
+  │   ├── Footer.jsx        // stopka z kontaktem i mediami społecznościowymi
+  │   ├── LanguageSelector.jsx
+  │   ├── ThemeToggle.jsx
+  │   ├── FilterPanel.jsx   // filtrowanie po roku, tematyce, wydarzeniach
+  │   ├── Timeline.jsx      // oś czasu biografii
+  │   ├── Modal.jsx
+  │   └── ImageSlider.jsx
+  ├── pages/
+  │   ├── HomePage.jsx
+  │   ├── AboutPage.jsx
+  │   ├── GalleryPage.jsx
+  │   ├── ArtworkDetail.jsx
+  │   └── ContactPage.jsx
+  ├── translations/
+  │   ├── pl.json
+  │   ├── en.json
+  │   └── fr.json
+  ├── data/
+  │   └── artworks.json     // dane o pracach z tagami i kontekstem biograficznym
+  ├── App.jsx
+  ├── main.jsx
+  └── i18n.js
+6. Funkcjonalności (zaktualizowane)
+O Artyście – interaktywna oś czasu z klikalnymi punktami, wzbogacona o zdjęcia, dokumenty i anegdoty.
+
+Atlas prac – filtracja po dekadach, tematach i wydarzeniach (np. plener w Wieliczce, Droga Krzyżowa).
+
+Widok szczegółowy pracy – powiększenie obrazu, dane techniczne, historia powstania, kolory dominujące.
+
+Kontakt – formularz Netlify, e-mail, telefon, linki do social mediów.
+
+Responsywność – pełna obsługa urządzeń mobilnych z optymalizacją touch-friendly (min. 48×48 px elementy interaktywne).
+
+7. Stack technologiczny
+React (Vite) + TypeScript
+
+Tailwind CSS (z możliwością użycia CSS Modules dla specyficznych komponentów)
+
+React Router
+
+react-i18next
+
+react-helmet-async
+
+Framer Motion
+
+Netlify (hosting + formularze)
+
+8. Styl wizualny
+Motyw akwarelowy – pastelowe kolory tła inspirowane pracami artysty, lekko rozmyte plamy jako elementy dekoracyjne.
+
+Typografia – elegancka, czytelna (np. Poppins, Inter), z delikatnymi akcentami kursywy w cytatach.
+
+Efekty hover – subtelne powiększenia obrazów, fade-in i fade-out w przejściach.
+
+Spójność – wszystkie elementy UI utrzymane w estetyce harmonizującej z twórczością.
+
