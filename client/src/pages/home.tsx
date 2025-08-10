@@ -4,6 +4,13 @@ import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import FilterPanel from "@/components/filter-panel";
 import ArtworkCard from "@/components/artwork-card";
 import artworksData from "@/data/artworks.json";
@@ -12,6 +19,7 @@ import type { Artwork } from "@shared/schema";
 export default function Home() {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
+  const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
   const [filters, setFilters] = useState({
     year: "all",
     theme: "all",
@@ -72,14 +80,25 @@ export default function Home() {
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
                 {t("hero.description")}
               </p>
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
-                onClick={() => document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })}
-                data-testid="cta-button"
-              >
-                {t("hero.cta")}
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                  onClick={() => document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })}
+                  data-testid="cta-button"
+                >
+                  {t("hero.cta")}
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-watercolor-ochre-accent text-watercolor-ochre-accent hover:bg-watercolor-ochre-accent hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium"
+                  onClick={() => setIsArtistDialogOpen(true)}
+                  data-testid="artist-info-button"
+                >
+                  O Artyście
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
@@ -118,6 +137,69 @@ export default function Home() {
             )}
           </div>
         </section>
+
+        {/* Artist Info Dialog */}
+        <Dialog open={isArtistDialogOpen} onOpenChange={setIsArtistDialogOpen}>
+          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
+                Zbigniew Jan Rutkowski
+              </DialogTitle>
+              <DialogDescription className="text-lg text-watercolor-ochre-accent font-medium">
+                Malarz akwarelista z niemal 50-letnim doświadczeniem
+              </DialogDescription>
+            </DialogHeader>
+            
+            <div className="space-y-4 text-gray-700 dark:text-gray-300">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <img
+                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200"
+                  alt="Zbigniew Jan Rutkowski"
+                  className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
+                />
+                <div className="flex-1">
+                  <p className="text-sm leading-relaxed">
+                    <strong>Urodzony:</strong> 11 czerwca 1952 roku w Radomiu
+                  </p>
+                  <p className="text-sm leading-relaxed mt-2">
+                    <strong>Wykształcenie:</strong> Absolwent Państwowego Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu (1973-75), ukończył z wyróżnieniem kurs II stopnia "Za wybitne osiągnięcia w dziale malarstwa".
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                  Najważniejsze osiągnięcia
+                </h4>
+                <ul className="space-y-2 text-sm">
+                  <li>• <strong>1968</strong> - Pierwsza wystawa w Klubie "Łączności" w Radomiu</li>
+                  <li>• <strong>1987</strong> - Plener w Wieliczce, otrzymał tytuł "Honorowego Górnika Kopalni Soli"</li>
+                  <li>• <strong>Lata 90.</strong> - Namalował 14 stacji "Drogi Krzyżowej" według Józefa Mehoffera dla kościoła św. Jadwigi Królowej w Radomiu</li>
+                  <li>• Członek Zarządu Towarzystwa Przyjaciół Sztuk Pięknych, prowadził "Klub Plastyka Amatora"</li>
+                  <li>• Liczne wystawy w Warszawie, Poznaniu, Łodzi - I miejsce w dziale malarstwa w Wojskach Lotniczych</li>
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                  Kolekcje międzynarodowe
+                </h4>
+                <p className="text-sm leading-relaxed">
+                  Prace artysty znajdują się w prywatnych kolekcjach w <strong>Polsce, Szwecji, Argentynie, Austrii, Szwajcarii, Kanadzie i USA</strong>. Znaczną część kolekcji stanowią dzieła w posiadaniu wieloletniego przyjaciela i mecenasa artysty Piotra Drózda.
+                </p>
+              </div>
+
+              <div className="bg-watercolor-cream dark:bg-gray-800 p-4 rounded-xl border border-watercolor-ochre-accent/20">
+                <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
+                  "Przez niemal 50 lat malarstwo było i jest moją pasją oraz odskocznią od codziennego życia"
+                </p>
+                <p className="text-xs text-center mt-2 text-watercolor-ochre-accent font-medium">
+                  - Zbigniew Jan Rutkowski
+                </p>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
       </main>
     </>
   );
