@@ -5,6 +5,11 @@
     "contact": "Kontakt",
     "blog": "Blog"
   },
+  "site": {
+    "title": "Atlas Twórczości",
+    "fullTitle": "Atlas Twórczości Zbigniewa Rutkowskiego",
+    "artistName": "Zbigniewa Rutkowskiego"
+  },
   "hero": {
     "title": "Odkryj Świat",
     "subtitle": "Malarskiej Poezji",
@@ -98,7 +103,7 @@
     "navigation": "Nawigacja",
     "categories": "Kategorie",
     "contact": "Kontakt",
-    "copyright": "© 2024 Atlas Twórczości Rutkowskiego. Wszystkie prawa zastrzeżone.",
+    "copyright": "© 2024 Atlas Twórczości Zbigniewa Rutkowskiego. Wszystkie prawa zastrzeżone.",
     "privacy": "Polityka Prywatności",
     "terms": "Regulamin",
     "cookies": "Cookies"

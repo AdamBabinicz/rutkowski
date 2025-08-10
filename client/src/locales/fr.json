@@ -5,6 +5,11 @@
     "contact": "Contact",
     "blog": "Blog"
   },
+  "site": {
+    "title": "Atlas Créatif",
+    "fullTitle": "Atlas Créatif de Zbigniew Rutkowski",
+    "artistName": "Zbigniew Rutkowski"
+  },
   "hero": {
     "title": "Découvrez le Monde",
     "subtitle": "de la Poésie Picturale",
@@ -98,7 +103,7 @@
     "navigation": "Navigation",
     "categories": "Catégories",
     "contact": "Contact",
-    "copyright": "© 2024 Atlas Créatif de Rutkowski. Tous droits réservés.",
+    "copyright": "© 2024 Atlas Créatif de Zbigniew Rutkowski. Tous droits réservés.",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions",
     "cookies": "Cookies"

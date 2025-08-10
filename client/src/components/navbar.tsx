@@ -50,9 +50,9 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center" data-testid="logo">
             <h1 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
-              Atlas Twórczości{" "}
+              {t("site.title")}{" "}
               <span className="text-watercolor-lavender-deep dark:text-watercolor-lavender">
-                Zbigniewa Rutkowskiego
+                {t("site.artistName")}
               </span>
             </h1>
           </Link>

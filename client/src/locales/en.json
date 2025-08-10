@@ -5,6 +5,11 @@
     "contact": "Contact",
     "blog": "Blog"
   },
+  "site": {
+    "title": "Creative Atlas",
+    "fullTitle": "Zbigniew Rutkowski's Creative Atlas",
+    "artistName": "Zbigniew Rutkowski"
+  },
   "hero": {
     "title": "Discover the World",
     "subtitle": "of Artistic Poetry",
@@ -98,7 +103,7 @@
     "navigation": "Navigation",
     "categories": "Categories",
     "contact": "Contact",
-    "copyright": "© 2024 Rutkowski's Creative Atlas. All rights reserved.",
+    "copyright": "© 2024 Zbigniew Rutkowski's Creative Atlas. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms",
     "cookies": "Cookies"
