@@ -40,7 +40,7 @@ function App() {
                 <title>Atlas Twórczości Zbigniewa Rutkowskiego</title>
                 <meta name="description" content="Odkryj niezwykłą kolekcję dzieł artysty Rutkowskiego" />
               </Helmet>
-              <div className="min-h-screen bg-gradient-to-br from-watercolor-cream via-background to-watercolor-blue dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
+              <div className="min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
                 <Navbar />
                 <Suspense fallback={<div>Ładowanie...</div>}>
                   <Router />

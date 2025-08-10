@@ -69,7 +69,7 @@ export default function Contact() {
         <meta name="description" content={t("contact.description")} />
       </Helmet>
 
-      <section className="pt-20 py-20 px-4 bg-gradient-to-br from-watercolor-blue via-background to-watercolor-lavender dark:from-watercolor-charcoal-light dark:via-gray-800 dark:to-watercolor-charcoal">
+      <section className="pt-20 py-20 px-4 bg-gradient-to-br from-watercolor-blue via-background to-watercolor-sage dark:from-watercolor-charcoal-light dark:via-gray-800 dark:to-watercolor-charcoal">
         <div className="max-w-4xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -65,7 +65,7 @@ export default function Home() {
             >
               <h1 className="font-poppins font-bold text-4xl md:text-6xl text-gray-800 dark:text-white mb-6">
                 {t("hero.title")} <br />
-                <span className="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent bg-clip-text text-transparent">
                   {t("hero.subtitle")}
                 </span>
               </h1>
@@ -74,7 +74,7 @@ export default function Home() {
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
                 onClick={() => document.getElementById("gallery")?.scrollIntoView({ behavior: "smooth" })}
                 data-testid="cta-button"
               >

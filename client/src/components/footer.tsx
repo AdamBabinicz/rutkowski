@@ -5,7 +5,7 @@ export default function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="bg-watercolor-charcoal dark:bg-gray-900 text-white py-16">
+    <footer className="bg-watercolor-umber-accent dark:bg-watercolor-charcoal text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
@@ -17,7 +17,7 @@ export default function Footer() {
             <div className="flex space-x-3">
               <a
                 href="#"
-                className="w-8 h-8 bg-watercolor-lavender-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-peach-deep transition-colors"
+                className="w-8 h-8 bg-watercolor-ochre-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-umber-deep transition-colors"
                 data-testid="social-instagram"
               >
                 <i className="fab fa-instagram text-sm"></i>
@@ -31,7 +31,7 @@ export default function Footer() {
               </a>
               <a
                 href="#"
-                className="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-lavender-deep transition-colors"
+                className="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-ochre-deep transition-colors"
                 data-testid="social-linkedin"
               >
                 <i className="fab fa-linkedin text-sm"></i>
@@ -44,7 +44,7 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold mb-4">{t("footer.navigation")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-watercolor-lavender transition-colors">
+                <Link href="/" className="text-gray-300 hover:text-watercolor-ochre transition-colors">
                   {t("nav.gallery")}
                 </Link>
               </li>
@@ -54,7 +54,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-watercolor-peach transition-colors">
+                <Link href="/contact" className="text-gray-300 hover:text-watercolor-umber transition-colors">
                   {t("nav.contact")}
                 </Link>
               </li>
@@ -71,7 +71,7 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold mb-4">{t("footer.categories")}</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-lavender transition-colors">
+                <a href="#" className="text-gray-300 hover:text-watercolor-ochre transition-colors">
                   {t("themes.pejzaz")}
                 </a>
               </li>
@@ -81,7 +81,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-peach transition-colors">
+                <a href="#" className="text-gray-300 hover:text-watercolor-umber transition-colors">
                   {t("themes.abstrakcja")}
                 </a>
               </li>
@@ -98,18 +98,18 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold mb-4">{t("footer.contact")}</h4>
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center">
-                <i className="fas fa-envelope w-4 mr-3 text-watercolor-peach"></i>
-                <span>m.rutkowski@artystyka.pl</span>
+                <i className="fas fa-envelope w-4 mr-3 text-watercolor-ochre"></i>
+                <span>Zbyszior52@wp.pl</span>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-phone w-4 mr-3 text-watercolor-sage"></i>
-                <span>+48 123 456 789</span>
+                <span>600 252 658</span>
               </div>
               <div className="flex items-start">
-                <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-lavender"></i>
+                <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-umber"></i>
                 <span>
-                  ul. Artystyczna 15<br />
-                  31-000 Kraków
+                  Radom<br />
+                  Polska
                 </span>
               </div>
             </div>

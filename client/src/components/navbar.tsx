@@ -31,8 +31,8 @@ export default function Navbar() {
           href={href}
           className={`${
             mobile ? "block py-2" : ""
-          } text-gray-700 dark:text-gray-300 hover:text-watercolor-lavender-deep dark:hover:text-watercolor-lavender transition-colors font-medium ${
-            location === href ? "text-watercolor-lavender-deep dark:text-watercolor-lavender" : ""
+          } text-gray-700 dark:text-gray-300 hover:text-watercolor-ochre-accent dark:hover:text-watercolor-ochre transition-colors font-medium ${
+            location === href ? "text-watercolor-ochre-accent dark:text-watercolor-ochre" : ""
           }`}
           onClick={() => mobile && setIsOpen(false)}
           data-testid={`nav-link-${href.replace("/", "") || "home"}`}
@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link href="/" className="flex items-center" data-testid="logo">
             <h1 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
               {t("site.title")}{" "}
-              <span className="text-watercolor-lavender-deep dark:text-watercolor-lavender">
+              <span className="text-watercolor-ochre-accent dark:text-watercolor-ochre">
                 {t("site.artistName")}
               </span>
             </h1>

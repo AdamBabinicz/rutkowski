@@ -17,35 +17,35 @@ export default function Timeline() {
       year: "1952",
       title: "Narodziny w Radomiu",
       description: "Urodził się w Radomiu, mieście z którym pozostaje silnie związany przez całe życie.",
-      color: "watercolor-lavender-deep",
+      color: "watercolor-ochre-accent",
       side: "left",
     },
     {
       year: "1968",
       title: "Pierwsza wystawa",
       description: "Debiut artystyczny - pierwsza wystawa jeszcze przed ukończeniem studiów.",
-      color: "watercolor-sage-deep",
+      color: "watercolor-sage-accent",
       side: "right",
     },
     {
       year: "1973-75",
       title: "Dyplom z wyróżnieniem",
       description: "Ukończenie Państwowego Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu z dyplomem 'Za wybitne osiągnięcia w dziale malarstwa'.",
-      color: "watercolor-peach-deep",
+      color: "watercolor-umber-accent",
       side: "left",
     },
     {
       year: "1987",
       title: "Plener w Wieliczce",
       description: "Uczestnictwo w plenerze malarskim w Wieliczce, uhonorowany tytułem 'Honorowego Górnika'.",
-      color: "watercolor-blue-deep",
+      color: "watercolor-blue-accent",
       side: "right",
     },
     {
       year: "1995",
       title: "Droga Krzyżowa",
       description: "Namalowanie 14 stacji Drogi Krzyżowej dla kościoła św. Jadwigi Królowej w Radomiu (technika olejna, według Mehoffera).",
-      color: "watercolor-lavender-deep",
+      color: "watercolor-ochre-accent",
       side: "left",
     },
     {
@@ -60,7 +60,7 @@ export default function Timeline() {
   return (
     <div className="relative">
       {/* Timeline line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-lavender-deep to-watercolor-peach-deep rounded-full"></div>
+      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
 
       {/* Timeline Events */}
       <div className="space-y-16">
@@ -78,7 +78,7 @@ export default function Timeline() {
               <div
                 className={`bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border ${
                   event.color === "gradient"
-                    ? "bg-gradient-to-br from-watercolor-lavender to-watercolor-peach border-white/50"
+                    ? "bg-gradient-to-br from-watercolor-ochre to-watercolor-umber border-white/50"
                     : `border-${event.color}/20 dark:border-gray-700`
                 }`}
                 data-testid={`timeline-event-${event.year}`}
@@ -108,7 +108,7 @@ export default function Timeline() {
               <div
                 className={`w-6 h-6 rounded-full border-4 border-white dark:border-gray-800 shadow-lg ${
                   event.color === "gradient"
-                    ? "bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep animate-watercolor"
+                    ? "bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent animate-watercolor"
                     : `bg-${event.color}`
                 }`}
               ></div>
