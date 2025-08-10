@@ -60,7 +60,7 @@ export default function Timeline() {
   return (
     <div className="relative">
       {/* Timeline line */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
+      <div className="absolute left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
 
       {/* Timeline Events */}
       <div className="space-y-8 sm:space-y-12">
@@ -70,11 +70,18 @@ export default function Timeline() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
-            className={`flex items-center ${
-              event.side === "left" ? "justify-between" : "justify-between flex-row-reverse"
+            className={`flex items-start ${
+              event.side === "left" 
+                ? "md:justify-between justify-start" 
+                : "md:justify-between md:flex-row-reverse justify-start"
             }`}
           >
-            <div className={`w-5/12 ${event.side === "left" ? "text-right pr-8" : "pl-8"}`}>
+            {/* Mobile layout - full width */}
+            <div className={`w-full md:w-5/12 ${
+              event.side === "left" 
+                ? "md:text-right md:pr-8" 
+                : "md:pl-8"
+            } pl-8 md:pl-0`}>
               <div
                 className={`bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg watercolor-hover border ${
                   event.color === "gradient"
@@ -98,22 +105,26 @@ export default function Timeline() {
                     event.color === "gradient"
                       ? "text-gray-700"
                       : "text-gray-600 dark:text-gray-300"
-                  } text-sm sm:text-base`}
+                  } text-sm sm:text-base leading-relaxed`}
                 >
                   {event.description}
                 </p>
               </div>
             </div>
-            <div className="w-2/12 flex justify-center">
+            
+            {/* Timeline dot - positioned differently on mobile vs desktop */}
+            <div className="absolute left-6 md:relative md:left-0 md:w-2/12 md:flex md:justify-center w-auto flex justify-center mt-2">
               <div
-                className={`w-6 h-6 rounded-full border-4 border-white dark:border-gray-800 shadow-lg ${
+                className={`w-4 h-4 md:w-6 md:h-6 rounded-full border-4 border-white dark:border-gray-800 shadow-lg ${
                   event.color === "gradient"
                     ? "bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent animate-watercolor"
                     : `bg-${event.color}`
                 }`}
               ></div>
             </div>
-            <div className="w-5/12"></div>
+            
+            {/* Empty space for desktop layout */}
+            <div className="hidden md:block md:w-5/12"></div>
           </motion.div>
         ))}
       </div>
