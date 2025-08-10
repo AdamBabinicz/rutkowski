@@ -240,10 +240,10 @@ export default function Contact() {
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep"
                 />
                 <h3 className="font-poppins font-semibold text-xl text-center text-gray-800 dark:text-white mb-2">
-                  Marek Rutkowski
+                  Zbigniew Jan Rutkowski
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center text-sm">
-                  Malarz, akwarelista, pedagog sztuki. Twórca ponad 500 dzieł, laureat międzynarodowych konkursów artystycznych.
+                  Malarz akwarelista, absolwent Państwowego Ogniska Plastycznego w Radomiu. Twórca z niemal 50-letnim doświadczeniem artystycznym.
                 </p>
               </div>
 

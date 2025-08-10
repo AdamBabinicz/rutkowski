@@ -52,7 +52,7 @@ export default function Navbar() {
             <h1 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
               Atlas Twórczości{" "}
               <span className="text-watercolor-lavender-deep dark:text-watercolor-lavender">
-                Rutkowskiego
+                Zbigniewa Rutkowskiego
               </span>
             </h1>
           </Link>

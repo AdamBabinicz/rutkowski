@@ -1,6 +1,6 @@
 # Overview
 
-This project is an Interactive Creativity Atlas for Polish watercolor artist Zbigniew Jan Rutkowski. It's a modern Single Page Application (SPA) that serves as a dynamic gallery and portfolio, replacing traditional static websites with an engaging narrative journey through nearly 50 years of artistic work. The application allows users to explore artworks through filtering by time, themes, and exhibition contexts, presented in a storytelling format that educates visitors about the artist's creative evolution.
+This project is an Interactive Creativity Atlas for Polish watercolor artist Zbigniew Jan Rutkowski. It's a modern Single Page Application (SPA) that serves as a dynamic gallery and portfolio, showcasing the artist's nearly 50 years of artistic work since graduating from the State Art Center in Radom with a diploma "For Outstanding Achievements". The application allows users to explore artworks through filtering by time, themes, and exhibition contexts, presented in a storytelling format that educates visitors about the artist's creative evolution through watercolor techniques.
 
 # User Preferences
 
