@@ -235,8 +235,8 @@ export default function Contact() {
               {/* Artist Photo & Bio */}
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300"
-                  alt="Zdjęcie artysty Rutkowskiego w atelier"
+                  src="/api/placeholder/300/300"
+                  alt="Zbigniew Jan Rutkowski malujący na plenerze"
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep"
                 />
                 <h3 className="font-poppins font-semibold text-xl text-center text-gray-800 dark:text-white mb-2">

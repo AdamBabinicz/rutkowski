@@ -96,7 +96,7 @@ export default function Home() {
                   onClick={() => setIsArtistDialogOpen(true)}
                   data-testid="artist-info-button"
                 >
-                  O Artyście
+                  Poznaj Artystę
                 </Button>
               </div>
             </motion.div>
@@ -153,8 +153,8 @@ export default function Home() {
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <div className="flex flex-col sm:flex-row gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200"
-                  alt="Zbigniew Jan Rutkowski"
+                  src="/api/placeholder/200/200"
+                  alt="Zbigniew Jan Rutkowski malujący na plenerze"
                   className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
                 />
                 <div className="flex-1">
