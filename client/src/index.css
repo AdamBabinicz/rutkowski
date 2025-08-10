@@ -62,38 +62,38 @@
 }
 
 .dark {
-  --background: hsl(220, 25%, 10%);
-  --foreground: hsl(45, 15%, 92%);
-  --card: hsl(220, 20%, 14%);
-  --card-foreground: hsl(45, 15%, 92%);
-  --popover: hsl(220, 25%, 10%);
-  --popover-foreground: hsl(45, 15%, 92%);
-  --primary: hsl(35, 65%, 75%);
-  --primary-foreground: hsl(220, 25%, 10%);
-  --secondary: hsl(210, 50%, 75%);
-  --secondary-foreground: hsl(220, 25%, 10%);
-  --muted: hsl(220, 20%, 18%);
-  --muted-foreground: hsl(45, 15%, 75%);
-  --accent: hsl(85, 20%, 30%);
-  --accent-foreground: hsl(45, 15%, 92%);
-  --destructive: hsl(0, 70%, 65%);
+  --background: hsl(220, 25%, 8%);
+  --foreground: hsl(45, 20%, 95%);
+  --card: hsl(220, 20%, 12%);
+  --card-foreground: hsl(45, 20%, 95%);
+  --popover: hsl(220, 25%, 8%);
+  --popover-foreground: hsl(45, 20%, 95%);
+  --primary: hsl(35, 70%, 80%);
+  --primary-foreground: hsl(220, 25%, 8%);
+  --secondary: hsl(210, 55%, 80%);
+  --secondary-foreground: hsl(220, 25%, 8%);
+  --muted: hsl(220, 20%, 15%);
+  --muted-foreground: hsl(45, 20%, 85%);
+  --accent: hsl(85, 25%, 35%);
+  --accent-foreground: hsl(45, 20%, 95%);
+  --destructive: hsl(0, 70%, 70%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 15%, 22%);
-  --input: hsl(220, 18%, 16%);
-  --ring: hsl(35, 60%, 70%);
-  --chart-1: hsl(210, 40%, 60%);
-  --chart-2: hsl(35, 60%, 60%);
-  --chart-3: hsl(25, 45%, 50%);
-  --chart-4: hsl(85, 25%, 55%);
-  --chart-5: hsl(45, 15%, 75%);
-  --sidebar: hsl(220, 20%, 14%);
-  --sidebar-foreground: hsl(45, 15%, 92%);
-  --sidebar-primary: hsl(35, 65%, 75%);
-  --sidebar-primary-foreground: hsl(220, 25%, 10%);
-  --sidebar-accent: hsl(85, 20%, 30%);
-  --sidebar-accent-foreground: hsl(45, 15%, 92%);
-  --sidebar-border: hsl(220, 15%, 22%);
-  --sidebar-ring: hsl(35, 60%, 70%);
+  --border: hsl(220, 15%, 25%);
+  --input: hsl(220, 18%, 14%);
+  --ring: hsl(35, 65%, 75%);
+  --chart-1: hsl(210, 45%, 65%);
+  --chart-2: hsl(35, 65%, 65%);
+  --chart-3: hsl(25, 50%, 55%);
+  --chart-4: hsl(85, 30%, 60%);
+  --chart-5: hsl(45, 20%, 80%);
+  --sidebar: hsl(220, 20%, 12%);
+  --sidebar-foreground: hsl(45, 20%, 95%);
+  --sidebar-primary: hsl(35, 70%, 80%);
+  --sidebar-primary-foreground: hsl(220, 25%, 8%);
+  --sidebar-accent: hsl(85, 25%, 35%);
+  --sidebar-accent-foreground: hsl(45, 20%, 95%);
+  --sidebar-border: hsl(220, 15%, 25%);
+  --sidebar-ring: hsl(35, 65%, 75%);
   --font-sans: 'Inter', sans-serif;
   --font-serif: 'Georgia', serif;
   --font-mono: 'Menlo', monospace;
@@ -101,22 +101,22 @@
   --radius: 1rem;
   
   /* Dark mode artist watercolor palette with improved contrast */
-  --watercolor-blue: hsl(210, 30%, 80%);
-  --watercolor-blue-deep: hsl(210, 40%, 60%);
-  --watercolor-blue-accent: hsl(210, 50%, 75%);
-  --watercolor-ochre: hsl(35, 55%, 80%);
-  --watercolor-ochre-deep: hsl(35, 60%, 60%);
-  --watercolor-ochre-accent: hsl(35, 65%, 75%);
-  --watercolor-umber: hsl(25, 40%, 70%);
-  --watercolor-umber-deep: hsl(25, 45%, 50%);
-  --watercolor-umber-accent: hsl(25, 50%, 65%);
-  --watercolor-sage: hsl(85, 20%, 75%);
-  --watercolor-sage-deep: hsl(85, 25%, 55%);
-  --watercolor-sage-accent: hsl(85, 30%, 70%);
-  --watercolor-cream: hsl(48, 25%, 88%);
-  --watercolor-warm-white: hsl(45, 15%, 92%);
-  --watercolor-charcoal: hsl(220, 25%, 8%);
-  --watercolor-charcoal-light: hsl(220, 20%, 18%);
+  --watercolor-blue: hsl(210, 35%, 85%);
+  --watercolor-blue-deep: hsl(210, 45%, 65%);
+  --watercolor-blue-accent: hsl(210, 55%, 80%);
+  --watercolor-ochre: hsl(35, 60%, 85%);
+  --watercolor-ochre-deep: hsl(35, 65%, 65%);
+  --watercolor-ochre-accent: hsl(35, 70%, 80%);
+  --watercolor-umber: hsl(25, 45%, 75%);
+  --watercolor-umber-deep: hsl(25, 50%, 55%);
+  --watercolor-umber-accent: hsl(25, 55%, 70%);
+  --watercolor-sage: hsl(85, 25%, 80%);
+  --watercolor-sage-deep: hsl(85, 30%, 60%);
+  --watercolor-sage-accent: hsl(85, 35%, 75%);
+  --watercolor-cream: hsl(48, 30%, 90%);
+  --watercolor-warm-white: hsl(45, 20%, 95%);
+  --watercolor-charcoal: hsl(220, 25%, 6%);
+  --watercolor-charcoal-light: hsl(220, 20%, 15%);
 }
 
 @layer base {
