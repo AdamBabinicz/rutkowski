@@ -65,7 +65,7 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>{t("contact.title")} - Atlas Twórczości Rutkowskiego</title>
+        <title>{t("contact.title")} - {t("site.fullTitle")}</title>
         <meta name="description" content={t("contact.description")} />
       </Helmet>
 

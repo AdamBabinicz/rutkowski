@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-poppins font-bold text-xl">Atlas Twórczości</h3>
+            <h3 className="font-poppins font-bold text-xl">{t("site.title")}</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               {t("footer.description")}
             </p>

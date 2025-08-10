@@ -50,7 +50,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>{t("hero.title")} {t("hero.subtitle")} - Atlas Twórczości Rutkowskiego</title>
+        <title>{t("hero.title")} {t("hero.subtitle")} - {t("site.fullTitle")}</title>
         <meta name="description" content={t("hero.description")} />
       </Helmet>
 

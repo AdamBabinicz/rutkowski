@@ -37,7 +37,7 @@ function App() {
           <ThemeProvider>
             <TooltipProvider>
               <Helmet>
-                <title>Atlas Twórczości Rutkowskiego</title>
+                <title>Atlas Twórczości Zbigniewa Rutkowskiego</title>
                 <meta name="description" content="Odkryj niezwykłą kolekcję dzieł artysty Rutkowskiego" />
               </Helmet>
               <div className="min-h-screen bg-gradient-to-br from-watercolor-cream via-background to-watercolor-blue dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
