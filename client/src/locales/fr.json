@@ -49,7 +49,16 @@
     "niebo": "Ciel",
     "chmury": "Nuages",
     "światło": "Lumière",
-    "cień": "Ombre"
+    "cień": "Ombre",
+    "sztuka sakralna": "Art sacré",
+    "Radom": "Radom",
+    "kościół św. Jadwigi": "Église Sainte-Hedwige",
+    "Mehoffer": "Mehoffer",
+    "plener": "Plein air",
+    "Wieliczka": "Wieliczka",
+    "honorowy górnik": "Mineur d'honneur",
+    "miasto rodzinne": "Ville natale",
+    "studium": "Étude"
   },
   "techniques": {
     "akwarela": "Aquarelle",

@@ -49,7 +49,16 @@
     "niebo": "Sky",
     "chmury": "Clouds",
     "światło": "Light",
-    "cień": "Shadow"
+    "cień": "Shadow",
+    "sztuka sakralna": "Sacred Art",
+    "Radom": "Radom",
+    "kościół św. Jadwigi": "St. Jadwiga Church",
+    "Mehoffer": "Mehoffer",
+    "plener": "Plein Air",
+    "Wieliczka": "Wieliczka",
+    "honorowy górnik": "Honorary Miner",
+    "miasto rodzinne": "Hometown",
+    "studium": "Study"
   },
   "techniques": {
     "akwarela": "Watercolor",
