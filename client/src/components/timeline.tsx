@@ -60,7 +60,7 @@ export default function Timeline() {
   return (
     <div className="relative">
       {/* Timeline line */}
-      <div className="absolute left-12 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
+      <div className="absolute left-4 md:left-1/2 md:transform md:-translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-ochre-accent to-watercolor-umber-accent rounded-full"></div>
 
       {/* Timeline Events */}
       <div className="space-y-8 sm:space-y-12">
@@ -81,7 +81,7 @@ export default function Timeline() {
               event.side === "left" 
                 ? "md:text-right md:pr-8" 
                 : "md:pl-8"
-            } pl-20 md:pl-0`}>
+            } pl-12 md:pl-0`}>
               <div
                 className={`bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-2xl shadow-lg watercolor-hover border ${
                   event.color === "gradient"
@@ -113,7 +113,7 @@ export default function Timeline() {
             </div>
             
             {/* Timeline dot - positioned differently on mobile vs desktop */}
-            <div className="absolute left-10 md:relative md:left-0 md:w-2/12 md:flex md:justify-center w-auto flex justify-center mt-2 transform -translate-x-1/2">
+            <div className="absolute left-4 md:relative md:left-0 md:w-2/12 md:flex md:justify-center w-auto flex justify-center mt-2 transform -translate-x-1/2">
               <div
                 className={`w-4 h-4 md:w-6 md:h-6 rounded-full border-4 border-white dark:border-gray-800 shadow-lg ${
                   event.color === "gradient"
