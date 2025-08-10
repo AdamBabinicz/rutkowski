@@ -168,6 +168,19 @@
   .dark .text-gray-500 {
     color: hsl(45, 25%, 90%) !important;
   }
+  
+  .dark .text-gray-700 {
+    color: hsl(45, 30%, 95%) !important;
+  }
+  
+  .dark .text-gray-300 {
+    color: hsl(45, 30%, 95%) !important;
+  }
+  
+  /* Poprawki dla Badge w motywie ciemnym */
+  .dark .bg-watercolor-sage {
+    background-color: hsl(85, 30%, 25%) !important;
+  }
 }
 
 @keyframes fadeIn {
