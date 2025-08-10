@@ -10,10 +10,10 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       // Validate request body using Zod schema
       const validatedData = insertContactMessageSchema.parse(req.body);
-      
+
       // Create contact message using storage interface
       const contactMessage = await storage.createContactMessage(validatedData);
-      
+
       res.status(201).json({
         success: true,
         message: "Contact message sent successfully",
@@ -58,7 +58,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { id } = req.params;
       const message = await storage.getContactMessage(id);
-      
+
       if (!message) {
         res.status(404).json({
           success: false,
@@ -66,7 +66,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         });
         return;
       }
-      
+
       res.json({
         success: true,
         data: message
@@ -83,7 +83,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Temporary placeholder endpoint for artwork images
   app.get("/api/placeholder/:width/:height", (req, res) => {
     const { width, height } = req.params;
-    
+
     // Generate a simple SVG placeholder
     const svg = `
       <svg width="${width}" height="${height}" xmlns="http://www.w3.org/2000/svg">
@@ -103,7 +103,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         </text>
       </svg>
     `;
-    
+
     res.setHeader('Content-Type', 'image/svg+xml');
     res.setHeader('Cache-Control', 'public, max-age=86400'); // Cache for 1 day
     res.send(svg);

@@ -5,9 +5,9 @@
     "titleEn": "Stations of the Cross - Station IV",
     "titleFr": "Chemin de croix - Station IV",
     "year": 1995,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/1_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/1_1754841580817.jpg"
     ],
     "dimensions": "100 × 80 cm",
     "technique": "olej na płótnie",
@@ -28,9 +28,9 @@
     "titleEn": "Landscape from Wieliczka",
     "titleFr": "Paysage de Wieliczka",
     "year": 1987,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/2_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/2_1754841580817.jpg"
     ],
     "dimensions": "70 × 50 cm",
     "technique": "akwarela",
@@ -51,9 +51,10 @@
     "titleEn": "Radom Landscape",
     "titleFr": "Paysage de Radom",
     "year": 1985,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/3_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/3_1754841580817.jpg",
+      "/attached_assets/1_1754841580817.jpg"
     ],
     "dimensions": "60 × 40 cm",
     "technique": "akwarela",
@@ -74,9 +75,9 @@
     "titleEn": "Wild Flowers",
     "titleFr": "Fleurs sauvages",
     "year": 1992,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/1_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/1_1754841580817.jpg"
     ],
     "dimensions": "50 × 35 cm",
     "technique": "akwarela",
@@ -97,9 +98,9 @@
     "titleEn": "Portrait Study",
     "titleFr": "Étude de portrait",
     "year": 2005,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/2_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/2_1754841580817.jpg"
     ],
     "dimensions": "40 × 30 cm",
     "technique": "akwarela",
@@ -120,9 +121,9 @@
     "titleEn": "Winter Landscape",
     "titleFr": "Paysage d'hiver",
     "year": 2015,
-    "imageUrl": "/api/placeholder/800/600",
+    "imageUrl": "/attached_assets/3_1754841580817.jpg",
     "imageUrls": [
-      "/api/placeholder/1200/900"
+      "/attached_assets/3_1754841580817.jpg"
     ],
     "dimensions": "70 × 50 cm",
     "technique": "akwarela",
@@ -136,5 +137,74 @@
     "storyFr": "Ce matin d'hiver, je me suis levé tôt pour saisir la première lumière sur la neige fraîche. L'obscurité a lentement cédé la place à des bleus délicats.",
     "available": 1,
     "price": 260000
+  },
+  {
+    "id": "2020-kazimierz-dolny",
+    "title": "Plener w Kazimierzu Dolnym",
+    "titleEn": "Plein Air in Kazimierz Dolny",
+    "titleFr": "Plen Air à Kazimierz Dolny",
+    "description": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
+    "descriptionEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
+    "descriptionFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
+    "imageUrl": "/attached_assets/1_1754841580817.jpg",
+    "imageUrls": [
+      "/attached_assets/1_1754841580817.jpg"
+    ],
+    "year": 2020,
+    "technique": "Akwarela",
+    "dimensions": "40x30 cm",
+    "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
+    "storyEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
+    "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
+    "tags": ["pejzaż", "plener", "eksperyment"],
+    "price": 1500,
+    "isForSale": true,
+    "category": "Pejzaże"
+  },
+  {
+    "id": "5",
+    "title": "Portret starszego mężczyzny",
+    "titleEn": "Portrait of an Elderly Man",
+    "titleFr": "Portrait d'un homme âgé",
+    "description": "Studium charakteru wykonane akwarelą. Subtelne odcienie oddają mądrość i doświadczenie życiowe modela.",
+    "descriptionEn": "A character study in watercolor. Subtle shades convey the wisdom and life experience of the model.",
+    "descriptionFr": "Une étude de caractère à l'aquarelle. Des nuances subtiles transmettent la sagesse et l'expérience de vie du modèle.",
+    "imageUrl": "/attached_assets/2_1754841580817.jpg",
+    "imageUrls": [
+      "/attached_assets/2_1754841580817.jpg"
+    ],
+    "year": 2020,
+    "technique": "Akwarela",
+    "dimensions": "40x30 cm",
+    "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
+    "storyEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
+    "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
+    "tags": ["pejzaż", "plener", "eksperyment"],
+    "price": 1500,
+    "isForSale": true,
+    "category": "Pejzaże"
+  },
+  {
+    "id": "6",
+    "title": "Martwa natura z owocami",
+    "titleEn": "Still Life with Fruits",
+    "titleFr": "Nature morte aux fruits",
+    "description": "Kompozycja martwej natury z soczystymi owocami. Artysta uchwycił grę światła na gładkich powierzchniach owoców, tworząc realistyczny efekt.",
+    "descriptionEn": "Still life composition with juicy fruits. The artist captured the play of light on the smooth surfaces of the fruits, creating a realistic effect.",
+    "descriptionFr": "Composition de nature morte avec des fruits juteux. L'artiste a capturé le jeu de la lumière sur les surfaces lisses des fruits, créant un effet réaliste.",
+    "imageUrl": "/attached_assets/3_1754841580817.jpg",
+    "imageUrls": [
+      "/attached_assets/3_1754841580817.jpg"
+    ],
+    "year": 2020,
+    "technique": "Akwarela",
+    "dimensions": "40x30 cm",
+    "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
+    "storyEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
+    "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
+    "tags": ["pejzaż", "plener", "eksperyment"],
+    "price": 1500,
+    "isForSale": true,
+    "category": "Pejzaże"
   }
 ]
