@@ -14,7 +14,7 @@ import {
 import FilterPanel from "@/components/filter-panel";
 import ArtworkCard from "@/components/artwork-card";
 import artworksData from "@/data/artworks.json";
-import type { Artwork } from "@shared/schema";
+import { artworksSchema, type Artwork } from "@shared/schema";
 
 export default function Home() {
   const { t } = useTranslation();
@@ -27,10 +27,10 @@ export default function Home() {
     search: "",
   });
 
-  const artworks = artworksData as Artwork[];
+  const parsedArtworks = artworksSchema.parse(artworksData);
 
   const filteredArtworks = useMemo(() => {
-    return artworks.filter((artwork) => {
+    return parsedArtworks.filter((artwork) => {
       if (filters.year !== "all" && artwork.year.toString() !== filters.year)
         return false;
       if (filters.theme !== "all" && !artwork.tags?.includes(filters.theme))
@@ -55,7 +55,7 @@ export default function Home() {
       }
       return true;
     });
-  }, [artworks, filters]);
+  }, [parsedArtworks, filters]);
 
   const handleFilterChange = (key: string, value: string) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
@@ -75,7 +75,6 @@ export default function Home() {
       </Helmet>
 
       <main className="pt-20">
-        {/* Hero Section */}
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
@@ -98,7 +97,7 @@ export default function Home() {
                   className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
                   onClick={() =>
                     document
-                      .getElementById("gallery")
+                      .getElementById("gallery-section")
                       ?.scrollIntoView({ behavior: "smooth" })
                   }
                   data-testid="cta-button"
@@ -119,12 +118,17 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Filter Panel */}
         <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
 
-        {/* Gallery Grid */}
-        <section id="gallery" className="px-4 pb-20">
+        <section
+          id="gallery-section"
+          className="px-4 pb-20"
+          aria-labelledby="gallery-heading"
+        >
           <div className="max-w-7xl mx-auto">
+            <h2 id="gallery-heading" className="sr-only">
+              Galeria prac
+            </h2>
             {filteredArtworks.length > 0 ? (
               <div
                 className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
@@ -164,7 +168,6 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Artist Info Dialog */}
         <Dialog open={isArtistDialogOpen} onOpenChange={setIsArtistDialogOpen}>
           <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
             <DialogHeader>

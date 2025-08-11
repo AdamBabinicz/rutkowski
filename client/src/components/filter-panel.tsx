@@ -44,12 +44,15 @@ export default function FilterPanel({
   const techniques = ["akwarela", "olej", "grafika", "ołówek"];
 
   return (
-    <section className="px-4 mb-12">
+    <section className="px-4 mb-12" aria-labelledby="filter-panel-heading">
       <div className="max-w-7xl mx-auto">
         <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
-          <h3 className="font-poppins font-semibold text-lg mb-4 text-gray-800 dark:text-white">
+          <h2
+            id="filter-panel-heading"
+            className="font-poppins font-semibold text-lg mb-4 text-gray-800 dark:text-white"
+          >
             {t("filter.title")}
-          </h3>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">

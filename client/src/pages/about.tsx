@@ -9,7 +9,9 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>{t("about.title")} - {t("site.fullTitle")}</title>
+        <title>
+          {t("about.title")} - {t("site.fullTitle")}
+        </title>
         <meta name="description" content={t("about.description")} />
       </Helmet>
 
@@ -21,9 +23,9 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h1 className="font-poppins font-bold text-4xl text-gray-800 dark:text-white mb-6">
+            <h2 className="font-poppins font-bold text-4xl text-gray-800 dark:text-white mb-6">
               {t("about.title")}
-            </h1>
+            </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
               {t("about.description")}
             </p>

@@ -22,9 +22,9 @@ export default function CookiesPolicy() {
               transition={{ duration: 0.6 }}
               className="bg-white/50 dark:bg-gray-800/50 p-8 rounded-lg shadow-lg"
             >
-              <h1 className="font-poppins font-bold text-4xl md:text-5xl text-gray-800 dark:text-white mb-6 text-center">
+              <h2 className="font-poppins font-bold text-4xl md:text-5xl text-gray-800 dark:text-white mb-6 text-center">
                 {t("cookies.title")}
-              </h1>
+              </h2>
               <p className="text-sm text-gray-500 dark:text-gray-400 text-center mb-8">
                 {t("cookies.lastUpdated")}
               </p>

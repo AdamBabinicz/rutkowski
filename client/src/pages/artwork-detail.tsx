@@ -97,9 +97,9 @@ export default function ArtworkDetail() {
 
             <div className="space-y-6">
               <div>
-                <h1 className="font-poppins font-bold text-3xl text-gray-800 dark:text-white mb-2">
+                <h2 className="font-poppins font-bold text-3xl text-gray-800 dark:text-white mb-2">
                   {getLocalized("title")}
-                </h1>
+                </h2>
                 <p className="text-watercolor-ochre-accent dark:text-watercolor-ochre font-medium text-lg">
                   {artwork.year} • {t(`techniques.${artwork.technique}`)}
                 </p>
