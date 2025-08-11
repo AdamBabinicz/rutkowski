@@ -1,16 +1,15 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
-
 export default function Footer() {
   const { t } = useTranslation();
-
   return (
     <footer className="bg-watercolor-umber-accent dark:bg-watercolor-charcoal text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Brand */}
           <div className="space-y-4">
-            <h3 className="font-poppins font-bold text-xl">{t("site.title")}</h3>
+            <h3 className="font-poppins font-bold text-xl">
+              {t("site.title")}
+            </h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               {t("footer.description")}
             </p>
@@ -23,7 +22,7 @@ export default function Footer() {
                 <i className="fab fa-instagram text-sm"></i>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/zbigniewjan.rutkowski"
                 className="w-8 h-8 bg-watercolor-blue-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-sage-deep transition-colors"
                 data-testid="social-facebook"
               >
@@ -38,64 +37,96 @@ export default function Footer() {
               </a>
             </div>
           </div>
-
-          {/* Navigation */}
           <div>
-            <h4 className="font-poppins font-semibold mb-4">{t("footer.navigation")}</h4>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.navigation")}
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="text-gray-300 hover:text-watercolor-ochre transition-colors">
+                <Link
+                  href="/"
+                  className="text-gray-300 hover:text-watercolor-ochre transition-colors"
+                >
                   {t("nav.gallery")}
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-gray-300 hover:text-watercolor-sage transition-colors">
+                <Link
+                  href="/exhibitions"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
+                  {t("nav.exhibitions")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/archive"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
+                  {t("nav.archive")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
                   {t("nav.about")}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-gray-300 hover:text-watercolor-umber transition-colors">
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
                   {t("nav.contact")}
                 </Link>
               </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-blue transition-colors">
-                  {t("nav.blog")}
-                </a>
-              </li>
             </ul>
           </div>
-
-          {/* Categories */}
           <div>
-            <h4 className="font-poppins font-semibold mb-4">{t("footer.categories")}</h4>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.categories")}
+            </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-ochre transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-ochre transition-colors"
+                >
                   {t("themes.pejzaz")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-sage transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
                   {t("themes.portret")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-umber transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
                   {t("themes.abstrakcja")}
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-watercolor-blue transition-colors">
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-blue transition-colors"
+                >
                   {t("themes.natura")}
                 </a>
               </li>
             </ul>
           </div>
-
-          {/* Contact Info */}
           <div>
-            <h4 className="font-poppins font-semibold mb-4">{t("footer.contact")}</h4>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.contact")}
+            </h4>
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center">
                 <i className="fas fa-envelope w-4 mr-3 text-watercolor-ochre"></i>
@@ -108,7 +139,8 @@ export default function Footer() {
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-umber"></i>
                 <span>
-                  Radom<br />
+                  Radom
+                  <br />
                   Polska
                 </span>
               </div>
@@ -120,15 +152,24 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              <Link
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 {t("footer.privacy")}
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 {t("footer.terms")}
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              </Link>
+              <Link
+                href="/cookies-policy"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
                 {t("footer.cookies")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

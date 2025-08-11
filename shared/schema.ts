@@ -1,67 +1,45 @@
-import { sql } from "drizzle-orm";
-import { pgTable, text, varchar, integer, jsonb, timestamp } from "drizzle-orm/pg-core";
-import { createInsertSchema } from "drizzle-zod";
 import { z } from "zod";
 
-export const artworks = pgTable("artworks", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  title: text("title").notNull(),
-  titleEn: text("title_en"),
-  titleFr: text("title_fr"),
-  year: integer("year").notNull(),
-  imageUrl: text("image_url").notNull(),
-  imageUrls: jsonb("image_urls").$type<string[]>().default([]),
-  dimensions: text("dimensions").notNull(),
-  technique: text("technique").notNull(),
-  tags: jsonb("tags").$type<string[]>().default([]),
-  dominantColor: text("dominant_color"),
-  description: text("description").notNull(),
-  descriptionEn: text("description_en"),
-  descriptionFr: text("description_fr"),
-  story: text("story"),
-  storyEn: text("story_en"),
-  storyFr: text("story_fr"),
-  available: integer("available").default(1), // 1 = available, 0 = sold
-  price: integer("price"), // in cents
-  createdAt: timestamp("created_at").defaultNow(),
+export const artworkSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  titleEn: z.string().optional(),
+  titleFr: z.string().optional(),
+  year: z.number(),
+  imageUrl: z.string(),
+  imageUrls: z.array(z.string()).optional(),
+  dimensions: z.string(),
+  technique: z.string(),
+  substrate: z.string().optional(),
+  tags: z.array(z.string()).optional(),
+  dominantColor: z.string().optional(),
+  description: z.string(),
+  descriptionEn: z.string().optional(),
+  descriptionFr: z.string().optional(),
+  story: z.string().optional(),
+  storyEn: z.string().optional(),
+  storyFr: z.string().optional(),
+  available: z.number().transform((val) => val === 1),
+  price: z.number().optional(),
 });
 
-export const contactMessages = pgTable("contact_messages", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  firstName: text("first_name").notNull(),
-  lastName: text("last_name").notNull(),
-  email: text("email").notNull(),
-  subject: text("subject").notNull(),
-  message: text("message").notNull(),
-  createdAt: timestamp("created_at").defaultNow(),
+// Dodaj ten eksport
+export const artworksSchema = z.array(artworkSchema);
+
+export const contactMessageSchema = z.object({
+  firstName: z.string().min(1, "Imię jest wymagane"),
+  lastName: z.string().min(1, "Nazwisko jest wymagane"),
+  email: z.string().email("Nieprawidłowy adres email"),
+  subject: z.string().min(1, "Temat jest wymagany"),
+  message: z.string().min(1, "Wiadomość jest wymagana"),
 });
 
-export const insertArtworkSchema = createInsertSchema(artworks).omit({
-  id: true,
-  createdAt: true,
+export const userSchema = z.object({
+  id: z.string(),
+  username: z.string(),
+  password: z.string(),
 });
 
-export const insertContactMessageSchema = createInsertSchema(contactMessages).omit({
-  id: true,
-  createdAt: true,
-});
-
-export type InsertArtwork = z.infer<typeof insertArtworkSchema>;
-export type Artwork = typeof artworks.$inferSelect;
-export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
-export type ContactMessage = typeof contactMessages.$inferSelect;
-
-// Keep existing user schema
-export const users = pgTable("users", {
-  id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
-  username: text("username").notNull().unique(),
-  password: text("password").notNull(),
-});
-
-export const insertUserSchema = createInsertSchema(users).pick({
-  username: true,
-  password: true,
-});
-
-export type InsertUser = z.infer<typeof insertUserSchema>;
-export type User = typeof users.$inferSelect;
+export type Artwork = z.infer<typeof artworkSchema>;
+export type ContactMessage = z.infer<typeof contactMessageSchema>;
+export type User = z.infer<typeof userSchema>;

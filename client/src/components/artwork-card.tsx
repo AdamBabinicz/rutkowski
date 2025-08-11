@@ -9,9 +9,13 @@ interface ArtworkCardProps {
   onClick: () => void;
 }
 
-export default function ArtworkCard({ artwork, index, onClick }: ArtworkCardProps) {
+export default function ArtworkCard({
+  artwork,
+  index,
+  onClick,
+}: ArtworkCardProps) {
   const { t, i18n } = useTranslation();
-  
+
   const getTitle = () => {
     switch (i18n.language) {
       case "en":
@@ -47,11 +51,11 @@ export default function ArtworkCard({ artwork, index, onClick }: ArtworkCardProp
         <img
           src={artwork.imageUrl}
           alt={getTitle()}
-          className="w-full h-48 object-cover"
+          className="w-full h-80 object-cover"
           loading="lazy"
         />
         <div className="p-4">
-          <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">
+          <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2 truncate">
             {getTitle()}
           </h3>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-2">
@@ -64,12 +68,12 @@ export default function ArtworkCard({ artwork, index, onClick }: ArtworkCardProp
                 variant="secondary"
                 className="bg-watercolor-sage text-gray-700 dark:text-gray-300 text-xs"
               >
-                {t(`themes.${tag}`) || tag}
+                {t(`themes.${tag}`, tag) || tag}
               </Badge>
             ))}
           </div>
           <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
-            {getDescription().substring(0, 80)}...
+            {getDescription().substring(0, 100)}...
           </p>
         </div>
       </div>

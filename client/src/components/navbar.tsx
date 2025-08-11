@@ -3,7 +3,13 @@ import { Link, useLocation } from "wouter";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, Moon, Sun } from "lucide-react";
 
@@ -19,6 +25,8 @@ export default function Navbar() {
 
   const navItems = [
     { href: "/", label: t("nav.gallery") },
+    { href: "/exhibitions", label: t("nav.exhibitions") },
+    { href: "/archive", label: t("nav.archive") },
     { href: "/about", label: t("nav.about") },
     { href: "/contact", label: t("nav.contact") },
   ];
@@ -32,7 +40,9 @@ export default function Navbar() {
           className={`${
             mobile ? "block py-2" : ""
           } text-gray-700 dark:text-gray-300 hover:text-watercolor-ochre-accent dark:hover:text-watercolor-ochre transition-colors font-medium ${
-            location === href ? "text-watercolor-ochre-accent dark:text-watercolor-ochre" : ""
+            location === href
+              ? "text-watercolor-ochre-accent dark:text-watercolor-ochre"
+              : ""
           }`}
           onClick={() => mobile && setIsOpen(false)}
           data-testid={`nav-link-${href.replace("/", "") || "home"}`}
@@ -47,7 +57,6 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 glass-effect border-b border-white/20 dark:border-gray-700/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
           <Link href="/" className="flex items-center" data-testid="logo">
             <h1 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
               {t("site.title")}{" "}
@@ -57,29 +66,31 @@ export default function Navbar() {
             </h1>
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <NavLinks />
           </div>
 
-          {/* Controls */}
           <div className="flex items-center space-x-4">
-            {/* Language Selector */}
             <Select value={i18n.language} onValueChange={changeLanguage}>
-              <SelectTrigger 
+              <SelectTrigger
                 className="w-16 bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
                 data-testid="language-selector"
               >
                 <SelectValue />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="pl" data-testid="lang-pl">PL</SelectItem>
-                <SelectItem value="en" data-testid="lang-en">EN</SelectItem>
-                <SelectItem value="fr" data-testid="lang-fr">FR</SelectItem>
+                <SelectItem value="pl" data-testid="lang-pl">
+                  PL
+                </SelectItem>
+                <SelectItem value="en" data-testid="lang-en">
+                  EN
+                </SelectItem>
+                <SelectItem value="fr" data-testid="lang-fr">
+                  FR
+                </SelectItem>
               </SelectContent>
             </Select>
 
-            {/* Theme Toggle */}
             <Button
               variant="outline"
               size="icon"
@@ -94,7 +105,6 @@ export default function Navbar() {
               )}
             </Button>
 
-            {/* Mobile Menu Button */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button

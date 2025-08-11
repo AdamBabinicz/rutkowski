@@ -1,8 +1,17 @@
 import { useTranslation } from "react-i18next";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Search } from "lucide-react";
+
+import artworksData from "@/data/artworks.json";
+import { artworksSchema } from "@shared/schema";
 
 interface FilterPanelProps {
   filters: {
@@ -14,12 +23,27 @@ interface FilterPanelProps {
   onFilterChange: (key: string, value: string) => void;
 }
 
-export default function FilterPanel({ filters, onFilterChange }: FilterPanelProps) {
+export default function FilterPanel({
+  filters,
+  onFilterChange,
+}: FilterPanelProps) {
   const { t } = useTranslation();
 
-  const years = ["2023", "2022", "2021", "2020"];
-  const themes = ["natura", "portret", "abstrakcja", "pejzaz", "kwiaty", "woda"];
-  const techniques = ["akwarela", "olej", "akryl", "pastel"];
+  const parsedArtworks = artworksSchema.parse(artworksData);
+
+  // Poprawka: Użycie Array.from() zamiast [...]
+  const years = Array.from(
+    new Set(parsedArtworks.map((artwork) => artwork.year))
+  )
+    .sort((a, b) => b - a)
+    .map(String);
+
+  // Poprawka: Użycie Array.from() dla spójności
+  const themes = Array.from(
+    new Set(parsedArtworks.flatMap((artwork) => artwork.tags || []))
+  );
+
+  const techniques = ["akwarela", "olej", "grafika", "ołówek"];
 
   return (
     <section className="px-4 mb-12">
@@ -34,7 +58,10 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.year")}
               </Label>
-              <Select value={filters.year} onValueChange={(value) => onFilterChange("year", value)}>
+              <Select
+                value={filters.year}
+                onValueChange={(value) => onFilterChange("year", value)}
+              >
                 <SelectTrigger data-testid="filter-year">
                   <SelectValue placeholder={t("filter.allYears")} />
                 </SelectTrigger>
@@ -54,7 +81,10 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.theme")}
               </Label>
-              <Select value={filters.theme} onValueChange={(value) => onFilterChange("theme", value)}>
+              <Select
+                value={filters.theme}
+                onValueChange={(value) => onFilterChange("theme", value)}
+              >
                 <SelectTrigger data-testid="filter-theme">
                   <SelectValue placeholder={t("filter.allThemes")} />
                 </SelectTrigger>
@@ -62,7 +92,7 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
                   <SelectItem value="all">{t("filter.allThemes")}</SelectItem>
                   {themes.map((theme) => (
                     <SelectItem key={theme} value={theme}>
-                      {t(`themes.${theme}`)}
+                      {t(`themes.${theme}`, theme)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -74,12 +104,17 @@ export default function FilterPanel({ filters, onFilterChange }: FilterPanelProp
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.technique")}
               </Label>
-              <Select value={filters.technique} onValueChange={(value) => onFilterChange("technique", value)}>
+              <Select
+                value={filters.technique}
+                onValueChange={(value) => onFilterChange("technique", value)}
+              >
                 <SelectTrigger data-testid="filter-technique">
                   <SelectValue placeholder={t("filter.allTechniques")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="all">{t("filter.allTechniques")}</SelectItem>
+                  <SelectItem value="all">
+                    {t("filter.allTechniques")}
+                  </SelectItem>
                   {techniques.map((technique) => (
                     <SelectItem key={technique} value={technique}>
                       {t(`techniques.${technique}`)}

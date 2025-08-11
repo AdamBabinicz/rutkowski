@@ -1,6 +1,8 @@
 {
   "nav": {
     "gallery": "Gallery",
+    "exhibitions": "Exhibitions",
+    "archive": "The Forge",
     "about": "About Artist",
     "contact": "Contact",
     "blog": "Blog"
@@ -9,6 +11,84 @@
     "title": "Creative Atlas",
     "fullTitle": "Zbigniew Rutkowski's Creative Atlas",
     "artistName": "Zbigniew Rutkowski"
+  },
+  "archive": {
+    "title": "The Forge",
+    "description": "A journey back in time to the beginnings of the artistic path at the State Art Center in Radom, a place that shaped generations of artists.",
+    "history": {
+      "title": "History of the State Art Center in Radom",
+      "paragraph1": "The Jacek Malczewski State Art Center in Radom is an institution with a rich history, founded in 1945 by the painter Wacław Dobrowolski. [1] For decades, it was located in the historic Glogier Tenement House, becoming the heart of the city's artistic life. [1] Its goal has always been to provide artistic education for children, youth, and adults, developing their talents and preparing them for further education at art universities.",
+      "paragraph2": "The foundation of the Center was its outstanding educators. Alongside the founder, Prof. Dobrowolski, key roles were played by artists such as Irena Cichowska, who passionately shared their knowledge and skills. [1] It is thanks to them that the Center gained a reputation as a place where true talents were born in an atmosphere of creativity and respect for art.",
+      "paragraph3": "Many distinguished artists passed through the walls of the school that gave rise to the Center. Among others, Andrzej Wajda, later a world-famous film director and Oscar winner, took drawing lessons from Wacław Dobrowolski himself. Zbigniew Rutkowski is one of the many alumni for whom studying at the Center was a decisive step on their artistic path."
+    },
+    "photo1": {
+      "alt": "Glogier Tenement House in Radom",
+      "caption": "For years, this historic building housed the State Art Center. [1]"
+    },
+    "photo2": {
+      "alt": "Legendary lecturers of the Art Center",
+      "caption": "Legendary lecturers: Irena Cichowska and Prof. Wacław Dobrowolski. [1]"
+    },
+    "photo3": {
+      "alt": "Anna Apanowicz",
+      "caption": "At the Center, art history was taught by Anna Apanowicz, a significant figure in post-war museum management and the cultural life of Radom and the region."
+    },
+    "photo4": {
+      "alt": "Danuta Radzymińska-Nowakowska.",
+      "caption": "Danuta Radzymińska-Nowakowska. From 1969, she was a teacher at the State Art Center in Radom and actively participated in local and national exhibitions."
+    },
+    "photo5": {
+      "alt": "Classes at the Center, Radom",
+      "caption": "Classes in the sculpture studio - a sculpture by Wojciech Głowiak depicting a student of the Center, Zbigniew Rutkowski."
+    },
+    "photo6": {
+      "alt": "Photograph from a trip of the State Art Center to Święty Krzyż",
+      "caption": "Photograph from a trip of the State Art Center to Święty Krzyż: including Mirosław Siara, Joanna Szymańska (daughter of Wojciech Stan), Kornel Drzewiecki, Eliza Wojszko, and a sketching Zbigniew Rutkowski."
+    }
+  },
+  "exhibitions": {
+    "title": "Exhibitions & Plein-Airs",
+    "description": "An overview of the most important exhibitions, plein-air sessions, and artistic events over nearly 50 years of creative work.",
+    "exhibition1968": {
+      "title": "First Solo Exhibition",
+      "location": "'Łączności' Club, Radom",
+      "description": "A debut presentation of youthful works that began the artistic journey."
+    },
+    "exhibition1987": {
+      "title": "Plein-Air Painting in Wieliczka",
+      "location": "Wieliczka Salt Mine",
+      "description": "Participation in a plein-air event to raise funds for the preservation of the Salt Mine. The works were auctioned at the Polonia House, and the artist was awarded the title of 'Honorary Miner'."
+    },
+    "exhibition1990s": {
+      "title": "Air Force Artistic Creativity Reviews",
+      "location": "Warsaw, Poznań, Łódź, Tarnów",
+      "description": "Won first place in the painting category, a distinction in graphics, and numerous awards during military service."
+    },
+    "exhibitionOngoing": {
+      "title": "Ongoing Exhibition Activity",
+      "location": "Radom and Kazimierz Dolny",
+      "description": "Regular participation in exhibitions in Radom's galleries (WDK, 'ESTERKA', 'RELAKS') and frequent displays of work at the 'Izdebska-Łazorek' Gallery in Kazimierz Dolny."
+    },
+    "exhibition2013": {
+      "title": "My Own Watercolors and Those of My Masters",
+      "location": "Pedagogical Library, Radom",
+      "description": "A solo exhibition presenting both the artist's own works and pieces that inspired him."
+    },
+    "exhibition2014": {
+      "title": "Radom in Watercolor - Opening at 'Exlibris' Gallery",
+      "location": "Public Library, Radom",
+      "description": "An exhibition dedicated to the artist's hometown. Most of the works came from the private collection of Piotr Dróżd, owner of APM and the artist's patron."
+    },
+    "exhibition2015": {
+      "title": "Solo Exhibition: 46th Anniversary of Creative Work",
+      "location": "'IDALIN' Gallery, Radom",
+      "description": "Another solo presentation of the artist's work, strengthening his position on the local art scene."
+    },
+    "exhibition2018": {
+      "title": "Sacred Architecture of Radom and Beyond",
+      "location": "Łaźnia - Radom Club of Creative Communities and Gallery, Żeromskiego 56 St",
+      "description": "An exhibition showcasing the difficult art of watercolor, focusing on the sacred architecture of Radom and its surroundings."
+    }
   },
   "hero": {
     "title": "Discover the World",
@@ -56,14 +136,17 @@
     "Mehoffer": "Mehoffer",
     "plener": "Plein Air",
     "Wieliczka": "Wieliczka",
+    "Uniejów": "Uniejów",
     "honorowy górnik": "Honorary Miner",
     "miasto rodzinne": "Hometown",
-    "studium": "Study"
+    "studium": "Study",
+    "eksperyment": "Experiment"
   },
   "techniques": {
     "akwarela": "Watercolor",
     "olej": "Oil",
-    "akryl": "Acrylic",
+    "ołówek": "Pencil",
+    "grafika": "Graphics",
     "pastel": "Pastel"
   },
   "about": {
@@ -82,14 +165,20 @@
     "dimensions": "Dimensions",
     "technique": "Technique",
     "substrate": "Substrate",
-    "status": "Year created",
+    "status": "Status",
     "available": "In artist's collection",
     "sold": "In private collection",
     "tags": "Tags",
     "description": "Description",
     "story": "Creation Story",
     "addToFavorites": "Add to favorites",
-    "share": "Share"
+    "share": "Share",
+    "backToGallery": "Back to Gallery",
+    "substrates": {
+      "canvas": "Canvas",
+      "watercolor_paper": "Watercolor paper 300g",
+      "paper": "Paper"
+    }
   },
   "contact": {
     "title": "Let's Connect",
@@ -132,6 +221,60 @@
     "privacy": "Privacy Policy",
     "terms": "Terms",
     "cookies": "Cookies"
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "description": "Learn how we protect and process your personal data.",
+    "lastUpdated": "Last updated: August 11, 2025",
+    "intro": "This privacy policy describes how your personal information is collected, used, and shared when you visit our website.",
+    "section1": {
+      "title": "What data do we collect?",
+      "content": "We collect data you provide to us directly, for example, when you fill out the contact form (name, email address). We may also collect data automatically through cookies, such as your IP address and browser information."
+    },
+    "section2": {
+      "title": "How do we use your data?",
+      "content": "We use your data to respond to your inquiries, improve our website, and for analytical purposes. We do not share your data with third parties without your consent, unless required by law."
+    },
+    "section3": {
+      "title": "Your rights",
+      "content": "You have the right to access, correct, delete, and restrict the processing of your data. If you have any questions about our privacy policy, please contact us."
+    }
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "description": "Read the terms and conditions for using our website.",
+    "lastUpdated": "Last updated: August 11, 2025",
+    "intro": "Welcome to our website. By using this site, you agree to comply with and be bound by the following terms of use.",
+    "section1": {
+      "title": "Copyright",
+      "content": "All content, including images, text, and graphics, is the property of Zbigniew Rutkowski or used with permission and is protected by copyright law. Any reproduction or use of the content without written permission is prohibited."
+    },
+    "section2": {
+      "title": "Use of the site",
+      "content": "You agree to use this site only for lawful purposes and in a way that does not infringe the rights of others. Using the site for commercial purposes without prior consent is prohibited."
+    },
+    "section3": {
+      "title": "Limitation of liability",
+      "content": "We strive to ensure that the information on the site is current and accurate, but we are not liable for any errors or omissions. You use the site at your own risk."
+    }
+  },
+  "cookies": {
+    "title": "Cookies Policy",
+    "description": "Information about the cookies used on our website.",
+    "lastUpdated": "Last updated: August 11, 2025",
+    "intro": "Our website uses cookies to improve your browsing experience. Below, we explain what cookies are and how we use them.",
+    "section1": {
+      "title": "What are cookies?",
+      "content": "Cookies are small text files that are stored on your device (computer, phone) when you visit websites. They help sites remember information about your visit, which can make your next visit easier."
+    },
+    "section2": {
+      "title": "What cookies do we use?",
+      "content": "We use cookies for analytical purposes (e.g., Google Analytics) to understand how users interact with our site, which helps us improve it. We also use functional cookies that are necessary for certain features of the site to work correctly, such as the theme switcher."
+    },
+    "section3": {
+      "title": "How to manage cookies?",
+      "content": "You can manage cookies through your web browser settings. You have the option to block or delete cookies, but this may affect the functionality of our website."
+    }
   },
   "404": {
     "title": "Page Not Found",

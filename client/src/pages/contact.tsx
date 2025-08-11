@@ -8,9 +8,22 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -20,7 +33,9 @@ const contactSchema = z.object({
   email: z.string().email("Nieprawidłowy adres email"),
   subject: z.string().min(1, "Wybierz temat wiadomości"),
   message: z.string().min(10, "Wiadomość musi mieć co najmniej 10 znaków"),
-  privacy: z.boolean().refine(val => val === true, "Musisz zaakceptować politykę prywatności"),
+  privacy: z
+    .boolean()
+    .refine((val) => val === true, "Musisz zaakceptować politykę prywatności"),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -65,7 +80,9 @@ export default function Contact() {
   return (
     <>
       <Helmet>
-        <title>{t("contact.title")} - {t("site.fullTitle")}</title>
+        <title>
+          {t("contact.title")} - {t("site.fullTitle")}
+        </title>
         <meta name="description" content={t("contact.description")} />
       </Helmet>
 
@@ -98,7 +115,10 @@ export default function Contact() {
               </h3>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="space-y-6"
+                >
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <FormField
                       control={form.control}
@@ -135,7 +155,11 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>{t("contact.form.email")}</FormLabel>
                         <FormControl>
-                          <Input type="email" {...field} data-testid="input-email" />
+                          <Input
+                            type="email"
+                            {...field}
+                            data-testid="input-email"
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -148,18 +172,33 @@ export default function Contact() {
                     render={({ field }) => (
                       <FormItem>
                         <FormLabel>{t("contact.form.subject")}</FormLabel>
-                        <Select onValueChange={field.onChange} value={field.value}>
+                        <Select
+                          onValueChange={field.onChange}
+                          value={field.value}
+                        >
                           <FormControl>
                             <SelectTrigger data-testid="select-subject">
-                              <SelectValue placeholder={t("contact.form.selectSubject")} />
+                              <SelectValue
+                                placeholder={t("contact.form.selectSubject")}
+                              />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="purchase">{t("contact.subjects.purchase")}</SelectItem>
-                            <SelectItem value="commission">{t("contact.subjects.commission")}</SelectItem>
-                            <SelectItem value="exhibition">{t("contact.subjects.exhibition")}</SelectItem>
-                            <SelectItem value="general">{t("contact.subjects.general")}</SelectItem>
-                            <SelectItem value="press">{t("contact.subjects.press")}</SelectItem>
+                            <SelectItem value="purchase">
+                              {t("contact.subjects.purchase")}
+                            </SelectItem>
+                            <SelectItem value="commission">
+                              {t("contact.subjects.commission")}
+                            </SelectItem>
+                            <SelectItem value="exhibition">
+                              {t("contact.subjects.exhibition")}
+                            </SelectItem>
+                            <SelectItem value="general">
+                              {t("contact.subjects.general")}
+                            </SelectItem>
+                            <SelectItem value="press">
+                              {t("contact.subjects.press")}
+                            </SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -202,7 +241,10 @@ export default function Contact() {
                         <div className="space-y-1 leading-none">
                           <FormLabel className="text-sm">
                             {t("contact.form.privacy")}{" "}
-                            <a href="#" className="text-watercolor-lavender-deep hover:underline">
+                            <a
+                              href="#"
+                              className="text-watercolor-lavender-deep hover:underline"
+                            >
                               {t("contact.form.privacyPolicy")}
                             </a>
                           </FormLabel>
@@ -235,7 +277,7 @@ export default function Contact() {
               {/* Artist Photo & Bio */}
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <img
-                  src="/api/placeholder/300/300"
+                  src="/2.jpg"
                   alt="Zbigniew Jan Rutkowski malujący na plenerze"
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep"
                 />
@@ -243,7 +285,9 @@ export default function Contact() {
                   Zbigniew Jan Rutkowski
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center text-sm">
-                  Malarz akwarelista, absolwent Państwowego Ogniska Plastycznego w Radomiu. Twórca z niemal 50-letnim doświadczeniem artystycznym.
+                  Malarz akwarelista, absolwent Państwowego Ogniska Plastycznego
+                  w Radomiu. Twórca z niemal 50-letnim doświadczeniem
+                  artystycznym.
                 </p>
               </div>
 
@@ -258,8 +302,12 @@ export default function Contact() {
                       <i className="fas fa-envelope text-gray-700"></i>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.email")}</p>
-                      <p className="font-medium text-gray-800 dark:text-white">Zbyszior52@wp.pl</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {t("contact.info.email")}
+                      </p>
+                      <p className="font-medium text-gray-800 dark:text-white">
+                        Zbyszior52@wp.pl
+                      </p>
                     </div>
                   </div>
 
@@ -268,8 +316,12 @@ export default function Contact() {
                       <i className="fas fa-phone text-gray-700"></i>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.phone")}</p>
-                      <p className="font-medium text-gray-800 dark:text-white">600 252 658</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {t("contact.info.phone")}
+                      </p>
+                      <p className="font-medium text-gray-800 dark:text-white">
+                        600 252 658
+                      </p>
                     </div>
                   </div>
 
@@ -278,9 +330,12 @@ export default function Contact() {
                       <i className="fas fa-map-marker-alt text-gray-700"></i>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.atelier")}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {t("contact.info.atelier")}
+                      </p>
                       <p className="font-medium text-gray-800 dark:text-white">
-                        Radom<br />
+                        Radom
+                        <br />
                         Polska
                       </p>
                     </div>
@@ -291,9 +346,12 @@ export default function Contact() {
                       <i className="fas fa-clock text-gray-700"></i>
                     </div>
                     <div>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{t("contact.info.hours")}</p>
+                      <p className="text-sm text-gray-600 dark:text-gray-400">
+                        {t("contact.info.hours")}
+                      </p>
                       <p className="font-medium text-gray-800 dark:text-white">
-                        Wt-Pt: 10:00-18:00<br />
+                        Wt-Pt: 10:00-18:00
+                        <br />
                         So: 10:00-14:00
                       </p>
                     </div>
@@ -315,7 +373,7 @@ export default function Contact() {
                     <i className="fab fa-instagram"></i>
                   </a>
                   <a
-                    href="#"
+                    href="https://www.facebook.com/zbigniewjan.rutkowski"
                     className="w-12 h-12 bg-gradient-to-br from-watercolor-blue-deep to-watercolor-sage-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
                     data-testid="social-facebook-contact"
                   >

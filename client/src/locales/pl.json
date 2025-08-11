@@ -1,6 +1,8 @@
 {
   "nav": {
     "gallery": "Galeria",
+    "exhibitions": "Wystawy",
+    "archive": "Kuźnia",
     "about": "O Artyście",
     "contact": "Kontakt",
     "blog": "Blog"
@@ -9,6 +11,84 @@
     "title": "Atlas Twórczości",
     "fullTitle": "Atlas Twórczości Zbigniewa Rutkowskiego",
     "artistName": "Zbigniewa Rutkowskiego"
+  },
+  "archive": {
+    "title": "Kuźnia",
+    "description": "Podróż w czasie do początków artystycznej drogi w Państwowym Ognisku Plastycznym w Radomiu, miejscu, które ukształtowało pokolenia artystów.",
+    "history": {
+      "title": "Historia Państwowego Ogniska Plastycznego w Radomiu",
+      "paragraph1": "Państwowe Ognisko Plastyczne im. Jacka Malczewskiego w Radomiu to instytucja o bogatej historii, założona w 1945 roku przez artystę-malarza Wacława Dobrowolskiego. [1] Przez dziesięciolecia mieściło się w zabytkowej Kamienicy Glogierów, stając się sercem artystycznego życia miasta. [1] Jego celem od zawsze było kształcenie plastyczne dzieci, młodzieży i dorosłych, rozwijanie ich talentów oraz przygotowywanie do dalszej edukacji na uczelniach artystycznych.",
+      "paragraph2": "Fundamentem Ogniska byli jego wybitni pedagodzy. Obok założyciela, prof. Dobrowolskiego, kluczowe role odgrywali tacy artyści jak Irena Cichowska, którzy z pasją przekazywali swoją wiedzę i umiejętności. [1] To dzięki nim Ognisko zyskało renomę miejsca, gdzie w atmosferze kreatywności i szacunku dla sztuki rodziły się prawdziwe talenty.",
+      "paragraph3": "Przez mury szkoły, która dała początek Ognisku, przewinęło się wielu znamienitych artystów. Lekcje rysunku u samego Wacława Dobrowolskiego pobierał między innymi Andrzej Wajda, późniejszy światowej sławy reżyser i laureat Oscara. Zbigniew Rutkowski jest jednym z wielu wychowanków, dla których nauka w Ognisku stanowiła decydujący krok na artystycznej ścieżce."
+    },
+    "photo1": {
+      "alt": "Kamienica Glogierów w Radomiu",
+      "caption": "W tym zabytkowym budynku przez lata mieściło się Państwowe Ognisko Plastyczne. [1]"
+    },
+    "photo2": {
+      "alt": "Legendarni wykładowcy Ogniska Plastycznego",
+      "caption": "Legendarni wykładowcy: Irena Cichowska i prof. Wacław Dobrowolski. [1]"
+    },
+    "photo3": {
+      "alt": "Anna Apanowicz",
+      "caption": "W Ognisku historię sztuki wykładała mgr Anna Apanowicz, znacząca postać w powojennym muzealnictwie i życiu kulturalnym Radomia oraz regionu."
+    },
+    "photo4": {
+      "alt": "Danuta Radzymińska-Nowakowska.",
+      "caption": "Danuta Radzymińska-Nowakowska. Od 1969 roku była nauczycielem w Państwowym Ognisku Plastycznym w Radomiu i aktywnie uczestniczyła w wystawach lokalnych oraz ogólnopolskich."
+    },
+    "photo5": {
+      "alt": "Zajęcia w Ognisku, Radom",
+      "caption": "Zajęcia w pracowni rzeźbiarskiej - rzeźba Wojciecha Głowiaka przedstawiająca słuchacza Ogniska, Zbigniewa Rutkowskiego."
+    },
+    "photo6": {
+      "alt": "Fotografia z wycieczki Państwowego Ogniska Plastycznego na Święty Krzyż",
+      "caption": "Fotografia z wycieczki Państwowego Ogniska Plastycznego na Święty Krzyż: m.in. Mirosław Siara, Joanna Szymańska (córka Wojciecha Stana), Kornel Drzewiecki, Eliza Wojszko oraz rysujący Zbigniew Rutkowski."
+    }
+  },
+  "exhibitions": {
+    "title": "Wystawy i Plenery",
+    "description": "Przegląd najważniejszych wystaw, plenerów i wydarzeń artystycznych na przestrzeni niemal 50 lat pracy twórczej.",
+    "exhibition1968": {
+      "title": "Pierwsza indywidualna wystawa",
+      "location": "Klub 'Łączności', Radom",
+      "description": "Debiutancka prezentacja młodzieńczych prac, która zapoczątkowała artystyczną drogę."
+    },
+    "exhibition1987": {
+      "title": "Plener Malarski w Wieliczce",
+      "location": "Kopalnia Soli, Wieliczka",
+      "description": "Udział w plenerze, którego celem była zbiórka funduszy na ratowanie Kopalni Soli. Prace zostały zlicytowane w Domu Polonii, a artysta otrzymał tytuł 'Honorowego Górnika'."
+    },
+    "exhibition1990s": {
+      "title": "Przeglądy Twórczości Plastycznej Wojsk Lotniczych",
+      "location": "Warszawa, Poznań, Łódź, Tarnów",
+      "description": "Zdobycie I miejsca w dziale malarstwa, wyróżnienia w dziale grafiki oraz licznych nagród podczas służby wojskowej."
+    },
+    "exhibitionOngoing": {
+      "title": "Stała Aktywność Wystawiennicza",
+      "location": "Radom i Kazimierz Dolny",
+      "description": "Cykliczne uczestnictwo w wystawach w radomskich galeriach (WDK, 'ESTERKA', 'RELAKS') oraz częste wystawianie prac w Galerii 'Izdebska-Łazorek' w Kazimierzu Dolnym."
+    },
+    "exhibition2013": {
+      "title": "Akwarele własne i moich mistrzów",
+      "location": "Biblioteka Pedagogiczna, Radom",
+      "description": "Indywidualna wystawa prezentująca zarówno prace własne artysty, jak i dzieła jego inspiracji artystycznych."
+    },
+    "exhibition2014": {
+      "title": "Radom w akwareli - Wernisaż w Galerii 'Exlibris'",
+      "location": "Miejska Biblioteka Publiczna, Radom",
+      "description": "Wystawa poświęcona rodzinnemu miastu. Większość prac pochodziła z prywatnych zbiorów Piotra Drózda, właściciela Firmy APM i mecenasa artysty."
+    },
+    "exhibition2015": {
+      "title": "Wystawa Indywidualna: 46 - Lecie Pracy Twórczej",
+      "location": "Galeria 'IDALIN', Radom",
+      "description": "Kolejna indywidualna prezentacja dorobku artystycznego, ugruntowująca pozycję artysty na lokalnej scenie."
+    },
+    "exhibition2018": {
+      "title": "Architektura sakralna Radomia i nie tylko",
+      "location": "Łaźnia - Radomski Klub Środowisk Twórczych i Galeria, ul. Żeromskiego 56",
+      "description": "Wystawa prezentująca trudną sztukę akwareli, skupiona na architekturze sakralnej Radomia i okolic."
+    }
   },
   "hero": {
     "title": "Odkryj Świat",
@@ -56,14 +136,17 @@
     "Mehoffer": "Mehoffer",
     "plener": "Plener",
     "Wieliczka": "Wieliczka",
+    "Uniejów": "Uniejów",
     "honorowy górnik": "Honorowy górnik",
     "miasto rodzinne": "Miasto rodzinne",
-    "studium": "Studium"
+    "studium": "Studium",
+    "eksperyment": "Eksperyment"
   },
   "techniques": {
     "akwarela": "Akwarela",
     "olej": "Olej",
-    "akryl": "Akryl",
+    "ołówek": "Ołówek",
+    "grafika": "Grafika",
     "pastel": "Pastel"
   },
   "about": {
@@ -82,14 +165,20 @@
     "dimensions": "Wymiary",
     "technique": "Technika",
     "substrate": "Podłoże",
-    "status": "Rok powstania",
+    "status": "Status",
     "available": "W kolekcji artysty",
     "sold": "W kolekcji prywatnej",
     "tags": "Tagi",
     "description": "Opis",
     "story": "Historia Powstania",
     "addToFavorites": "Dodaj do ulubionych",
-    "share": "Udostępnij"
+    "share": "Udostępnij",
+    "backToGallery": "Wróć do Galerii",
+    "substrates": {
+      "canvas": "Płótno",
+      "watercolor_paper": "Papier akwarelowy 300g",
+      "paper": "Papier"
+    }
   },
   "contact": {
     "title": "Nawiążmy Kontakt",
@@ -132,6 +221,60 @@
     "privacy": "Polityka Prywatności",
     "terms": "Regulamin",
     "cookies": "Cookies"
+  },
+  "privacy": {
+    "title": "Polityka Prywatności",
+    "description": "Dowiedz się, jak chronimy i przetwarzamy Twoje dane osobowe.",
+    "lastUpdated": "Ostatnia aktualizacja: 11 sierpnia 2025",
+    "intro": "Niniejsza polityka prywatności opisuje, w jaki sposób zbierane, wykorzystywane i udostępniane są Twoje dane osobowe podczas odwiedzania naszej strony internetowej.",
+    "section1": {
+      "title": "Jakie dane zbieramy?",
+      "content": "Zbieramy dane, które nam bezpośrednio podajesz, na przykład podczas wypełniania formularza kontaktowego (imię, nazwisko, adres e-mail). Możemy również zbierać dane automatycznie za pomocą plików cookie, takie jak adres IP i informacje o przeglądarce."
+    },
+    "section2": {
+      "title": "Jak wykorzystujemy Twoje dane?",
+      "content": "Twoje dane wykorzystujemy w celu odpowiedzi na Twoje zapytania, ulepszania naszej strony internetowej oraz w celach analitycznych. Nie udostępniamy Twoich danych stronom trzecim bez Twojej zgody, chyba że jest to wymagane przez prawo."
+    },
+    "section3": {
+      "title": "Twoje prawa",
+      "content": "Masz prawo do dostępu do swoich danych, ich sprostowania, usunięcia oraz ograniczenia przetwarzania. Jeśli masz pytania dotyczące naszej polityki prywatności, skontaktuj się z nami."
+    }
+  },
+  "terms": {
+    "title": "Regulamin",
+    "description": "Zapoznaj się z warunkami korzystania z naszej strony internetowej.",
+    "lastUpdated": "Ostatnia aktualizacja: 11 sierpnia 2025",
+    "intro": "Witamy na naszej stronie. Korzystając z tej witryny, zgadzasz się na przestrzeganie poniższych warunków użytkowania.",
+    "section1": {
+      "title": "Prawa autorskie",
+      "content": "Wszystkie treści, w tym obrazy, teksty i grafiki, są własnością Zbigniewa Rutkowskiego lub są wykorzystywane za zgodą i są chronione prawem autorskim. Jakiekolwiek powielanie lub wykorzystywanie treści bez pisemnej zgody jest zabronione."
+    },
+    "section2": {
+      "title": "Korzystanie ze strony",
+      "content": "Zobowiązujesz się do korzystania z tej strony wyłącznie w celach zgodnych z prawem i w sposób, który nie narusza praw innych osób. Zabronione jest wykorzystywanie strony do celów komercyjnych bez uprzedniej zgody."
+    },
+    "section3": {
+      "title": "Ograniczenie odpowiedzialności",
+      "content": "Dokładamy wszelkich starań, aby informacje na stronie były aktualne i dokładne, jednak nie ponosimy odpowiedzialności za jakiekolwiek błędy lub pominięcia. Korzystasz ze strony na własne ryzyko."
+    }
+  },
+  "cookies": {
+    "title": "Polityka Cookies",
+    "description": "Informacje o plikach cookie używanych na naszej stronie.",
+    "lastUpdated": "Ostatnia aktualizacja: 11 sierpnia 2025",
+    "intro": "Nasza strona internetowa wykorzystuje pliki cookie, aby poprawić Twoje doświadczenia podczas przeglądania. Poniżej wyjaśniamy, czym są pliki cookie i jak ich używamy.",
+    "section1": {
+      "title": "Czym są pliki cookie?",
+      "content": "Pliki cookie to małe pliki tekstowe, które są przechowywane na Twoim urządzeniu (komputerze, telefonie) podczas odwiedzania stron internetowych. Pomagają one stronom zapamiętać informacje o Twojej wizycie, co może ułatwić kolejne odwiedziny."
+    },
+    "section2": {
+      "title": "Jakich plików cookie używamy?",
+      "content": "Używamy plików cookie w celach analitycznych (np. Google Analytics), aby zrozumieć, w jaki sposób użytkownicy korzystają z naszej strony, co pozwala nam ją ulepszać. Używamy również plików cookie funkcjonalnych, które są niezbędne do prawidłowego działania niektórych funkcji strony, takich jak przełącznik motywu."
+    },
+    "section3": {
+      "title": "Jak zarządzać plikami cookie?",
+      "content": "Możesz zarządzać plikami cookie za pomocą ustawień swojej przeglądarki internetowej. Masz możliwość zablokowania lub usunięcia plików cookie, jednak może to wpłynąć na funkcjonalność naszej strony."
+    }
   },
   "404": {
     "title": "Strona Nie Została Znaleziona",

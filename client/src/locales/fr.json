@@ -1,6 +1,8 @@
 {
   "nav": {
     "gallery": "Galerie",
+    "exhibitions": "Expositions",
+    "archive": "La Forge",
     "about": "À propos de l'Artiste",
     "contact": "Contact",
     "blog": "Blog"
@@ -9,6 +11,84 @@
     "title": "Atlas Créatif",
     "fullTitle": "Atlas Créatif de Zbigniew Rutkowski",
     "artistName": "Zbigniew Rutkowski"
+  },
+  "archive": {
+    "title": "La Forge",
+    "description": "Un voyage dans le temps aux débuts du parcours artistique au Centre d'Art de l'État à Radom, un lieu qui a façonné des générations d'artistes.",
+    "history": {
+      "title": "Histoire du Centre d'Art de l'État à Radom",
+      "paragraph1": "Le Centre d'Art de l'État Jacek Malczewski à Radom est une institution à l'histoire riche, fondée en 1945 par le peintre Wacław Dobrowolski. [1] Pendant des décennies, il a été situé dans l'historique Maison Glogier, devenant le cœur de la vie artistique de la ville. [1] Son objectif a toujours été de dispenser une éducation artistique aux enfants, aux jeunes et aux adultes, de développer leurs talents et de les préparer à des études supérieures dans les universités d'art.",
+      "paragraph2": "La base du Centre était ses éducateurs exceptionnels. Aux côtés du fondateur, le professeur Dobrowolski, des artistes comme Irena Cichowska ont joué un rôle clé, partageant avec passion leurs connaissances et leurs compétences. [1] C'est grâce à eux que le Centre a acquis la réputation d'un lieu où de vrais talents sont nés dans une atmosphère de créativité et de respect de l'art.",
+      "paragraph3": "De nombreux artistes de renom ont franchi les portes de l'école qui a donné naissance au Centre. Entre autres, Andrzej Wajda, futur réalisateur de renommée mondiale et lauréat d'un Oscar, a pris des cours de dessin auprès de Wacław Dobrowolski lui-même. Zbigniew Rutkowski est l'un des nombreux anciens élèves pour qui les études au Centre ont été une étape décisive dans leur parcours artistique."
+    },
+    "photo1": {
+      "alt": "Maison Glogier à Radom",
+      "caption": "Pendant des années, ce bâtiment historique a abrité le Centre d'Art de l'État. [1]"
+    },
+    "photo2": {
+      "alt": "Conférenciers légendaires du Centre d'Art",
+      "caption": "Conférenciers légendaires : Irena Cichowska et le professeur Wacław Dobrowolski. [1]"
+    },
+    "photo3": {
+      "alt": "Anna Apanowicz",
+      "caption": "Au Centre, l'histoire de l'art était enseignée par Anna Apanowicz, une figure importante de la muséologie d'après-guerre et de la vie culturelle de Radom et de la région."
+    },
+    "photo4": {
+      "alt": "Danuta Radzymińska-Nowakowska.",
+      "caption": "Danuta Radzymińska-Nowakowska. À partir de 1969, elle a été enseignante au Centre d'Art de l'État à Radom et a participé activement à des expositions locales et nationales."
+    },
+    "photo5": {
+      "alt": "Cours au Centre, Radom",
+      "caption": "Cours dans l'atelier de sculpture - une sculpture de Wojciech Głowiak représentant un étudiant du Centre, Zbigniew Rutkowski."
+    },
+    "photo6": {
+      "alt": "Photographie d'une excursion du Centre d'Art de l'État à Święty Krzyż",
+      "caption": "Photographie d'une excursion du Centre d'Art de l'État à Święty Krzyż : entre autres, Mirosław Siara, Joanna Szymańska (fille de Wojciech Stan), Kornel Drzewiecki, Eliza Wojszko et Zbigniew Rutkowski en train de dessiner."
+    }
+  },
+  "exhibitions": {
+    "title": "Expositions et Plein Air",
+    "description": "Un aperçu des expositions, des séances de peinture en plein air et des événements artistiques les plus importants sur près de 50 ans de travail créatif.",
+    "exhibition1968": {
+      "title": "Première Exposition Personnelle",
+      "location": "Club 'Łączności', Radom",
+      "description": "Une première présentation d'œuvres de jeunesse qui a initié le parcours artistique."
+    },
+    "exhibition1987": {
+      "title": "Plein Air de Peinture à Wieliczka",
+      "location": "Mine de sel de Wieliczka",
+      "description": "Participation à un événement en plein air pour lever des fonds pour la préservation de la mine de sel. Les œuvres ont été vendues aux enchères à la Maison Polonia et l'artiste a reçu le titre de 'Mineur d'Honneur'."
+    },
+    "exhibition1990s": {
+      "title": "Revues de la Créativité Artistique de l'Armée de l'Air",
+      "location": "Varsovie, Poznań, Łódź, Tarnów",
+      "description": "A remporté la première place dans la catégorie peinture, une distinction en graphisme et de nombreuses récompenses pendant son service militaire."
+    },
+    "exhibitionOngoing": {
+      "title": "Activité d'Exposition Continue",
+      "location": "Radom et Kazimierz Dolny",
+      "description": "Participation régulière à des expositions dans les galeries de Radom (WDK, 'ESTERKA', 'RELAKS') et présentation fréquente de ses œuvres à la Galerie 'Izdebska-Łazorek' à Kazimierz Dolny."
+    },
+    "exhibition2013": {
+      "title": "Mes propres aquarelles et celles de mes maîtres",
+      "location": "Bibliothèque Pédagogique, Radom",
+      "description": "Une exposition personnelle présentant à la fois les œuvres de l'artiste et les pièces qui l'ont inspiré."
+    },
+    "exhibition2014": {
+      "title": "Radom en Aquarelle - Vernissage à la Galerie 'Exlibris'",
+      "location": "Bibliothèque Publique, Radom",
+      "description": "Une exposition consacrée à la ville natale de l'artiste. La plupart des œuvres provenaient de la collection privée de Piotr Dróżd, propriétaire d'APM et mécène de l'artiste."
+    },
+    "exhibition2015": {
+      "title": "Exposition Personnelle: 46e Anniversaire du Travail Créatif",
+      "location": "Galerie 'IDALIN', Radom",
+      "description": "Une autre présentation solo de l'œuvre de l'artiste, consolidant sa position sur la scène artistique locale."
+    },
+    "exhibition2018": {
+      "title": "Architecture Sacrée de Radom et d'ailleurs",
+      "location": "Łaźnia - Club des Communautés Créatives et Galerie de Radom, 56 rue Żeromskiego",
+      "description": "Une exposition présentant l'art difficile de l'aquarelle, axée sur l'architecture sacrée de Radom et de ses environs."
+    }
   },
   "hero": {
     "title": "Découvrez le Monde",
@@ -56,14 +136,17 @@
     "Mehoffer": "Mehoffer",
     "plener": "Plein air",
     "Wieliczka": "Wieliczka",
+    "Uniejów": "Uniejów",
     "honorowy górnik": "Mineur d'honneur",
     "miasto rodzinne": "Ville natale",
-    "studium": "Étude"
+    "studium": "Étude",
+    "eksperyment": "Expérience"
   },
   "techniques": {
     "akwarela": "Aquarelle",
     "olej": "Huile",
-    "akryl": "Acrylique",
+    "ołówek": "Crayon",
+    "grafika": "Graphiques",
     "pastel": "Pastel"
   },
   "about": {
@@ -82,14 +165,20 @@
     "dimensions": "Dimensions",
     "technique": "Technique",
     "substrate": "Support",
-    "status": "Année de création",
+    "status": "Statut",
     "available": "Dans la collection de l'artiste",
     "sold": "Dans une collection privée",
     "tags": "Étiquettes",
     "description": "Description",
     "story": "Histoire de la Création",
     "addToFavorites": "Ajouter aux favoris",
-    "share": "Partager"
+    "share": "Partager",
+    "backToGallery": "Retour à la galerie",
+    "substrates": {
+      "canvas": "Toile",
+      "watercolor_paper": "Papier aquarelle 300g",
+      "paper": "Papier"
+    }
   },
   "contact": {
     "title": "Connectons-nous",
@@ -132,6 +221,60 @@
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions",
     "cookies": "Cookies"
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "description": "Découvrez comment nous protégeons et traitons vos données personnelles.",
+    "lastUpdated": "Dernière mise à jour : 11 août 2025",
+    "intro": "Cette politique de confidentialité décrit comment vos informations personnelles sont collectées, utilisées et partagées lorsque vous visitez notre site web.",
+    "section1": {
+      "title": "Quelles données collectons-nous ?",
+      "content": "Nous collectons les données que vous nous fournissez directement, par exemple lorsque vous remplissez le formulaire de contact (nom, adresse e-mail). Nous pouvons également collecter des données automatiquement via des cookies, telles que votre adresse IP et des informations sur votre navigateur."
+    },
+    "section2": {
+      "title": "Comment utilisons-nous vos données ?",
+      "content": "Nous utilisons vos données pour répondre à vos demandes, améliorer notre site web et à des fins d'analyse. Nous ne partageons pas vos données avec des tiers sans votre consentement, sauf si la loi l'exige."
+    },
+    "section3": {
+      "title": "Vos droits",
+      "content": "Vous avez le droit d'accéder, de corriger, de supprimer et de limiter le traitement de vos données. Si vous avez des questions sur notre politique de confidentialité, veuillez nous contacter."
+    }
+  },
+  "terms": {
+    "title": "Conditions d'Utilisation",
+    "description": "Lisez les conditions d'utilisation de notre site web.",
+    "lastUpdated": "Dernière mise à jour : 11 août 2025",
+    "intro": "Bienvenue sur notre site. En utilisant ce site, vous acceptez de respecter et d'être lié par les conditions d'utilisation suivantes.",
+    "section1": {
+      "title": "Droits d'auteur",
+      "content": "Tout le contenu, y compris les images, textes et graphiques, est la propriété de Zbigniew Rutkowski ou est utilisé avec permission et est protégé par le droit d'auteur. Toute reproduction ou utilisation du contenu sans autorisation écrite est interdite."
+    },
+    "section2": {
+      "title": "Utilisation du site",
+      "content": "Vous vous engagez à n'utiliser ce site qu'à des fins légales et d'une manière qui ne porte pas atteinte aux droits d'autrui. L'utilisation du site à des fins commerciales sans autorisation préalable est interdite."
+    },
+    "section3": {
+      "title": "Limitation de responsabilité",
+      "content": "Nous nous efforçons de garantir que les informations sur le site sont à jour et exactes, mais nous ne sommes pas responsables des erreurs ou omissions. Vous utilisez le site à vos propres risques."
+    }
+  },
+  "cookies": {
+    "title": "Politique de Cookies",
+    "description": "Informations sur les cookies utilisés sur notre site web.",
+    "lastUpdated": "Dernière mise à jour : 11 août 2025",
+    "intro": "Notre site web utilise des cookies pour améliorer votre expérience de navigation. Ci-dessous, nous expliquons ce que sont les cookies et comment nous les utilisons.",
+    "section1": {
+      "title": "Que sont les cookies ?",
+      "content": "Les cookies sont de petits fichiers texte qui sont stockés sur votre appareil (ordinateur, téléphone) lorsque vous visitez des sites web. Ils aident les sites à se souvenir des informations sur votre visite, ce qui peut faciliter votre prochaine visite."
+    },
+    "section2": {
+      "title": "Quels cookies utilisons-nous ?",
+      "content": "Nous utilisons des cookies à des fins d'analyse (par exemple, Google Analytics) pour comprendre comment les utilisateurs interagissent avec notre site, ce qui nous aide à l'améliorer. Nous utilisons également des cookies fonctionnels qui sont nécessaires au bon fonctionnement de certaines fonctionnalités du site, comme le sélecteur de thème."
+    },
+    "section3": {
+      "title": "Comment gérer les cookies ?",
+      "content": "Vous pouvez gérer les cookies via les paramètres de votre navigateur web. Vous avez la possibilité de bloquer ou de supprimer les cookies, mais cela peut affecter la fonctionnalité de notre site web."
+    }
   },
   "404": {
     "title": "Page Non Trouvée",

@@ -1,0 +1,1039 @@
+<html lang="pl" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas Twórczości Rutkowskiego</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        watercolor: {
+                            blue: '#E8F4FD',
+                            'blue-deep': '#B8E0F5',
+                            lavender: '#F0E6FF',
+                            'lavender-deep': '#D9C3FF',
+                            peach: '#FFE6D9',
+                            'peach-deep': '#FFD1B8',
+                            sage: '#E8F5E8',
+                            'sage-deep': '#D1EBD1',
+                            cream: '#FEF9F3',
+                            charcoal: '#2D3748',
+                            'charcoal-light': '#4A5568'
+                        }
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.6s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'watercolor': 'watercolor 3s ease-in-out infinite'
+                    }
+                }
+            },
+            darkMode: 'class'
+        }
+    </script>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px); 
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            }
+        }
+        
+        @keyframes watercolor {
+            0%, 100% { filter: hue-rotate(0deg) saturate(1); }
+            50% { filter: hue-rotate(10deg) saturate(1.1); }
+        }
+        
+        .watercolor-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .watercolor-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            filter: saturate(1.1) brightness(1.02);
+        }
+        
+        .dark .watercolor-hover:hover {
+            box-shadow: 0 10px 25px rgba(255,255,255,0.05);
+        }
+
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .dark .glass-effect {
+            background: rgba(45, 55, 72, 0.3);
+        }
+    </style>
+</head>
+<body class="font-inter bg-gradient-to-br from-watercolor-cream via-white to-watercolor-blue dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
+
+<!-- @COMPONENT: Navbar [language switcher, theme toggle, navigation] -->
+<nav class="fixed top-0 w-full z-50 glass-effect border-b border-white/20 dark:border-gray-700/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <h1 class="font-poppins font-bold text-xl text-gray-800 dark:text-white">
+                    Atlas Twórczości <span class="text-watercolor-lavender-deep dark:text-watercolor-lavender">Rutkowskiego</span>
+                </h1>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link text-gray-700 dark:text-gray-300 hover:text-watercolor-lavender-deep dark:hover:text-watercolor-lavender transition-colors font-medium">
+                    Galeria
+                </a>
+                <a href="#about" class="nav-link text-gray-700 dark:text-gray-300 hover:text-watercolor-sage-deep dark:hover:text-watercolor-sage transition-colors font-medium">
+                    O Artyście
+                </a>
+                <a href="#contact" class="nav-link text-gray-700 dark:text-gray-300 hover:text-watercolor-peach-deep dark:hover:text-watercolor-peach transition-colors font-medium">
+                    Kontakt
+                </a>
+            </div>
+            
+            <!-- Controls -->
+            <div class="flex items-center space-x-4">
+                <!-- Language Selector -->
+                <div class="relative" data-implementation="Dropdown component with react-i18next">
+                    <select class="bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-watercolor-lavender-deep">
+                        <option value="pl">PL</option>
+                        <option value="en">EN</option>
+                        <option value="fr">FR</option>
+                    </select>
+                </div>
+                
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600 hover:bg-watercolor-blue dark:hover:bg-gray-700 transition-colors" data-event="click:toggleTheme">
+                    <i class="fas fa-moon dark:hidden text-gray-600"></i>
+                    <i class="fas fa-sun hidden dark:inline text-yellow-400"></i>
+                </button>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2 rounded-lg bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600">
+                    <i class="fas fa-bars text-gray-600 dark:text-gray-300"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- @END_COMPONENT: Navbar -->
+
+<!-- @COMPONENT: HomePage [gallery with filtering] -->
+<main id="home" class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 px-4">
+        <div class="max-w-4xl mx-auto text-center animate-fade-in">
+            <h1 class="font-poppins font-bold text-4xl md:text-6xl text-gray-800 dark:text-white mb-6">
+                Odkryj Świat <br>
+                <span class="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep bg-clip-text text-transparent">
+                    Malarskiej Poezji
+                </span>
+            </h1>
+            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                Zanurz się w niezwykłej kolekcji dzieł artysty, gdzie każdy obraz opowiada własną historię
+            </p>
+            <button class="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+                Rozpocznij Podróż
+            </button>
+        </div>
+    </section>
+
+    <!-- @COMPONENT: FilterPanel [year, theme, events filtering] -->
+    <section class="px-4 mb-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
+                <h3 class="font-poppins font-semibold text-lg mb-4 text-gray-800 dark:text-white">Filtruj Kolekcję</h3>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <!-- Year Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Rok</label>
+                        <select class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-watercolor-lavender-deep" data-filter="year">
+                            <option value="">Wszystkie lata</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Theme Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Temat</label>
+                        <select class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-watercolor-sage-deep" data-filter="theme">
+                            <option value="">Wszystkie tematy</option>
+                            <option value="natura">Natura</option>
+                            <option value="portret">Portret</option>
+                            <option value="abstrakcja">Abstrakcja</option>
+                            <option value="pejzaz">Pejzaż</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Technique Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Technika</label>
+                        <select class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-watercolor-peach-deep" data-filter="technique">
+                            <option value="">Wszystkie techniki</option>
+                            <option value="akwarela">Akwarela</option>
+                            <option value="olej">Olej</option>
+                            <option value="akryl">Akryl</option>
+                            <option value="pastel">Pastel</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Search -->
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Szukaj</label>
+                        <div class="relative">
+                            <input type="text" placeholder="Szukaj dzieł..." class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-3 py-2 pr-10 focus:outline-none focus:ring-2 focus:ring-watercolor-blue-deep" data-filter="search">
+                            <i class="fas fa-search absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FilterPanel -->
+
+    <!-- Gallery Grid -->
+    <section class="px-4 pb-20">
+        <div class="max-w-7xl mx-auto">
+            <!-- @MAP: artworks.filter(artwork => matchesFilters(artwork)).map(artwork => ( -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="gallery-grid" data-implementation="Masonry layout with react-window for virtualization">
+                
+                <!-- Artwork Card 1 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="1" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-blue/20 dark:border-gray-700">
+                        <!-- Beautiful landscape painting with rolling hills and morning mist -->
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Poranek w Tatrach - akwarela przedstawiająca mglisty poranek w górach" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Poranek w Tatrach</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2023 • Akwarela na papierze</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-sage text-xs px-2 py-1 rounded-full text-gray-700">natura</span>
+                                <span class="bg-watercolor-blue text-xs px-2 py-1 rounded-full text-gray-700">pejzaż</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Mglisty poranek ukazany poprzez delikatne przejścia kolorów...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Card 2 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="2" style="animation-delay: 0.1s" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-lavender/20 dark:border-gray-700">
+                        <!-- Portrait of an elderly woman with wise eyes and gentle expression -->
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Babcia Maria - portret akwarelowy starszej kobiety" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Babcia Maria</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2022 • Akwarela na papierze</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-peach text-xs px-2 py-1 rounded-full text-gray-700">portret</span>
+                                <span class="bg-watercolor-lavender text-xs px-2 py-1 rounded-full text-gray-700">rodzina</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Portret wykonany z pamięci, ukazujący ciepło i mądrość...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Card 3 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="3" style="animation-delay: 0.2s" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-sage/20 dark:border-gray-700">
+                        <!-- Abstract flowing colors resembling ocean waves -->
+                        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Przepływ - abstrakcyjna kompozycja w błękitach" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Przepływ</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2023 • Akryl na płótnie</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-blue text-xs px-2 py-1 rounded-full text-gray-700">abstrakcja</span>
+                                <span class="bg-watercolor-sage text-xs px-2 py-1 rounded-full text-gray-700">ekspresja</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Spontaniczny wyraz emocji poprzez płynne formy...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Card 4 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="4" style="animation-delay: 0.3s" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-peach/20 dark:border-gray-700">
+                        <!-- Autumn forest with golden and orange leaves -->
+                        <img src="https://images.unsplash.com/photo-1509773896068-7fd415d91e2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Jesienne Złoto - pejzaż jesienny z kolorowymi liśćmi" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Jesienne Złoto</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2021 • Olej na płótnie</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-peach text-xs px-2 py-1 rounded-full text-gray-700">pejzaż</span>
+                                <span class="bg-watercolor-sage text-xs px-2 py-1 rounded-full text-gray-700">jesień</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Ciepłe barwy polskiej jesieni w pełnej krasie...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Card 5 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="5" style="animation-delay: 0.4s" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-blue/20 dark:border-gray-700">
+                        <!-- Serene lake with reflection of clouds and sky -->
+                        <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Lustro Nieba - jezioro z odbiciami chmur" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Lustro Nieba</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2022 • Akwarela na papierze</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-blue text-xs px-2 py-1 rounded-full text-gray-700">woda</span>
+                                <span class="bg-watercolor-lavender text-xs px-2 py-1 rounded-full text-gray-700">refleksja</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Spokojne wody jeziora odbijające nieskończoność nieba...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Artwork Card 6 -->
+                <div class="watercolor-hover cursor-pointer animate-slide-up" data-artwork-id="6" style="animation-delay: 0.5s" data-event="click:openArtworkDetail">
+                    <div class="bg-white dark:bg-gray-800 rounded-2xl overflow-hidden shadow-lg border border-watercolor-lavender/20 dark:border-gray-700">
+                        <!-- Close-up of vibrant flowers in a garden -->
+                        <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600" 
+                             alt="Kwitnący Ogród - kolorowe kwiaty w zbliżeniu" 
+                             class="w-full h-48 object-cover" 
+                             data-mock-image="true"
+                             loading="lazy">
+                        <div class="p-4">
+                            <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">Kwitnący Ogród</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">2023 • Pastel na papierze</p>
+                            <div class="flex flex-wrap gap-1 mb-3">
+                                <span class="bg-watercolor-peach text-xs px-2 py-1 rounded-full text-gray-700">kwiaty</span>
+                                <span class="bg-watercolor-sage text-xs px-2 py-1 rounded-full text-gray-700">natura</span>
+                            </div>
+                            <p class="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">Explosion kolorów wiosennych kwiatów w pełnym rozkwicie...</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- @END_MAP )) -->
+        </div>
+    </section>
+</main>
+<!-- @END_COMPONENT: HomePage -->
+
+<!-- @COMPONENT: AboutPage [narrative timeline with artist history] -->
+<section id="about" class="py-20 px-4 bg-gradient-to-br from-watercolor-sage via-watercolor-cream to-watercolor-peach dark:from-watercolor-charcoal dark:via-gray-800 dark:to-watercolor-charcoal-light hidden">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in">
+            <h2 class="font-poppins font-bold text-4xl text-gray-800 dark:text-white mb-6">
+                Podróż Artystyczna
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Poznaj fascynującą historię artysty, którego twórczość przekracza granice konwencji
+            </p>
+        </div>
+
+        <!-- @COMPONENT: Timeline [artist's history milestones] -->
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-watercolor-lavender-deep to-watercolor-peach-deep rounded-full"></div>
+            
+            <!-- Timeline Events -->
+            <div class="space-y-16">
+                <!-- Event 1 -->
+                <div class="flex items-center justify-between animate-slide-up">
+                    <div class="w-5/12 text-right pr-8">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border border-watercolor-lavender/20 dark:border-gray-700">
+                            <h3 class="font-poppins font-semibold text-xl text-gray-800 dark:text-white mb-2">Pierwsze Kroki</h3>
+                            <p class="text-watercolor-lavender-deep font-medium mb-2">1985</p>
+                            <p class="text-gray-600 dark:text-gray-300">Rozpoczęcie nauki malarstwa w prywatnym atelier mistrza Kowalskiego w Krakowie.</p>
+                        </div>
+                    </div>
+                    <div class="w-2/12 flex justify-center">
+                        <div class="w-6 h-6 bg-watercolor-lavender-deep rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="flex items-center justify-between animate-slide-up" style="animation-delay: 0.2s">
+                    <div class="w-5/12"></div>
+                    <div class="w-2/12 flex justify-center">
+                        <div class="w-6 h-6 bg-watercolor-sage-deep rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                    </div>
+                    <div class="w-5/12 pl-8">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border border-watercolor-sage/20 dark:border-gray-700">
+                            <h3 class="font-poppins font-semibold text-xl text-gray-800 dark:text-white mb-2">Pierwsza Wystawa</h3>
+                            <p class="text-watercolor-sage-deep font-medium mb-2">1992</p>
+                            <p class="text-gray-600 dark:text-gray-300">Debiut artystyczny w Galerii Sztuki Współczesnej z kolekcją "Pejzaże Duszy".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="flex items-center justify-between animate-slide-up" style="animation-delay: 0.4s">
+                    <div class="w-5/12 text-right pr-8">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border border-watercolor-peach/20 dark:border-gray-700">
+                            <h3 class="font-poppins font-semibold text-xl text-gray-800 dark:text-white mb-2">Przełom Artystyczny</h3>
+                            <p class="text-watercolor-peach-deep font-medium mb-2">2001</p>
+                            <p class="text-gray-600 dark:text-gray-300">Odkrycie unikalnego stylu łączącego tradycyjne techniki z nowoczesną ekspresją.</p>
+                        </div>
+                    </div>
+                    <div class="w-2/12 flex justify-center">
+                        <div class="w-6 h-6 bg-watercolor-peach-deep rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="flex items-center justify-between animate-slide-up" style="animation-delay: 0.6s">
+                    <div class="w-5/12"></div>
+                    <div class="w-2/12 flex justify-center">
+                        <div class="w-6 h-6 bg-watercolor-blue-deep rounded-full border-4 border-white dark:border-gray-800 shadow-lg"></div>
+                    </div>
+                    <div class="w-5/12 pl-8">
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-2xl shadow-lg watercolor-hover border border-watercolor-blue/20 dark:border-gray-700">
+                            <h3 class="font-poppins font-semibold text-xl text-gray-800 dark:text-white mb-2">Uznanie Międzynarodowe</h3>
+                            <p class="text-watercolor-blue-deep font-medium mb-2">2015</p>
+                            <p class="text-gray-600 dark:text-gray-300">Nagroda Grand Prix na Międzynarodowym Biennale Malarstwa w Paryżu.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Current -->
+                <div class="flex items-center justify-between animate-slide-up" style="animation-delay: 0.8s">
+                    <div class="w-5/12 text-right pr-8">
+                        <div class="bg-gradient-to-br from-watercolor-lavender to-watercolor-peach p-6 rounded-2xl shadow-lg watercolor-hover border border-white/50">
+                            <h3 class="font-poppins font-semibold text-xl text-gray-800 mb-2">Współczesność</h3>
+                            <p class="text-gray-700 font-medium mb-2">2024</p>
+                            <p class="text-gray-700">Aktywna twórczość i mentoring młodych artystów w ramach Fundacji Twórczej.</p>
+                        </div>
+                    </div>
+                    <div class="w-2/12 flex justify-center">
+                        <div class="w-6 h-6 bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep rounded-full border-4 border-white dark:border-gray-800 shadow-lg animate-watercolor"></div>
+                    </div>
+                    <div class="w-5/12"></div>
+                </div>
+            </div>
+        </div>
+        <!-- @END_COMPONENT: Timeline -->
+    </div>
+</section>
+<!-- @END_COMPONENT: AboutPage -->
+
+<!-- @COMPONENT: ArtworkDetailPage [image zoom, description, tags, anecdotes] -->
+<section id="artwork-detail" class="py-20 px-4 hidden" data-artwork-id="">
+    <div class="max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- @COMPONENT: ImageSlider [main image with zoom capability] -->
+            <div class="space-y-4">
+                <div class="relative bg-white dark:bg-gray-800 rounded-2xl p-4 shadow-lg">
+                    <!-- Main artwork display -->
+                    <!-- Detailed view of an artistic landscape painting -->
+                    <img id="main-artwork-image" 
+                         src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=900" 
+                         alt="Szczegółowy widok dzieła artystycznego" 
+                         class="w-full h-96 object-cover rounded-xl cursor-zoom-in" 
+                         data-mock-image="true"
+                         data-event="click:openImageModal">
+                    
+                    <!-- Zoom overlay -->
+                    <button class="absolute top-6 right-6 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors" data-event="click:openImageModal">
+                        <i class="fas fa-search-plus"></i>
+                    </button>
+                </div>
+                
+                <!-- Thumbnail navigation -->
+                <div class="flex space-x-2 overflow-x-auto pb-2">
+                    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=150" 
+                         alt="Miniatura 1" 
+                         class="w-16 h-12 object-cover rounded cursor-pointer border-2 border-watercolor-lavender-deep" 
+                         data-mock-image="true">
+                    <img src="https://images.unsplash.com/photo-1439066615861-d1af74d74000?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=150" 
+                         alt="Miniatura 2" 
+                         class="w-16 h-12 object-cover rounded cursor-pointer border-2 border-transparent hover:border-watercolor-peach-deep" 
+                         data-mock-image="true">
+                    <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=150" 
+                         alt="Miniatura 3" 
+                         class="w-16 h-12 object-cover rounded cursor-pointer border-2 border-transparent hover:border-watercolor-sage-deep" 
+                         data-mock-image="true">
+                </div>
+            </div>
+            <!-- @END_COMPONENT: ImageSlider -->
+
+            <!-- Artwork Information -->
+            <div class="space-y-6">
+                <div>
+                    <h1 class="font-poppins font-bold text-3xl text-gray-800 dark:text-white mb-2" data-bind="artwork.title">
+                        Poranek w Tatrach
+                    </h1>
+                    <p class="text-watercolor-lavender-deep dark:text-watercolor-lavender font-medium text-lg" data-bind="artwork.year">
+                        2023 • Akwarela na papierze
+                    </p>
+                </div>
+
+                <!-- Technical Details -->
+                <div class="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-xl p-4 border border-white/20 dark:border-gray-700/20">
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-3">Szczegóły Techniczne</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">Wymiary:</span>
+                            <p class="font-medium text-gray-800 dark:text-white" data-bind="artwork.dimensions">70 × 50 cm</p>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">Technika:</span>
+                            <p class="font-medium text-gray-800 dark:text-white" data-bind="artwork.technique">Akwarela</p>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">Podłoże:</span>
+                            <p class="font-medium text-gray-800 dark:text-white">Papier akwarelowy 300g</p>
+                        </div>
+                        <div>
+                            <span class="text-gray-600 dark:text-gray-400">Status:</span>
+                            <p class="font-medium text-green-600 dark:text-green-400">Dostępne</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tags -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-3">Tagi</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- @MAP: artwork.tags.map(tag => ( -->
+                        <span class="bg-watercolor-sage text-gray-700 px-3 py-1 rounded-full text-sm font-medium">natura</span>
+                        <span class="bg-watercolor-blue text-gray-700 px-3 py-1 rounded-full text-sm font-medium">pejzaż</span>
+                        <span class="bg-watercolor-lavender text-gray-700 px-3 py-1 rounded-full text-sm font-medium">góry</span>
+                        <span class="bg-watercolor-peach text-gray-700 px-3 py-1 rounded-full text-sm font-medium">mgła</span>
+                        <!-- @END_MAP )) -->
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-3">Opis</h3>
+                    <p class="text-gray-600 dark:text-gray-300 leading-relaxed" data-bind="artwork.description">
+                        Ten mglisty poranek w Tatrach to jedna z moich najbardziej osobistych prac. Powstała podczas trzydniowego pobytu 
+                        w schronisku, gdzie każdy świt przynosił nowe odkrycie kolorów i światła. Delikatne przejścia między błękitem 
+                        nieba a ciepłymi tonami pierwszych promieni słońca zostały uchwycone w technice mokro-na-mokro, 
+                        co pozwoliło na naturalne rozlewanie się pigmentów.
+                    </p>
+                </div>
+
+                <!-- Anecdote -->
+                <div class="bg-gradient-to-r from-watercolor-peach/30 to-watercolor-lavender/30 dark:from-gray-700/30 dark:to-gray-600/30 rounded-xl p-4 border-l-4 border-watercolor-peach-deep">
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">
+                        <i class="fas fa-quote-left text-watercolor-peach-deep mr-2"></i>
+                        Historia Powstania
+                    </h3>
+                    <p class="text-gray-700 dark:text-gray-300 italic" data-bind="artwork.story">
+                        "Wstałem o piątej rano, żeby złapać ten moment, gdy mgła powoli unosi się z doliny. 
+                        Miałem ze sobą tylko małą palętę i blok akwarelowy. To dzieło powstało w ciągu 45 minut, 
+                        w całkowitym skupieniu na chwili. Do dziś pamiętam zapach sosnowego lasu i chłód poranka."
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex space-x-4">
+                    <button class="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white px-6 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium">
+                        <i class="fas fa-heart mr-2"></i>
+                        Dodaj do ulubionych
+                    </button>
+                    <button class="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-6 py-3 rounded-full hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors font-medium">
+                        <i class="fas fa-share mr-2"></i>
+                        Udostępnij
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: ArtworkDetailPage -->
+
+<!-- @COMPONENT: ContactPage [Netlify Forms + contact details] -->
+<section id="contact" class="py-20 px-4 bg-gradient-to-br from-watercolor-blue via-white to-watercolor-lavender dark:from-watercolor-charcoal-light dark:via-gray-800 dark:to-watercolor-charcoal hidden">
+    <div class="max-w-4xl mx-auto">
+        <div class="text-center mb-16 animate-fade-in">
+            <h2 class="font-poppins font-bold text-4xl text-gray-800 dark:text-white mb-6">
+                Nawiążmy Kontakt
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                Masz pytania o dzieła, chcesz zamówić portret lub po prostu porozmawiać o sztuce? 
+                Skontaktuj się ze mną!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <!-- Contact Form -->
+            <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-8 border border-white/20 dark:border-gray-700/20 shadow-xl">
+                <h3 class="font-poppins font-semibold text-2xl text-gray-800 dark:text-white mb-6">Napisz do mnie</h3>
+                
+                <form data-netlify="true" data-netlify-name="contact" data-implementation="Netlify Forms integration">
+                    <input type="hidden" name="form-name" value="contact" />
+                    
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Imię</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-watercolor-lavender-deep transition-colors">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Nazwisko</label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                       class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-watercolor-lavender-deep transition-colors">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-watercolor-peach-deep transition-colors">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Temat</label>
+                            <select id="subject" name="subject" 
+                                    class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-watercolor-sage-deep transition-colors">
+                                <option value="">Wybierz temat</option>
+                                <option value="purchase">Zakup dzieła</option>
+                                <option value="commission">Zlecenie portret</option>
+                                <option value="exhibition">Wystawa</option>
+                                <option value="general">Ogólne pytanie</option>
+                                <option value="press">Media</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Wiadomość</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-watercolor-blue-deep transition-colors resize-none"
+                                      placeholder="Opisz szczegóły swojego zapytania..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <input type="checkbox" id="privacy" name="privacy" required 
+                                   class="mt-1 mr-3 w-4 h-4 text-watercolor-lavender-deep focus:ring-watercolor-lavender-deep border-gray-300 rounded">
+                            <label for="privacy" class="text-sm text-gray-600 dark:text-gray-300">
+                                Zgadzam się na przetwarzanie moich danych osobowych zgodnie z 
+                                <a href="#" class="text-watercolor-lavender-deep hover:underline">polityką prywatności</a>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white py-4 rounded-lg hover:shadow-lg transition-all duration-300 font-medium text-lg" 
+                                data-event="submit:handleContactForm">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            Wyślij Wiadomość
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="space-y-8">
+                <!-- Artist Photo & Bio -->
+                <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
+                    <!-- Professional portrait of an artist in their studio -->
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
+                         alt="Zdjęcie artysty Rutkowskiego w atelier" 
+                         class="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep" 
+                         data-mock-image="true">
+                    <h3 class="font-poppins font-semibold text-xl text-center text-gray-800 dark:text-white mb-2">
+                        Marek Rutkowski
+                    </h3>
+                    <p class="text-gray-600 dark:text-gray-300 text-center text-sm">
+                        Malarz, akwarelista, pedagog sztuki. Twórca ponad 500 dzieł, 
+                        laureat międzynarodowych konkursów artystycznych.
+                    </p>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">Dane Kontaktowe</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-watercolor-sage rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-envelope text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Email</p>
+                                <p class="font-medium text-gray-800 dark:text-white">m.rutkowski@artystyka.pl</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-watercolor-blue rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-phone text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Telefon</p>
+                                <p class="font-medium text-gray-800 dark:text-white">+48 123 456 789</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-watercolor-peach rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-map-marker-alt text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Atelier</p>
+                                <p class="font-medium text-gray-800 dark:text-white">ul. Artystyczna 15<br>31-000 Kraków</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-watercolor-lavender rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-clock text-gray-700"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600 dark:text-gray-400">Godziny wizyty</p>
+                                <p class="font-medium text-gray-800 dark:text-white">Wt-Pt: 10:00-18:00<br>So: 10:00-14:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
+                    <h3 class="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">Znajdź mnie też tutaj</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-watercolor-lavender-deep to-watercolor-peach-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-watercolor-blue-deep to-watercolor-sage-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-watercolor-sage-deep to-watercolor-lavender-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-gradient-to-br from-watercolor-peach-deep to-watercolor-blue-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- @END_COMPONENT: ContactPage -->
+
+<!-- @COMPONENT: Modal [image zoom modal] -->
+<div id="image-modal" class="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4 hidden" data-event="click:closeModal">
+    <div class="relative max-w-5xl max-h-full">
+        <button class="absolute -top-12 right-0 text-white text-2xl hover:text-gray-300 transition-colors" data-event="click:closeModal">
+            <i class="fas fa-times"></i>
+        </button>
+        <!-- Zoomed artwork image -->
+        <img id="modal-image" 
+             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&h=1080" 
+             alt="Powiększone dzieło artystyczne" 
+             class="max-w-full max-h-full rounded-lg" 
+             data-mock-image="true">
+        
+        <!-- Image Controls -->
+        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-black/50 rounded-full px-4 py-2 flex items-center space-x-4">
+            <button class="text-white hover:text-gray-300 transition-colors" data-event="click:zoomOut">
+                <i class="fas fa-search-minus"></i>
+            </button>
+            <span class="text-white text-sm" id="zoom-level">100%</span>
+            <button class="text-white hover:text-gray-300 transition-colors" data-event="click:zoomIn">
+                <i class="fas fa-search-plus"></i>
+            </button>
+            <div class="w-px h-4 bg-gray-500"></div>
+            <button class="text-white hover:text-gray-300 transition-colors" data-event="click:downloadImage">
+                <i class="fas fa-download"></i>
+            </button>
+        </div>
+    </div>
+</div>
+<!-- @END_COMPONENT: Modal -->
+
+<!-- @COMPONENT: Footer [site navigation and legal] -->
+<footer class="bg-watercolor-charcoal dark:bg-gray-900 text-white py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Brand -->
+            <div class="space-y-4">
+                <h3 class="font-poppins font-bold text-xl">Atlas Twórczości</h3>
+                <p class="text-gray-300 text-sm leading-relaxed">
+                    Odkrywaj niezwykły świat malarstwa poprzez dzieła pełne emocji i mistrzowskiego rzemiosła artystycznego.
+                </p>
+                <div class="flex space-x-3">
+                    <a href="#" class="w-8 h-8 bg-watercolor-lavender-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-peach-deep transition-colors">
+                        <i class="fab fa-instagram text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-watercolor-blue-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-sage-deep transition-colors">
+                        <i class="fab fa-facebook text-sm"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-lavender-deep transition-colors">
+                        <i class="fab fa-linkedin text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div>
+                <h4 class="font-poppins font-semibold mb-4">Nawigacja</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#home" class="text-gray-300 hover:text-watercolor-lavender transition-colors">Galeria</a></li>
+                    <li><a href="#about" class="text-gray-300 hover:text-watercolor-sage transition-colors">O Artyście</a></li>
+                    <li><a href="#contact" class="text-gray-300 hover:text-watercolor-peach transition-colors">Kontakt</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-watercolor-blue transition-colors">Blog</a></li>
+                </ul>
+            </div>
+            
+            <!-- Categories -->
+            <div>
+                <h4 class="font-poppins font-semibold mb-4">Kategorie</h4>
+                <ul class="space-y-2 text-sm">
+                    <li><a href="#" class="text-gray-300 hover:text-watercolor-lavender transition-colors">Pejzaże</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-watercolor-sage transition-colors">Portrety</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-watercolor-peach transition-colors">Abstrakcja</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-watercolor-blue transition-colors">Natura</a></li>
+                </ul>
+            </div>
+            
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-poppins font-semibold mb-4">Kontakt</h4>
+                <div class="space-y-3 text-sm text-gray-300">
+                    <div class="flex items-center">
+                        <i class="fas fa-envelope w-4 mr-3 text-watercolor-peach"></i>
+                        <span>m.rutkowski@artystyka.pl</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-phone w-4 mr-3 text-watercolor-sage"></i>
+                        <span>+48 123 456 789</span>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-lavender"></i>
+                        <span>ul. Artystyczna 15<br>31-000 Kraków</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="border-t border-gray-700 mt-12 pt-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    © 2024 Atlas Twórczości Rutkowskiego. Wszystkie prawa zastrzeżone.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Polityka Prywatności</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Regulamin</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- @END_COMPONENT: Footer -->
+
+<!-- 404 Page (Hidden by default) -->
+<section id="page-404" class="py-20 px-4 min-h-screen flex items-center justify-center hidden">
+    <div class="text-center max-w-2xl mx-auto animate-fade-in">
+        <div class="mb-8">
+            <i class="fas fa-palette text-8xl text-watercolor-lavender-deep mb-4"></i>
+        </div>
+        <h1 class="font-poppins font-bold text-6xl text-gray-800 dark:text-white mb-4">404</h1>
+        <h2 class="font-poppins font-semibold text-2xl text-gray-700 dark:text-gray-300 mb-6">
+            Strona Nie Została Znaleziona
+        </h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+            Przepraszamy, ale szukana przez Ciebie strona nie istnieje. 
+            Być może została przeniesiona lub usunięta.
+        </p>
+        <div class="space-x-4">
+            <button class="bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium" data-event="click:goHome">
+                Wróć do Galerii
+            </button>
+            <button class="bg-white dark:bg-gray-700 text-gray-800 dark:text-white border border-gray-300 dark:border-gray-600 px-8 py-3 rounded-full hover:bg-gray-50 dark:hover:bg-gray-600 transition-colors font-medium" data-event="click:goBack">
+                Cofnij
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for Interactions -->
+<script>
+    (function() {
+        // TODO: Implement React Router for SPA navigation
+        // TODO: Implement react-i18next for internationalization
+        // TODO: Implement framer-motion for animations
+        // TODO: Implement react-helmet-async for SEO
+        
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+        
+        // Load saved theme or default to light
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.className = savedTheme;
+        
+        themeToggle?.addEventListener('click', function() {
+            const currentTheme = html.className;
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            html.className = newTheme;
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        // Simple Navigation (SPA simulation)
+        const navLinks = document.querySelectorAll('a[href^="#"]');
+        const sections = ['home', 'about', 'artwork-detail', 'contact'];
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                showSection(targetId);
+            });
+        });
+        
+        function showSection(targetId) {
+            // Hide all sections
+            sections.forEach(sectionId => {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    section.classList.add('hidden');
+                }
+            });
+            
+            const page404 = document.getElementById('page-404');
+            if (page404) page404.classList.add('hidden');
+            
+            // Show target section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+            } else if (targetId !== 'home') {
+                // Show 404 for unknown routes
+                if (page404) page404.classList.remove('hidden');
+            } else {
+                // Default to home
+                const homeSection = document.getElementById('home');
+                if (homeSection) homeSection.classList.remove('hidden');
+            }
+        }
+        
+        // Artwork Detail Modal
+        const artworkCards = document.querySelectorAll('[data-artwork-id]');
+        const artworkDetailSection = document.getElementById('artwork-detail');
+        
+        artworkCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const artworkId = this.getAttribute('data-artwork-id');
+                // TODO: Load artwork data from artworks.json based on artworkId
+                showSection('artwork-detail');
+                if (artworkDetailSection) {
+                    artworkDetailSection.setAttribute('data-artwork-id', artworkId);
+                }
+            });
+        });
+        
+        // Image Modal Functionality
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const mainArtworkImage = document.getElementById('main-artwork-image');
+        
+        // Open modal when clicking main artwork image
+        mainArtworkImage?.addEventListener('click', function() {
+            if (imageModal && modalImage) {
+                modalImage.src = this.src;
+                modalImage.alt = this.alt;
+                imageModal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+        
+        // Close modal
+        imageModal?.addEventListener('click', function(e) {
+            if (e.target === this || e.target.closest('[data-event*="closeModal"]')) {
+                this.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        // Filter functionality simulation
+        const filterElements = document.querySelectorAll('[data-filter]');
+        
+        filterElements.forEach(filter => {
+            filter.addEventListener('change', function() {
+                // TODO: Implement actual filtering logic
+                console.log(`Filter changed: ${this.getAttribute('data-filter')} = ${this.value}`);
+            });
+        });
+        
+        // Contact form submission
+        const contactForm = document.querySelector('[data-netlify="true"]');
+        contactForm?.addEventListener('submit', function(e) {
+            // TODO: Integrate with Netlify Forms
+            console.log('Contact form submitted');
+        });
+        
+        // Lazy loading simulation
+        const images = document.querySelectorAll('img[loading="lazy"]');
+        
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        // Image is already loaded due to src attribute, 
+                        // but in real implementation would load here
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+            
+            images.forEach(img => imageObserver.observe(img));
+        }
+        
+        // Initialize with home section visible
+        showSection('home');
+        
+        // 404 page navigation
+        document.addEventListener('click', function(e) {
+            if (e.target.matches('[data-event*="goHome"]')) {
+                showSection('home');
+            } else if (e.target.matches('[data-event*="goBack"]')) {
+                history.back();
+            }
+        });
+    })();
+</script>
+
+</body>
+</html>
