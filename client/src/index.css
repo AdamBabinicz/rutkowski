@@ -43,13 +43,12 @@
   --font-playfair: "Playfair Display", serif;
   --radius: 1rem;
 
-  /* Artist watercolor palette - earthy, natural tones with improved contrast */
   --watercolor-blue: hsl(210, 35%, 85%);
   --watercolor-blue-deep: hsl(210, 45%, 55%);
   --watercolor-blue-accent: hsl(210, 60%, 40%);
   --watercolor-ochre: hsl(35, 65%, 82%);
   --watercolor-ochre-deep: hsl(35, 70%, 55%);
-  --watercolor-ochre-accent: hsl(35, 75%, 40%);
+  --watercolor-ochre-accent: hsl(30, 80%, 35%);
   --watercolor-umber: hsl(25, 45%, 72%);
   --watercolor-umber-deep: hsl(25, 50%, 50%);
   --watercolor-umber-accent: hsl(25, 55%, 30%);
@@ -58,7 +57,7 @@
   --watercolor-sage-accent: hsl(85, 35%, 35%);
   --watercolor-cream: hsl(48, 30%, 92%);
   --watercolor-warm-white: hsl(45, 20%, 96%);
-  --watercolor-charcoal: hsl(220, 25%, 20%);
+  --watercolor-charcoal: hsl(220, 25%, 15%);
   --watercolor-charcoal-light: hsl(220, 20%, 30%);
 }
 
@@ -101,7 +100,6 @@
   --font-poppins: "Poppins", sans-serif;
   --font-playfair: "Playfair Display", serif;
 
-  /* Dark mode artist watercolor palette with improved contrast */
   --watercolor-blue: hsl(210, 35%, 85%);
   --watercolor-blue-deep: hsl(210, 45%, 65%);
   --watercolor-blue-accent: hsl(210, 55%, 80%);
@@ -116,7 +114,7 @@
   --watercolor-sage-accent: hsl(85, 35%, 75%);
   --watercolor-cream: hsl(48, 30%, 90%);
   --watercolor-warm-white: hsl(45, 20%, 95%);
-  --watercolor-charcoal: hsl(220, 25%, 6%);
+  --watercolor-charcoal: hsl(220, 20%, 12%);
   --watercolor-charcoal-light: hsl(220, 20%, 15%);
 }
 
@@ -163,32 +161,6 @@
 
   .font-poppins {
     font-family: var(--font-poppins);
-  }
-
-  /* Lepszy kontrast dla tagów i etykiet w motywie ciemnym */
-  .dark .text-muted-foreground {
-    color: hsl(45, 25%, 90%) !important;
-  }
-
-  .dark .text-gray-600 {
-    color: hsl(45, 20%, 85%) !important;
-  }
-
-  .dark .text-gray-500 {
-    color: hsl(45, 25%, 90%) !important;
-  }
-
-  .dark .text-gray-700 {
-    color: hsl(45, 30%, 95%) !important;
-  }
-
-  .dark .text-gray-300 {
-    color: hsl(45, 30%, 95%) !important;
-  }
-
-  /* Poprawki dla Badge w motywie ciemnym */
-  .dark .bg-watercolor-sage {
-    background-color: hsl(85, 30%, 25%) !important;
   }
 }
 
