@@ -31,14 +31,12 @@ export default function FilterPanel({
 
   const parsedArtworks = artworksSchema.parse(artworksData);
 
-  // Poprawka: Użycie Array.from() zamiast [...]
   const years = Array.from(
     new Set(parsedArtworks.map((artwork) => artwork.year))
   )
     .sort((a, b) => b - a)
     .map(String);
 
-  // Poprawka: Użycie Array.from() dla spójności
   const themes = Array.from(
     new Set(parsedArtworks.flatMap((artwork) => artwork.tags || []))
   );
@@ -53,7 +51,6 @@ export default function FilterPanel({
             {t("filter.title")}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            {/* Year Filter */}
             <div>
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.year")}
@@ -62,7 +59,10 @@ export default function FilterPanel({
                 value={filters.year}
                 onValueChange={(value) => onFilterChange("year", value)}
               >
-                <SelectTrigger data-testid="filter-year">
+                <SelectTrigger
+                  data-testid="filter-year"
+                  aria-label={t("filter.year")}
+                >
                   <SelectValue placeholder={t("filter.allYears")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -76,7 +76,6 @@ export default function FilterPanel({
               </Select>
             </div>
 
-            {/* Theme Filter */}
             <div>
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.theme")}
@@ -85,7 +84,10 @@ export default function FilterPanel({
                 value={filters.theme}
                 onValueChange={(value) => onFilterChange("theme", value)}
               >
-                <SelectTrigger data-testid="filter-theme">
+                <SelectTrigger
+                  data-testid="filter-theme"
+                  aria-label={t("filter.theme")}
+                >
                   <SelectValue placeholder={t("filter.allThemes")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -99,7 +101,6 @@ export default function FilterPanel({
               </Select>
             </div>
 
-            {/* Technique Filter */}
             <div>
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.technique")}
@@ -108,7 +109,10 @@ export default function FilterPanel({
                 value={filters.technique}
                 onValueChange={(value) => onFilterChange("technique", value)}
               >
-                <SelectTrigger data-testid="filter-technique">
+                <SelectTrigger
+                  data-testid="filter-technique"
+                  aria-label={t("filter.technique")}
+                >
                   <SelectValue placeholder={t("filter.allTechniques")} />
                 </SelectTrigger>
                 <SelectContent>
@@ -124,7 +128,6 @@ export default function FilterPanel({
               </Select>
             </div>
 
-            {/* Search */}
             <div>
               <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 {t("filter.search")}

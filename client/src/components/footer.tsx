@@ -18,6 +18,7 @@ export default function Footer() {
                 href="#"
                 className="w-8 h-8 bg-watercolor-ochre-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-umber-deep transition-colors"
                 data-testid="social-instagram"
+                aria-label="Odwiedź profil na Instagramie"
               >
                 <i className="fab fa-instagram text-sm"></i>
               </a>
@@ -25,6 +26,7 @@ export default function Footer() {
                 href="https://www.facebook.com/zbigniewjan.rutkowski"
                 className="w-8 h-8 bg-watercolor-blue-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-sage-deep transition-colors"
                 data-testid="social-facebook"
+                aria-label="Odwiedź profil na Facebooku"
               >
                 <i className="fab fa-facebook text-sm"></i>
               </a>
@@ -32,6 +34,7 @@ export default function Footer() {
                 href="#"
                 className="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-ochre-deep transition-colors"
                 data-testid="social-linkedin"
+                aria-label="Odwiedź profil na LinkedIn"
               >
                 <i className="fab fa-linkedin text-sm"></i>
               </a>

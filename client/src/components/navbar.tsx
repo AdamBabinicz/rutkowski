@@ -75,6 +75,7 @@ export default function Navbar() {
               <SelectTrigger
                 className="w-16 bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
                 data-testid="language-selector"
+                aria-label="Wybierz język"
               >
                 <SelectValue />
               </SelectTrigger>
@@ -97,6 +98,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600 hover:bg-watercolor-blue dark:hover:bg-gray-700"
               data-testid="theme-toggle"
+              aria-label="Zmień motyw"
             >
               {theme === "light" ? (
                 <Moon className="h-4 w-4 text-gray-600" />
@@ -112,6 +114,7 @@ export default function Navbar() {
                   size="icon"
                   className="md:hidden bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
                   data-testid="mobile-menu-button"
+                  aria-label="Otwórz menu nawigacji"
                 >
                   <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
                 </Button>
