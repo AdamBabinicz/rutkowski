@@ -42,6 +42,9 @@ export default function SEO({
   const pageDescription = description || defaultDescription;
   const canonicalUrl = `${siteUrl}${path || window.location.pathname}`;
 
+  // Poprawka: Gwarantuje pełny URL obrazka
+  const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
+
   const getOgLocale = () => {
     switch (i18n.language) {
       case "pl":
@@ -93,7 +96,7 @@ export default function SEO({
           "@type": "Painting",
           name: data.title,
           description: data.description,
-          image: data.image,
+          image: fullImageUrl, // Użycie pełnego URL
           url: canonicalUrl,
           author: {
             "@type": "Person",
@@ -137,7 +140,7 @@ export default function SEO({
       <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
-      <meta property="og:image" content={image} />
+      <meta property="og:image" content={fullImageUrl} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content={getOgLocale()} />
@@ -146,7 +149,7 @@ export default function SEO({
       <meta property="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
-      <meta name="twitter:image" content={image} />
+      <meta name="twitter:image" content={fullImageUrl} />
 
       <link rel="canonical" href={canonicalUrl} />
       {generateSchema()}
