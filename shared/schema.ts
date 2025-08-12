@@ -7,6 +7,7 @@ export const artworkSchema = z.object({
   titleFr: z.string().optional(),
   year: z.number(),
   imageUrl: z.string(),
+  ogImageUrl: z.string().optional(), // <--- DODANA LINIA
   imageUrls: z.array(z.string()).optional(),
   dimensions: z.string(),
   technique: z.string(),
@@ -23,7 +24,6 @@ export const artworkSchema = z.object({
   price: z.number().optional(),
 });
 
-// Dodaj ten eksport
 export const artworksSchema = z.array(artworkSchema);
 
 export const contactMessageSchema = z.object({

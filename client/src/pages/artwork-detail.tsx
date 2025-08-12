@@ -58,13 +58,13 @@ export default function ArtworkDetail() {
         title={getLocalized("title")}
         description={getLocalized("description").substring(0, 160)}
         path={`/artwork/${artwork.id}`}
-        image={artwork.imageUrl}
+        image={artwork.ogImageUrl || artwork.imageUrl}
         schema={{
           type: "artwork",
           data: {
             title: getLocalized("title"),
             description: getLocalized("description"),
-            image: artwork.imageUrl,
+            image: artwork.ogImageUrl || artwork.imageUrl,
             year: artwork.year,
             technique: t(`techniques.${artwork.technique}`),
             substrate: artwork.substrate
