@@ -14,7 +14,9 @@ export default defineConfig({
 
   root: path.resolve(import.meta.dirname, "client"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    // ZMIANA: Mówimy Vite, aby budował do prostego folderu 'dist'
+    // na głównym poziomie projektu.
+    outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
   server: {
