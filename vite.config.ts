@@ -6,16 +6,18 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": path.resolve(import.meta.dirname, "client", "src"),
+      // POPRAWKA: Teraz '@' wskazuje na folder 'src' w głównym katalogu
+      "@": path.resolve(import.meta.dirname, "src"),
       "@shared": path.resolve(import.meta.dirname, "shared"),
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
 
-  root: path.resolve(import.meta.dirname, "client"),
+  // USUWAMY TĘ LINIĘ: Nie ma już niestandardowego 'root'
+  // root: path.resolve(import.meta.dirname, "client"),
+
   build: {
-    // ZMIANA: Mówimy Vite, aby budował do prostego folderu 'dist'
-    // na głównym poziomie projektu.
+    // Ta linia jest już poprawna, zostawiamy ją
     outDir: path.resolve(import.meta.dirname, "dist"),
     emptyOutDir: true,
   },
