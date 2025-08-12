@@ -118,7 +118,7 @@ export default function Exhibitions() {
                     />
                     <div className="flex-1">
                       <p className="font-poppins font-semibold text-xl text-watercolor-ochre-accent dark:text-watercolor-ochre">
-                        {exhibition.year}
+                        {t(exhibition.year, { ns: "exhibitions" })}
                       </p>
                       <h3 className="font-poppins font-bold text-2xl text-gray-800 dark:text-white mt-1 mb-2">
                         {t(exhibition.titleKey)}

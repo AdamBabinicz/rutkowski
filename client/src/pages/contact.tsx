@@ -26,24 +26,27 @@ import {
 } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import type { TFunction } from "i18next";
 
-const contactSchema = z.object({
-  firstName: z.string().min(2, "Imię musi mieć co najmniej 2 znaki"),
-  lastName: z.string().min(2, "Nazwisko musi mieć co najmniej 2 znaki"),
-  email: z.string().email("Nieprawidłowy adres email"),
-  subject: z.string().min(1, "Wybierz temat wiadomości"),
-  message: z.string().min(10, "Wiadomość musi mieć co najmniej 10 znaków"),
-  privacy: z
-    .boolean()
-    .refine((val) => val === true, "Musisz zaakceptować politykę prywatności"),
-});
-
-type ContactFormData = z.infer<typeof contactSchema>;
+const getContactSchema = (t: TFunction) =>
+  z.object({
+    firstName: z.string().min(2, t("validation.firstNameMin")),
+    lastName: z.string().min(2, t("validation.lastNameMin")),
+    email: z.string().email(t("validation.emailInvalid")),
+    subject: z.string().min(1, t("validation.subjectRequired")),
+    message: z.string().min(10, t("validation.messageMin")),
+    privacy: z
+      .boolean()
+      .refine((val) => val === true, t("validation.privacyRequired")),
+  });
 
 export default function Contact() {
   const { t } = useTranslation();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const contactSchema = getContactSchema(t);
+  type ContactFormData = z.infer<typeof contactSchema>;
 
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactSchema),
@@ -62,13 +65,13 @@ export default function Contact() {
     try {
       await apiRequest("POST", "/api/contact", data);
       toast({
-        title: "Sukces!",
+        title: t("contact.form.successTitle"),
         description: t("contact.form.success"),
       });
       form.reset();
     } catch (error) {
       toast({
-        title: "Błąd",
+        title: t("contact.form.errorTitle"),
         description: t("contact.form.error"),
         variant: "destructive",
       });
@@ -103,7 +106,6 @@ export default function Contact() {
           </motion.div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -242,7 +244,7 @@ export default function Contact() {
                           <FormLabel className="text-sm">
                             {t("contact.form.privacy")}{" "}
                             <a
-                              href="#"
+                              href="/privacy-policy"
                               className="text-watercolor-lavender-deep hover:underline"
                             >
                               {t("contact.form.privacyPolicy")}
@@ -267,34 +269,29 @@ export default function Contact() {
               </Form>
             </motion.div>
 
-            {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="space-y-8"
             >
-              {/* Artist Photo & Bio */}
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <img
                   src="/2.jpg"
-                  alt="Zbigniew Jan Rutkowski malujący na plenerze"
+                  alt={t("contact.artistInfo.alt")}
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep"
                 />
                 <h3 className="font-poppins font-semibold text-xl text-center text-gray-800 dark:text-white mb-2">
-                  Zbigniew Jan Rutkowski
+                  {t("contact.artistInfo.name")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 text-center text-sm">
-                  Malarz akwarelista, absolwent Państwowego Ogniska Plastycznego
-                  w Radomiu. Twórca z niemal 50-letnim doświadczeniem
-                  artystycznym.
+                  {t("contact.artistInfo.bio")}
                 </p>
               </div>
 
-              {/* Contact Details */}
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">
-                  Dane Kontaktowe
+                  {t("contact.artistInfo.contactDetails")}
                 </h3>
                 <div className="space-y-4">
                   <div className="flex items-center">
@@ -334,9 +331,9 @@ export default function Contact() {
                         {t("contact.info.atelier")}
                       </p>
                       <p className="font-medium text-gray-800 dark:text-white">
-                        Radom
+                        {t("contact.artistInfo.location.city")}
                         <br />
-                        Polska
+                        {t("contact.artistInfo.location.country")}
                       </p>
                     </div>
                   </div>
@@ -350,19 +347,18 @@ export default function Contact() {
                         {t("contact.info.hours")}
                       </p>
                       <p className="font-medium text-gray-800 dark:text-white">
-                        Wt-Pt: 10:00-18:00
+                        {t("contact.artistInfo.hours.days")}
                         <br />
-                        So: 10:00-14:00
+                        {t("contact.artistInfo.hours.weekend")}
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Social Links */}
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">
-                  Znajdź mnie też tutaj
+                  {t("contact.artistInfo.socialsTitle")}
                 </h3>
                 <div className="flex space-x-4">
                   <a

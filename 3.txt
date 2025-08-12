@@ -1,0 +1,974 @@
+import { useState } from "react";
+import { Link, useLocation } from "wouter";
+import { useTranslation } from "react-i18next";
+import { useTheme } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu, Moon, Sun } from "lucide-react";
+
+export default function Navbar() {
+  const { i18n, t } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
+  const [location] = useLocation();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+  };
+
+  const navItems = [
+    { href: "/", label: t("nav.gallery") },
+    { href: "/exhibitions", label: t("nav.exhibitions") },
+    { href: "/archive", label: t("nav.archive") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
+
+  const NavLinks = ({ mobile = false }) => (
+    <>
+      {navItems.map(({ href, label }) => (
+        <Link
+          key={href}
+          href={href}
+          className={`${
+            mobile ? "block py-2" : ""
+          } text-gray-700 dark:text-gray-300 hover:text-watercolor-ochre-accent dark:hover:text-watercolor-ochre transition-colors font-medium ${
+            location === href
+              ? "text-watercolor-ochre-accent dark:text-watercolor-ochre"
+              : ""
+          }`}
+          onClick={() => mobile && setIsOpen(false)}
+          data-testid={`nav-link-${href.replace("/", "") || "home"}`}
+        >
+          {label}
+        </Link>
+      ))}
+    </>
+  );
+
+  return (
+    <nav className="fixed top-0 w-full z-50 glass-effect border-b border-white/20 dark:border-gray-700/20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16">
+          <Link href="/" className="flex items-center" data-testid="logo">
+            <h1 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
+              {t("site.title")}{" "}
+              <span className="text-watercolor-ochre-accent dark:text-watercolor-ochre">
+                {t("site.artistName")}
+              </span>
+            </h1>
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-8">
+            <NavLinks />
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <Select value={i18n.language} onValueChange={changeLanguage}>
+              <SelectTrigger
+                className="w-16 bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
+                data-testid="language-selector"
+              >
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="pl" data-testid="lang-pl">
+                  PL
+                </SelectItem>
+                <SelectItem value="en" data-testid="lang-en">
+                  EN
+                </SelectItem>
+                <SelectItem value="fr" data-testid="lang-fr">
+                  FR
+                </SelectItem>
+              </SelectContent>
+            </Select>
+
+            <Button
+              variant="outline"
+              size="icon"
+              onClick={toggleTheme}
+              className="bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600 hover:bg-watercolor-blue dark:hover:bg-gray-700"
+              data-testid="theme-toggle"
+            >
+              {theme === "light" ? (
+                <Moon className="h-4 w-4 text-gray-600" />
+              ) : (
+                <Sun className="h-4 w-4 text-yellow-400" />
+              )}
+            </Button>
+
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="md:hidden bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
+                  data-testid="mobile-menu-button"
+                >
+                  <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-64">
+                <div className="flex flex-col space-y-4 mt-8">
+                  <NavLinks mobile />
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+-----------------------------------
+
+import { useTranslation } from "react-i18next";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Search } from "lucide-react";
+
+import artworksData from "@/data/artworks.json";
+import { artworksSchema } from "@shared/schema";
+
+interface FilterPanelProps {
+  filters: {
+    year: string;
+    theme: string;
+    technique: string;
+    search: string;
+  };
+  onFilterChange: (key: string, value: string) => void;
+}
+
+export default function FilterPanel({
+  filters,
+  onFilterChange,
+}: FilterPanelProps) {
+  const { t } = useTranslation();
+
+  const parsedArtworks = artworksSchema.parse(artworksData);
+
+  // Poprawka: Użycie Array.from() zamiast [...]
+  const years = Array.from(
+    new Set(parsedArtworks.map((artwork) => artwork.year))
+  )
+    .sort((a, b) => b - a)
+    .map(String);
+
+  // Poprawka: Użycie Array.from() dla spójności
+  const themes = Array.from(
+    new Set(parsedArtworks.flatMap((artwork) => artwork.tags || []))
+  );
+
+  const techniques = ["akwarela", "olej", "grafika", "ołówek"];
+
+  return (
+    <section className="px-4 mb-12">
+      <div className="max-w-7xl mx-auto">
+        <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
+          <h3 className="font-poppins font-semibold text-lg mb-4 text-gray-800 dark:text-white">
+            {t("filter.title")}
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+            {/* Year Filter */}
+            <div>
+              <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                {t("filter.year")}
+              </Label>
+              <Select
+                value={filters.year}
+                onValueChange={(value) => onFilterChange("year", value)}
+              >
+                <SelectTrigger data-testid="filter-year">
+                  <SelectValue placeholder={t("filter.allYears")} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">{t("filter.allYears")}</SelectItem>
+                  {years.map((year) => (
+                    <SelectItem key={year} value={year}>
+                      {year}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Theme Filter */}
+            <div>
+              <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                {t("filter.theme")}
+              </Label>
+              <Select
+                value={filters.theme}
+                onValueChange={(value) => onFilterChange("theme", value)}
+              >
+                <SelectTrigger data-testid="filter-theme">
+                  <SelectValue placeholder={t("filter.allThemes")} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">{t("filter.allThemes")}</SelectItem>
+                  {themes.map((theme) => (
+                    <SelectItem key={theme} value={theme}>
+                      {t(`themes.${theme}`, theme)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Technique Filter */}
+            <div>
+              <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                {t("filter.technique")}
+              </Label>
+              <Select
+                value={filters.technique}
+                onValueChange={(value) => onFilterChange("technique", value)}
+              >
+                <SelectTrigger data-testid="filter-technique">
+                  <SelectValue placeholder={t("filter.allTechniques")} />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">
+                    {t("filter.allTechniques")}
+                  </SelectItem>
+                  {techniques.map((technique) => (
+                    <SelectItem key={technique} value={technique}>
+                      {t(`techniques.${technique}`)}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+
+            {/* Search */}
+            <div>
+              <Label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                {t("filter.search")}
+              </Label>
+              <div className="relative">
+                <Input
+                  type="text"
+                  placeholder={t("filter.searchPlaceholder")}
+                  value={filters.search}
+                  onChange={(e) => onFilterChange("search", e.target.value)}
+                  className="pr-10"
+                  data-testid="filter-search"
+                />
+                <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+----------------------------------
+import { useTranslation } from "react-i18next";
+import { Link } from "wouter";
+export default function Footer() {
+  const { t } = useTranslation();
+  return (
+    <footer className="bg-watercolor-umber-accent dark:bg-watercolor-charcoal text-white py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <h3 className="font-poppins font-bold text-xl">
+              {t("site.title")}
+            </h3>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              {t("footer.description")}
+            </p>
+            <div className="flex space-x-3">
+              <a
+                href="#"
+                className="w-8 h-8 bg-watercolor-ochre-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-umber-deep transition-colors"
+                data-testid="social-instagram"
+              >
+                <i className="fab fa-instagram text-sm"></i>
+              </a>
+              <a
+                href="https://www.facebook.com/zbigniewjan.rutkowski"
+                className="w-8 h-8 bg-watercolor-blue-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-sage-deep transition-colors"
+                data-testid="social-facebook"
+              >
+                <i className="fab fa-facebook text-sm"></i>
+              </a>
+              <a
+                href="#"
+                className="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-ochre-deep transition-colors"
+                data-testid="social-linkedin"
+              >
+                <i className="fab fa-linkedin text-sm"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.navigation")}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  href="/"
+                  className="text-gray-300 hover:text-watercolor-ochre transition-colors"
+                >
+                  {t("nav.gallery")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/exhibitions"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
+                  {t("nav.exhibitions")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/archive"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
+                  {t("nav.archive")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
+                  {t("nav.about")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
+                  {t("nav.contact")}
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.categories")}
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-ochre transition-colors"
+                >
+                  {t("themes.pejzaz")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                >
+                  {t("themes.portret")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                >
+                  {t("themes.abstrakcja")}
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  className="text-gray-300 hover:text-watercolor-blue transition-colors"
+                >
+                  {t("themes.natura")}
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-poppins font-semibold mb-4">
+              {t("footer.contact")}
+            </h4>
+            <div className="space-y-3 text-sm text-gray-300">
+              <div className="flex items-center">
+                <i className="fas fa-envelope w-4 mr-3 text-watercolor-ochre"></i>
+                <span>Zbyszior52@wp.pl</span>
+              </div>
+              <div className="flex items-center">
+                <i className="fas fa-phone w-4 mr-3 text-watercolor-sage"></i>
+                <span>600 252 658</span>
+              </div>
+              <div className="flex items-start">
+                <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-umber"></i>
+                <span>
+                  Radom
+                  <br />
+                  Polska
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm">{t("footer.copyright")}</p>
+            <div className="flex space-x-6 mt-4 md:mt-0">
+              <Link
+                href="/privacy-policy"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                {t("footer.privacy")}
+              </Link>
+              <Link
+                href="/terms-of-service"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                {t("footer.terms")}
+              </Link>
+              <Link
+                href="/cookies-policy"
+                className="text-gray-400 hover:text-white text-sm transition-colors"
+              >
+                {t("footer.cookies")}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+---------------------------
+
+import { useState, useMemo } from "react";
+import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
+import { Helmet } from "react-helmet-async";
+import { useLocation } from "wouter";
+import { Button } from "@/components/ui/button";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import FilterPanel from "@/components/filter-panel";
+import ArtworkCard from "@/components/artwork-card";
+import artworksData from "@/data/artworks.json";
+import type { Artwork } from "@shared/schema";
+
+export default function Home() {
+  const { t } = useTranslation();
+  const [, setLocation] = useLocation();
+  const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
+  const [filters, setFilters] = useState({
+    year: "all",
+    theme: "all",
+    technique: "all",
+    search: "",
+  });
+
+  const artworks = artworksData as Artwork[];
+
+  const filteredArtworks = useMemo(() => {
+    return artworks.filter((artwork) => {
+      if (filters.year !== "all" && artwork.year.toString() !== filters.year)
+        return false;
+      if (filters.theme !== "all" && !artwork.tags?.includes(filters.theme))
+        return false;
+      if (
+        filters.technique !== "all" &&
+        artwork.technique !== filters.technique
+      )
+        return false;
+      if (filters.search) {
+        const searchTerm = filters.search.toLowerCase();
+        const title = artwork.title.toLowerCase();
+        const description = artwork.description.toLowerCase();
+        const tags = artwork.tags?.join(" ").toLowerCase() || "";
+        if (
+          !title.includes(searchTerm) &&
+          !description.includes(searchTerm) &&
+          !tags.includes(searchTerm)
+        ) {
+          return false;
+        }
+      }
+      return true;
+    });
+  }, [artworks, filters]);
+
+  const handleFilterChange = (key: string, value: string) => {
+    setFilters((prev) => ({ ...prev, [key]: value }));
+  };
+
+  const handleArtworkClick = (id: string) => {
+    setLocation(`/artwork/${id}`);
+  };
+
+  return (
+    <>
+      <Helmet>
+        <title>
+          {t("hero.title")} {t("hero.subtitle")} - {t("site.fullTitle")}
+        </title>
+        <meta name="description" content={t("hero.description")} />
+      </Helmet>
+
+      <main className="pt-20">
+        {/* Hero Section */}
+        <section className="py-20 px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
+              <h1 className="font-poppins font-bold text-4xl md:text-6xl text-gray-800 dark:text-white mb-6">
+                {t("hero.title")} <br />
+                <span className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent bg-clip-text text-transparent">
+                  {t("hero.subtitle")}
+                </span>
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto leading-relaxed">
+                {t("hero.description")}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                  onClick={() =>
+                    document
+                      .getElementById("gallery")
+                      ?.scrollIntoView({ behavior: "smooth" })
+                  }
+                  data-testid="cta-button"
+                >
+                  {t("hero.cta")}
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-watercolor-ochre-accent text-watercolor-ochre-accent hover:bg-watercolor-ochre-accent hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium"
+                  onClick={() => setIsArtistDialogOpen(true)}
+                  data-testid="artist-info-button"
+                >
+                  Poznaj Artystę
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Filter Panel */}
+        <FilterPanel filters={filters} onFilterChange={handleFilterChange} />
+
+        {/* Gallery Grid */}
+        <section id="gallery" className="px-4 pb-20">
+          <div className="max-w-7xl mx-auto">
+            {filteredArtworks.length > 0 ? (
+              <div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                data-testid="gallery-grid"
+              >
+                {filteredArtworks.map((artwork, index) => (
+                  <ArtworkCard
+                    key={artwork.id}
+                    artwork={artwork}
+                    index={index}
+                    onClick={() => handleArtworkClick(artwork.id)}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="text-center py-16" data-testid="no-results">
+                <div className="text-gray-500 dark:text-gray-400 text-lg">
+                  Nie znaleziono dzieł spełniających kryteria wyszukiwania.
+                </div>
+                <Button
+                  variant="outline"
+                  className="mt-4"
+                  onClick={() =>
+                    setFilters({
+                      year: "all",
+                      theme: "all",
+                      technique: "all",
+                      search: "",
+                    })
+                  }
+                  data-testid="clear-filters"
+                >
+                  Wyczyść filtry
+                </Button>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Artist Info Dialog */}
+        <Dialog open={isArtistDialogOpen} onOpenChange={setIsArtistDialogOpen}>
+          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
+                Zbigniew Jan Rutkowski
+              </DialogTitle>
+              <DialogDescription className="text-lg text-watercolor-ochre-accent font-medium">
+                Malarz akwarelista z niemal 50-letnim doświadczeniem
+              </DialogDescription>
+            </DialogHeader>
+
+            <div className="space-y-4 text-gray-700 dark:text-gray-300">
+              <div className="flex flex-col sm:flex-row gap-4">
+                <img
+                  src="/3.jpg"
+                  alt="Zbigniew Jan Rutkowski malujący na plenerze"
+                  className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
+                />
+                <div className="flex-1">
+                  <p className="text-sm leading-relaxed">
+                    <strong>Urodzony:</strong> 11 czerwca 1952 roku w Radomiu.
+                  </p>
+                  <p className="text-sm leading-relaxed mt-2">
+                    <strong>Edukacja:</strong> W dzieciństwie uczeń Prywatnej
+                    Szkoły Pana Wacława Dobrowolskiego. Absolwent Państwowego
+                    Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu
+                    (1973-75), gdzie ukończył kursy z malarstwa, rysunku, rzeźby
+                    i historii sztuki, otrzymując dyplom z wyróżnieniem "Za
+                    wybitne osiągnięcia w dziale malarstwa".
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                  Kariera i osiągnięcia
+                </h4>
+                <ul className="space-y-2 text-sm list-disc list-inside">
+                  <li>
+                    <strong>1968:</strong> Pierwsza indywidualna wystawa w
+                    Klubie "Łączności" w Radomiu.
+                  </li>
+                  <li>
+                    <strong>1987:</strong> Udział w plenerze w Wieliczce; prace
+                    zlicytowano na rzecz ratowania kopalni. Otrzymał tytuł
+                    "Honorowego Górnika Kopalni Soli".
+                  </li>
+                  <li>
+                    <strong>Lata 90.:</strong> Namalował 14 stacji "Drogi
+                    Krzyżowej" (olej) wg J. Mehoffera dla kościoła św. Jadwigi w
+                    Radomiu.
+                  </li>
+                  <li>
+                    Członek Zarządu Towarzystwa Przyjaciół Sztuk Pięknych (Dom
+                    Gąski i Esterki), gdzie prowadził "Klub Plastyka Amatora".
+                  </li>
+                  <li>
+                    Zdobywca I miejsca w dziale malarstwa i wyróżnienia w
+                    grafice na przeglądach twórczości w Wojskach Lotniczych
+                    (Warszawa, Poznań, Łódź, Tarnów).
+                  </li>
+                  <li>
+                    Liczne wystawy indywidualne i zbiorowe, m.in. w WDK,
+                    "Esterce", "Relaksie", Galerii "Izdebska-Łazorek" w
+                    Kazimierzu Dolnym (Rynek 22), Bibliotece Pedagogicznej
+                    (2013) oraz Miejskiej Bibliotece Publicznej w Radomiu
+                    (2014).
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                  Kolekcje i mecenat
+                </h4>
+                <p className="text-sm leading-relaxed">
+                  Prace artysty znajdują się w prywatnych kolekcjach w{" "}
+                  <strong>
+                    Polsce, Szwecji, Argentynie, Austrii, Szwajcarii, Kanadzie i
+                    USA
+                  </strong>
+                  . Znaczną część kolekcji stanowią dzieła w posiadaniu
+                  wieloletniego przyjaciela i mecenasa artysty, Piotra Drózda
+                  (właściciela firmy APM).
+                </p>
+              </div>
+
+              <div className="bg-watercolor-cream dark:bg-gray-800 p-4 rounded-xl border border-watercolor-ochre-accent/20">
+                <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
+                  "Przez ponad 47 lat malarstwo akwarelowe było i jest moją
+                  pasją oraz odskocznią od codziennego życia."
+                </p>
+                <p className="text-xs text-center mt-2 text-watercolor-ochre-accent font-medium">
+                  - Zbigniew Jan Rutkowski
+                </p>
+              </div>
+            </div>
+          </DialogContent>
+        </Dialog>
+      </main>
+    </>
+  );
+}
+
+----------------------------------
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(45, 20%, 98%);
+  --foreground: hsl(220, 25%, 15%);
+  --card: hsl(48, 30%, 95%);
+  --card-foreground: hsl(220, 25%, 15%);
+  --popover: hsl(45, 20%, 98%);
+  --popover-foreground: hsl(220, 25%, 15%);
+  --primary: hsl(35, 75%, 40%);
+  --primary-foreground: hsl(45, 20%, 98%);
+  --secondary: hsl(210, 60%, 40%);
+  --secondary-foreground: hsl(45, 20%, 98%);
+  --muted: hsl(48, 25%, 88%);
+  --muted-foreground: hsl(220, 25%, 30%);
+  --accent: hsl(85, 25%, 75%);
+  --accent-foreground: hsl(220, 25%, 15%);
+  --destructive: hsl(0, 70%, 45%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(48, 20%, 82%);
+  --input: hsl(48, 25%, 90%);
+  --ring: hsl(35, 70%, 50%);
+  --chart-1: hsl(210, 45%, 55%);
+  --chart-2: hsl(35, 70%, 55%);
+  --chart-3: hsl(25, 50%, 45%);
+  --chart-4: hsl(85, 30%, 50%);
+  --chart-5: hsl(220, 25%, 30%);
+  --sidebar: hsl(48, 30%, 95%);
+  --sidebar-foreground: hsl(220, 25%, 15%);
+  --sidebar-primary: hsl(35, 75%, 40%);
+  --sidebar-primary-foreground: hsl(45, 20%, 98%);
+  --sidebar-accent: hsl(85, 25%, 75%);
+  --sidebar-accent-foreground: hsl(220, 25%, 15%);
+  --sidebar-border: hsl(48, 20%, 82%);
+  --sidebar-ring: hsl(35, 70%, 50%);
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-mono: "Menlo", monospace;
+  --font-poppins: "Poppins", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  --radius: 1rem;
+
+  /* Artist watercolor palette - earthy, natural tones with improved contrast */
+  --watercolor-blue: hsl(210, 35%, 85%);
+  --watercolor-blue-deep: hsl(210, 45%, 55%);
+  --watercolor-blue-accent: hsl(210, 60%, 40%);
+  --watercolor-ochre: hsl(35, 65%, 82%);
+  --watercolor-ochre-deep: hsl(35, 70%, 55%);
+  --watercolor-ochre-accent: hsl(35, 75%, 40%);
+  --watercolor-umber: hsl(25, 45%, 72%);
+  --watercolor-umber-deep: hsl(25, 50%, 50%);
+  --watercolor-umber-accent: hsl(25, 55%, 30%);
+  --watercolor-sage: hsl(85, 25%, 75%);
+  --watercolor-sage-deep: hsl(85, 30%, 55%);
+  --watercolor-sage-accent: hsl(85, 35%, 35%);
+  --watercolor-cream: hsl(48, 30%, 92%);
+  --watercolor-warm-white: hsl(45, 20%, 96%);
+  --watercolor-charcoal: hsl(220, 25%, 20%);
+  --watercolor-charcoal-light: hsl(220, 20%, 30%);
+}
+
+.dark {
+  --background: hsl(220, 25%, 8%);
+  --foreground: hsl(45, 20%, 95%);
+  --card: hsl(220, 20%, 12%);
+  --card-foreground: hsl(45, 20%, 95%);
+  --popover: hsl(220, 25%, 8%);
+  --popover-foreground: hsl(45, 20%, 95%);
+  --primary: hsl(35, 70%, 80%);
+  --primary-foreground: hsl(220, 25%, 8%);
+  --secondary: hsl(210, 55%, 80%);
+  --secondary-foreground: hsl(220, 25%, 8%);
+  --muted: hsl(220, 20%, 15%);
+  --muted-foreground: hsl(45, 25%, 90%);
+  --accent: hsl(85, 25%, 35%);
+  --accent-foreground: hsl(45, 20%, 95%);
+  --destructive: hsl(0, 70%, 70%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --border: hsl(220, 15%, 25%);
+  --input: hsl(220, 18%, 14%);
+  --ring: hsl(35, 65%, 75%);
+  --chart-1: hsl(210, 45%, 65%);
+  --chart-2: hsl(35, 65%, 65%);
+  --chart-3: hsl(25, 50%, 55%);
+  --chart-4: hsl(85, 30%, 60%);
+  --chart-5: hsl(45, 20%, 80%);
+  --sidebar: hsl(220, 20%, 12%);
+  --sidebar-foreground: hsl(45, 20%, 95%);
+  --sidebar-primary: hsl(35, 70%, 80%);
+  --sidebar-primary-foreground: hsl(220, 25%, 8%);
+  --sidebar-accent: hsl(85, 25%, 35%);
+  --sidebar-accent-foreground: hsl(45, 20%, 95%);
+  --sidebar-border: hsl(220, 15%, 25%);
+  --sidebar-ring: hsl(35, 65%, 75%);
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Georgia", serif;
+  --font-mono: "Menlo", monospace;
+  --font-poppins: "Poppins", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
+  /* Dark mode artist watercolor palette with improved contrast */
+  --watercolor-blue: hsl(210, 35%, 85%);
+  --watercolor-blue-deep: hsl(210, 45%, 65%);
+  --watercolor-blue-accent: hsl(210, 55%, 80%);
+  --watercolor-ochre: hsl(35, 60%, 85%);
+  --watercolor-ochre-deep: hsl(35, 65%, 65%);
+  --watercolor-ochre-accent: hsl(35, 70%, 80%);
+  --watercolor-umber: hsl(25, 45%, 75%);
+  --watercolor-umber-deep: hsl(25, 50%, 55%);
+  --watercolor-umber-accent: hsl(25, 55%, 70%);
+  --watercolor-sage: hsl(85, 25%, 80%);
+  --watercolor-sage-deep: hsl(85, 30%, 60%);
+  --watercolor-sage-accent: hsl(85, 35%, 75%);
+  --watercolor-cream: hsl(48, 30%, 90%);
+  --watercolor-warm-white: hsl(45, 20%, 95%);
+  --watercolor-charcoal: hsl(220, 25%, 6%);
+  --watercolor-charcoal-light: hsl(220, 20%, 15%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .watercolor-hover {
+    @apply transition-all duration-300;
+  }
+
+  .watercolor-hover:hover {
+    @apply -translate-y-0.5 shadow-lg;
+    filter: saturate(1.1) brightness(1.02);
+  }
+
+  .dark .watercolor-hover:hover {
+    @apply shadow-white/5;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .dark .glass-effect {
+    background: rgba(45, 55, 72, 0.3);
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+
+  /* Lepszy kontrast dla tagów i etykiet w motywie ciemnym */
+  .dark .text-muted-foreground {
+    color: hsl(45, 25%, 90%) !important;
+  }
+
+  .dark .text-gray-600 {
+    color: hsl(45, 20%, 85%) !important;
+  }
+
+  .dark .text-gray-500 {
+    color: hsl(45, 25%, 90%) !important;
+  }
+
+  .dark .text-gray-700 {
+    color: hsl(45, 30%, 95%) !important;
+  }
+
+  .dark .text-gray-300 {
+    color: hsl(45, 30%, 95%) !important;
+  }
+
+  /* Poprawki dla Badge w motywie ciemnym */
+  .dark .bg-watercolor-sage {
+    background-color: hsl(85, 30%, 25%) !important;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes watercolor {
+  0%,
+  100% {
+    filter: hue-rotate(0deg) saturate(1);
+  }
+  50% {
+    filter: hue-rotate(10deg) saturate(1.1);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+.animate-watercolor {
+  animation: watercolor 3s ease-in-out infinite;
+}

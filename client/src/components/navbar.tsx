@@ -23,6 +23,10 @@ export default function Navbar() {
     i18n.changeLanguage(lng);
   };
 
+  const handleTitleClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   const navItems = [
     { href: "/", label: t("nav.gallery") },
     { href: "/exhibitions", label: t("nav.exhibitions") },
@@ -56,11 +60,16 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 w-full z-50 glass-effect border-b border-white/20 dark:border-gray-700/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/" className="flex items-center" data-testid="logo">
-            <h2 className="font-poppins font-bold text-xl text-gray-800 dark:text-white">
+        <div className="flex justify-between items-center min-h-[4rem] py-2">
+          <Link
+            href="/"
+            className="flex items-center"
+            data-testid="logo"
+            onClick={handleTitleClick}
+          >
+            <h2 className="font-poppins font-bold text-lg md:text-xl text-gray-800 dark:text-white">
               {t("site.title")}{" "}
-              <span className="text-watercolor-ochre-accent dark:text-watercolor-ochre">
+              <span className="block leading-tight md:inline text-watercolor-ochre-accent dark:text-watercolor-ochre">
                 {t("site.artistName")}
               </span>
             </h2>
@@ -75,7 +84,7 @@ export default function Navbar() {
               <SelectTrigger
                 className="w-16 bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
                 data-testid="language-selector"
-                aria-label="Wybierz język"
+                aria-label={t("nav.selectLanguage")}
               >
                 <SelectValue />
               </SelectTrigger>
@@ -98,7 +107,7 @@ export default function Navbar() {
               onClick={toggleTheme}
               className="bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600 hover:bg-watercolor-blue dark:hover:bg-gray-700"
               data-testid="theme-toggle"
-              aria-label="Zmień motyw"
+              aria-label={t("nav.toggleTheme")}
             >
               {theme === "light" ? (
                 <Moon className="h-4 w-4 text-gray-600" />
@@ -114,7 +123,7 @@ export default function Navbar() {
                   size="icon"
                   className="md:hidden bg-white/80 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-600"
                   data-testid="mobile-menu-button"
-                  aria-label="Otwórz menu nawigacji"
+                  aria-label={t("nav.openMenu")}
                 >
                   <Menu className="h-4 w-4 text-gray-600 dark:text-gray-300" />
                 </Button>

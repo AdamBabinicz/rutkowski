@@ -111,7 +111,7 @@ export default function Home() {
                   onClick={() => setIsArtistDialogOpen(true)}
                   data-testid="artist-info-button"
                 >
-                  Poznaj Artystę
+                  {t("hero.artistInfoButton")}
                 </Button>
               </div>
             </motion.div>
@@ -127,7 +127,7 @@ export default function Home() {
         >
           <div className="max-w-7xl mx-auto">
             <h2 id="gallery-heading" className="sr-only">
-              Galeria prac
+              {t("gallery.heading")}
             </h2>
             {filteredArtworks.length > 0 ? (
               <div
@@ -146,7 +146,7 @@ export default function Home() {
             ) : (
               <div className="text-center py-16" data-testid="no-results">
                 <div className="text-gray-500 dark:text-gray-400 text-lg">
-                  Nie znaleziono dzieł spełniających kryteria wyszukiwania.
+                  {t("gallery.noResults")}
                 </div>
                 <Button
                   variant="outline"
@@ -161,7 +161,7 @@ export default function Home() {
                   }
                   data-testid="clear-filters"
                 >
-                  Wyczyść filtry
+                  {t("gallery.clearFilters")}
                 </Button>
               </div>
             )}
@@ -172,10 +172,10 @@ export default function Home() {
           <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
             <DialogHeader>
               <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
-                Zbigniew Jan Rutkowski
+                {t("home.artistDialog.name")}
               </DialogTitle>
               <DialogDescription className="text-lg text-watercolor-ochre-accent font-medium">
-                Malarz akwarelista z niemal 50-letnim doświadczeniem
+                {t("home.artistDialog.description")}
               </DialogDescription>
             </DialogHeader>
 
@@ -183,85 +183,61 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <img
                   src="/3.jpg"
-                  alt="Zbigniew Jan Rutkowski malujący na plenerze"
+                  alt={t("home.artistDialog.alt")}
                   className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
                 />
                 <div className="flex-1">
                   <p className="text-sm leading-relaxed">
-                    <strong>Urodzony:</strong> 11 czerwca 1952 roku w Radomiu.
+                    <strong>{t("home.artistDialog.bornLabel")}</strong>{" "}
+                    {t("home.artistDialog.bornText")}
                   </p>
                   <p className="text-sm leading-relaxed mt-2">
-                    <strong>Edukacja:</strong> W dzieciństwie uczeń Prywatnej
-                    Szkoły Pana Wacława Dobrowolskiego. Absolwent Państwowego
-                    Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu
-                    (1973-75), gdzie ukończył kursy z malarstwa, rysunku, rzeźby
-                    i historii sztuki, otrzymując dyplom z wyróżnieniem "Za
-                    wybitne osiągnięcia w dziale malarstwa".
+                    <strong>{t("home.artistDialog.educationLabel")}</strong>{" "}
+                    {t("home.artistDialog.educationText")}
                   </p>
                 </div>
               </div>
 
               <div className="space-y-3">
                 <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
-                  Kariera i osiągnięcia
+                  {t("home.artistDialog.careerTitle")}
                 </h4>
                 <ul className="space-y-2 text-sm list-disc list-inside">
                   <li>
-                    <strong>1968:</strong> Pierwsza indywidualna wystawa w
-                    Klubie "Łączności" w Radomiu.
+                    <strong>{t("home.artistDialog.career1.year")}</strong>{" "}
+                    {t("home.artistDialog.career1.event")}
                   </li>
                   <li>
-                    <strong>1987:</strong> Udział w plenerze w Wieliczce; prace
-                    zlicytowano na rzecz ratowania kopalni. Otrzymał tytuł
-                    "Honorowego Górnika Kopalni Soli".
+                    <strong>{t("home.artistDialog.career2.year")}</strong>{" "}
+                    {t("home.artistDialog.career2.event")}
                   </li>
                   <li>
-                    <strong>Lata 90.:</strong> Namalował 14 stacji "Drogi
-                    Krzyżowej" (olej) wg J. Mehoffera dla kościoła św. Jadwigi w
-                    Radomiu.
+                    <strong>{t("home.artistDialog.career3.year")}</strong>{" "}
+                    {t("home.artistDialog.career3.event")}
                   </li>
-                  <li>
-                    Członek Zarządu Towarzystwa Przyjaciół Sztuk Pięknych (Dom
-                    Gąski i Esterki), gdzie prowadził "Klub Plastyka Amatora".
-                  </li>
-                  <li>
-                    Zdobywca I miejsca w dziale malarstwa i wyróżnienia w
-                    grafice na przeglądach twórczości w Wojskach Lotniczych
-                    (Warszawa, Poznań, Łódź, Tarnów).
-                  </li>
-                  <li>
-                    Liczne wystawy indywidualne i zbiorowe, m.in. w WDK,
-                    "Esterce", "Relaksie", Galerii "Izdebska-Łazorek" w
-                    Kazimierzu Dolnym (Rynek 22), Bibliotece Pedagogicznej
-                    (2013) oraz Miejskiej Bibliotece Publicznej w Radomiu
-                    (2014).
-                  </li>
+                  <li>{t("home.artistDialog.career4.event")}</li>
+                  <li>{t("home.artistDialog.career5.event")}</li>
+                  <li>{t("home.artistDialog.career6.event")}</li>
                 </ul>
               </div>
 
               <div className="space-y-3">
                 <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
-                  Kolekcje i mecenat
+                  {t("home.artistDialog.collectionsTitle")}
                 </h4>
                 <p className="text-sm leading-relaxed">
-                  Prace artysty znajdują się w prywatnych kolekcjach w{" "}
-                  <strong>
-                    Polsce, Szwecji, Argentynie, Austrii, Szwajcarii, Kanadzie i
-                    USA
-                  </strong>
-                  . Znaczną część kolekcji stanowią dzieła w posiadaniu
-                  wieloletniego przyjaciela i mecenasa artysty, Piotra Drózda
-                  (właściciela firmy APM).
+                  {t("home.artistDialog.collectionsText1")}{" "}
+                  <strong>{t("home.artistDialog.collectionsCountries")}</strong>
+                  . {t("home.artistDialog.collectionsText2")}
                 </p>
               </div>
 
               <div className="bg-watercolor-cream dark:bg-gray-800 p-4 rounded-xl border border-watercolor-ochre-accent/20">
                 <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
-                  "Przez ponad 47 lat malarstwo akwarelowe było i jest moją
-                  pasją oraz odskocznią od codziennego życia."
+                  "{t("home.artistDialog.quote")}"
                 </p>
                 <p className="text-xs text-center mt-2 text-watercolor-ochre-accent font-medium">
-                  - Zbigniew Jan Rutkowski
+                  - {t("home.artistDialog.name")}
                 </p>
               </div>
             </div>

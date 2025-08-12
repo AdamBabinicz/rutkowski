@@ -6,7 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { Suspense } from "react";
-import { I18nextProvider } from "react-i18next";
+import { I18nextProvider, useTranslation } from "react-i18next";
 import i18n from "./lib/i18n";
 
 import Navbar from "@/components/navbar";
@@ -21,6 +21,7 @@ import NotFound from "@/pages/not-found";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import TermsOfService from "@/pages/terms-of-service";
 import CookiesPolicy from "@/pages/cookies-policy";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 function Router() {
   return (
@@ -40,6 +41,8 @@ function Router() {
 }
 
 function App() {
+  const { t } = useTranslation();
+
   return (
     <HelmetProvider>
       <QueryClientProvider client={queryClient}>
@@ -47,18 +50,16 @@ function App() {
           <ThemeProvider>
             <TooltipProvider>
               <Helmet>
-                <title>Atlas Twórczości Zbigniewa Rutkowskiego</title>
-                <meta
-                  name="description"
-                  content="Odkryj niezwykłą kolekcję dzieł artysty Rutkowskiego"
-                />
+                <title>{t("nav.brand")}</title>
+                <meta name="description" content={t("footer.description")} />
               </Helmet>
               <div className="min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
                 <Navbar />
-                <Suspense fallback={<div>Ładowanie...</div>}>
+                <Suspense fallback={<div>{t("loading")}</div>}>
                   <Router />
                 </Suspense>
                 <Footer />
+                <ScrollToTopButton />
               </div>
               <Toaster />
             </TooltipProvider>

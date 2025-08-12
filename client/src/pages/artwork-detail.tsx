@@ -56,7 +56,9 @@ export default function ArtworkDetail() {
   return (
     <>
       <Helmet>
-        <title>{getLocalized("title")} - Atlas Twórczości Rutkowskiego</title>
+        <title>
+          {getLocalized("title")} - {t("site.fullTitle")}
+        </title>
         <meta
           name="description"
           content={getLocalized("description").substring(0, 160)}

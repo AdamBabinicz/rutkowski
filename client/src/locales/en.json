@@ -5,29 +5,39 @@
     "archive": "The Forge",
     "about": "About Artist",
     "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "brand": "Zbigniew Rutkowski's Creative Atlas",
+    "selectLanguage": "Select language",
+    "toggleTheme": "Toggle theme",
+    "openMenu": "Open navigation menu"
   },
   "site": {
-    "title": "Creative Atlas",
+    "title": "Zbigniew Rutkowski's",
     "fullTitle": "Zbigniew Rutkowski's Creative Atlas",
-    "artistName": "Zbigniew Rutkowski"
+    "artistName": "Creative Atlas"
   },
   "archive": {
     "title": "The Forge",
     "description": "A journey back in time to the beginnings of the artistic path at the State Art Center in Radom, a place that shaped generations of artists.",
     "history": {
       "title": "History of the State Art Center in Radom",
-      "paragraph1": "The Jacek Malczewski State Art Center in Radom is an institution with a rich history, founded in 1945 by the painter Wacław Dobrowolski. [1] For decades, it was located in the historic Glogier Tenement House, becoming the heart of the city's artistic life. [1] Its goal has always been to provide artistic education for children, youth, and adults, developing their talents and preparing them for further education at art universities.",
-      "paragraph2": "The foundation of the Center was its outstanding educators. Alongside the founder, Prof. Dobrowolski, key roles were played by artists such as Irena Cichowska, who passionately shared their knowledge and skills. [1] It is thanks to them that the Center gained a reputation as a place where true talents were born in an atmosphere of creativity and respect for art.",
+      "paragraph1": "The Jacek Malczewski State Art Center in Radom is an institution with a rich history, founded in 1945 by the painter Wacław Dobrowolski. For decades, it was located in the historic Glogier Tenement House, becoming the heart of the city's artistic life. Its goal has always been to provide artistic education for children, youth, and adults, developing their talents and preparing them for further education at art universities.",
+      "paragraph2": "The foundation of the Center was its outstanding educators. Alongside the founder, Prof. Dobrowolski, key roles were played by artists such as Irena Cichowska, who passionately shared their knowledge and skills. It is thanks to them that the Center gained a reputation as a place where true talents were born in an atmosphere of creativity and respect for art.",
       "paragraph3": "Many distinguished artists passed through the walls of the school that gave rise to the Center. Among others, Andrzej Wajda, later a world-famous film director and Oscar winner, took drawing lessons from Wacław Dobrowolski himself. Zbigniew Rutkowski is one of the many alumni for whom studying at the Center was a decisive step on their artistic path."
+    },
+    "relatedLinks": {
+      "title": "Discover More",
+      "link1": "State Art Center",
+      "link2": "Glogier Tenement House",
+      "link3": "Wacław Dobrowolski"
     },
     "photo1": {
       "alt": "Glogier Tenement House in Radom",
-      "caption": "For years, this historic building housed the State Art Center. [1]"
+      "caption": "For years, this historic building housed the State Art Center."
     },
     "photo2": {
       "alt": "Legendary lecturers of the Art Center",
-      "caption": "Legendary lecturers: Irena Cichowska and Prof. Wacław Dobrowolski. [1]"
+      "caption": "Legendary lecturers: Irena Cichowska and Prof. Wacław Dobrowolski."
     },
     "photo3": {
       "alt": "Anna Apanowicz",
@@ -49,6 +59,8 @@
   "exhibitions": {
     "title": "Exhibitions & Plein-Airs",
     "description": "An overview of the most important exhibitions, plein-air sessions, and artistic events over nearly 50 years of creative work.",
+    "Lata 90.": "1990s",
+    "Aktywność Ciągła": "Ongoing Activity",
     "exhibition1968": {
       "title": "First Solo Exhibition",
       "location": "'Łączności' Club, Radom",
@@ -94,7 +106,51 @@
     "title": "Discover the World",
     "subtitle": "of Artistic Poetry",
     "description": "Immerse yourself in an extraordinary collection of artist's works, where each painting tells its own story",
-    "cta": "Start Your Journey"
+    "cta": "Start Your Journey",
+    "artistInfoButton": "Meet the Artist"
+  },
+  "gallery": {
+    "heading": "Artwork Gallery",
+    "noResults": "No works found matching the search criteria.",
+    "clearFilters": "Clear filters"
+  },
+  "home": {
+    "artistDialog": {
+      "name": "Zbigniew Jan Rutkowski",
+      "description": "Watercolor painter with nearly 50 years of experience",
+      "alt": "Zbigniew Jan Rutkowski painting in plein air",
+      "bornLabel": "Born:",
+      "bornText": "June 11, 1952, in Radom.",
+      "educationLabel": "Education:",
+      "educationText": "As a child, a student of Mr. Wacław Dobrowolski's Private School. Graduate of the Jacek Malczewski State Art Center in Radom (1973-75), where he completed courses in painting, drawing, sculpture, and art history, receiving a diploma with distinction 'For outstanding achievements in the field of painting'.",
+      "careerTitle": "Career and achievements",
+      "career1": {
+        "year": "1968:",
+        "event": "First solo exhibition at the 'Łączności' Club in Radom."
+      },
+      "career2": {
+        "year": "1987:",
+        "event": "Participation in a plein-air in Wieliczka; works were auctioned to save the mine. He received the title of 'Honorary Miner of the Salt Mine'."
+      },
+      "career3": {
+        "year": "1990s:",
+        "event": "Painted 14 stations of the 'Stations of the Cross' (oil) according to J. Mehoffer for St. Jadwiga's Church in Radom."
+      },
+      "career4": {
+        "event": "Board member of the Society of Friends of Fine Arts (Gąska and Esterka Houses), where he ran the 'Amateur Artist Club'."
+      },
+      "career5": {
+        "event": "Winner of the 1st place in painting and a distinction in graphics at reviews of creativity in the Air Force (Warsaw, Poznań, Łódź, Tarnów)."
+      },
+      "career6": {
+        "event": "Numerous solo and group exhibitions, including at WDK, 'Esterka', 'Relaks', 'Izdebska-Łazorek' Gallery in Kazimierz Dolny (Rynek 22), Pedagogical Library (2013), and the Municipal Public Library in Radom (2014)."
+      },
+      "collectionsTitle": "Collections and patronage",
+      "collectionsText1": "The artist's works are in private collections in",
+      "collectionsCountries": "Poland, Sweden, Argentina, Austria, Switzerland, Canada, and the USA",
+      "collectionsText2": "A significant part of the collection consists of works owned by the artist's long-time friend and patron, Piotr Drózd (owner of the APM company).",
+      "quote": "\"For over 47 years, watercolor painting has been and is my passion and an escape from everyday life.\""
+    }
   },
   "filter": {
     "title": "Filter Collection",
@@ -154,11 +210,36 @@
     "description": "Discover the fascinating story of an artist whose work transcends conventional boundaries"
   },
   "timeline": {
-    "firstSteps": "First Steps",
-    "firstExhibition": "First Exhibition",
-    "breakthrough": "Artistic Breakthrough",
-    "international": "International Recognition",
-    "present": "Present"
+    "event1": {
+      "year": "1952",
+      "title": "Birth in Radom",
+      "description": "Born in Radom, a city with which he remains strongly connected throughout his life."
+    },
+    "event2": {
+      "year": "1968",
+      "title": "First Exhibition",
+      "description": "Artistic debut - first exhibition even before attending the State Art Center in Radom."
+    },
+    "event3": {
+      "year": "1973-75",
+      "title": "Diploma with Honors",
+      "description": "Graduation from the Jacek Malczewski State Art Center in Radom with a diploma 'For outstanding achievements in the field of painting'."
+    },
+    "event4": {
+      "year": "1987",
+      "title": "Plein-Air in Wieliczka",
+      "description": "Participation in a painting plein-air in Wieliczka, honored with the title of 'Honorary Miner'."
+    },
+    "event5": {
+      "year": "1995",
+      "title": "Stations of the Cross",
+      "description": "Painted 14 Stations of the Cross for the Church of St. Jadwiga the Queen in Radom (oil technique, after Mehoffer)."
+    },
+    "event6": {
+      "year": "2024",
+      "title": "50 Years of Creativity",
+      "description": "Continuation of active creative work. Works in private collections in Poland, Sweden, Argentina, Austria, Switzerland, Canada, and the USA."
+    }
   },
   "artwork": {
     "details": "Technical Details",
@@ -195,7 +276,9 @@
       "privacy": "I agree to the processing of my personal data in accordance with",
       "privacyPolicy": "privacy policy",
       "submit": "Send Message",
+      "successTitle": "Success!",
       "success": "Message sent successfully!",
+      "errorTitle": "Error",
       "error": "An error occurred while sending the message."
     },
     "subjects": {
@@ -210,6 +293,21 @@
       "phone": "Phone",
       "atelier": "Atelier",
       "hours": "Visit hours"
+    },
+    "artistInfo": {
+      "alt": "Zbigniew Jan Rutkowski painting in plein air",
+      "name": "Zbigniew Jan Rutkowski",
+      "bio": "Watercolorist, graduate of the State Art Center in Radom. An artist with almost 50 years of artistic experience.",
+      "contactDetails": "Contact Details",
+      "location": {
+        "city": "Radom",
+        "country": "Poland"
+      },
+      "hours": {
+        "days": "Tue-Fri: 10:00-18:00",
+        "weekend": "Sat: 10:00-14:00"
+      },
+      "socialsTitle": "Find me here too"
     }
   },
   "footer": {
@@ -277,10 +375,18 @@
     }
   },
   "404": {
-    "title": "Page Not Found",
-    "description": "Sorry, but the page you are looking for does not exist. It may have been moved or deleted.",
+    "title": "404 Page Not Found",
+    "description": "Did you forget to add the page to the router?",
     "goHome": "Return to Gallery",
     "goBack": "Go Back"
+  },
+  "validation": {
+    "firstNameMin": "First name must be at least 2 characters",
+    "lastNameMin": "Last name must be at least 2 characters",
+    "emailInvalid": "Invalid email address",
+    "subjectRequired": "Please select a subject",
+    "messageMin": "Message must be at least 10 characters",
+    "privacyRequired": "You must accept the privacy policy"
   },
   "loading": "Loading...",
   "error": "An error occurred"

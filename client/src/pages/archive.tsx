@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
-
 const archivalPhotos = [
   {
     id: 1,
@@ -40,10 +39,22 @@ const archivalPhotos = [
     captionKey: "archive.photo6.caption",
   },
 ];
-
 export default function Archive() {
   const { t } = useTranslation();
-
+  const relatedLinks = [
+    {
+      name: t("archive.relatedLinks.link1"),
+      url: "https://ognisko.netlify.app/",
+    },
+    {
+      name: t("archive.relatedLinks.link2"),
+      url: "https://glogier.netlify.app/",
+    },
+    {
+      name: t("archive.relatedLinks.link3"),
+      url: "https://dobrowolski.netlify.app/",
+    },
+  ];
   return (
     <>
       <Helmet>
@@ -52,7 +63,7 @@ export default function Archive() {
         </title>
         <meta name="description" content={t("archive.description")} />
       </Helmet>
-
+      code Code
       <main className="pt-20">
         <section className="pt-20 px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -86,6 +97,34 @@ export default function Archive() {
               <p>{t("archive.history.paragraph1")}</p>
               <p>{t("archive.history.paragraph2")}</p>
               <p>{t("archive.history.paragraph3")}</p>
+            </div>
+          </motion.div>
+        </section>
+
+        <section className="py-10 px-4">
+          <motion.div
+            className="max-w-4xl mx-auto"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+          >
+            <h3 className="font-poppins font-bold text-2xl text-gray-800 dark:text-white mb-4 text-center">
+              {t("archive.relatedLinks.title")}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-4">
+              {relatedLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-lg p-4 border border-white/20 dark:border-gray-700/20 shadow-lg hover:shadow-xl transition-shadow duration-300 text-center font-medium text-watercolor-ochre-accent dark:text-watercolor-ochre hover:text-watercolor-umber-accent"
+                >
+                  {link.name}
+                  <i className="fas fa-external-link-alt ml-2 text-xs"></i>
+                </a>
+              ))}
             </div>
           </motion.div>
         </section>

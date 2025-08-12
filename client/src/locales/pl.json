@@ -5,7 +5,11 @@
     "archive": "Kuźnia",
     "about": "O Artyście",
     "contact": "Kontakt",
-    "blog": "Blog"
+    "blog": "Blog",
+    "brand": "Atlas Twórczości Zbigniewa Rutkowskiego",
+    "selectLanguage": "Wybierz język",
+    "toggleTheme": "Zmień motyw",
+    "openMenu": "Otwórz menu nawigacji"
   },
   "site": {
     "title": "Atlas Twórczości",
@@ -17,17 +21,23 @@
     "description": "Podróż w czasie do początków artystycznej drogi w Państwowym Ognisku Plastycznym w Radomiu, miejscu, które ukształtowało pokolenia artystów.",
     "history": {
       "title": "Historia Państwowego Ogniska Plastycznego w Radomiu",
-      "paragraph1": "Państwowe Ognisko Plastyczne im. Jacka Malczewskiego w Radomiu to instytucja o bogatej historii, założona w 1945 roku przez artystę-malarza Wacława Dobrowolskiego. [1] Przez dziesięciolecia mieściło się w zabytkowej Kamienicy Glogierów, stając się sercem artystycznego życia miasta. [1] Jego celem od zawsze było kształcenie plastyczne dzieci, młodzieży i dorosłych, rozwijanie ich talentów oraz przygotowywanie do dalszej edukacji na uczelniach artystycznych.",
-      "paragraph2": "Fundamentem Ogniska byli jego wybitni pedagodzy. Obok założyciela, prof. Dobrowolskiego, kluczowe role odgrywali tacy artyści jak Irena Cichowska, którzy z pasją przekazywali swoją wiedzę i umiejętności. [1] To dzięki nim Ognisko zyskało renomę miejsca, gdzie w atmosferze kreatywności i szacunku dla sztuki rodziły się prawdziwe talenty.",
+      "paragraph1": "Państwowe Ognisko Plastyczne im. Jacka Malczewskiego w Radomiu to instytucja o bogatej historii, założona w 1945 roku przez artystę-malarza Wacława Dobrowolskiego. Przez dziesięciolecia mieściło się w zabytkowej Kamienicy Glogierów, stając się sercem artystycznego życia miasta. Jego celem od zawsze było kształcenie plastyczne dzieci, młodzieży i dorosłych, rozwijanie ich talentów oraz przygotowywanie do dalszej edukacji na uczelniach artystycznych.",
+      "paragraph2": "Fundamentem Ogniska byli jego wybitni pedagodzy. Obok założyciela, prof. Dobrowolskiego, kluczowe role odgrywali tacy artyści jak Irena Cichowska, którzy z pasją przekazywali swoją wiedzę i umiejętności. To dzięki nim Ognisko zyskało renomę miejsca, gdzie w atmosferze kreatywności i szacunku dla sztuki rodziły się prawdziwe talenty.",
       "paragraph3": "Przez mury szkoły, która dała początek Ognisku, przewinęło się wielu znamienitych artystów. Lekcje rysunku u samego Wacława Dobrowolskiego pobierał między innymi Andrzej Wajda, późniejszy światowej sławy reżyser i laureat Oscara. Zbigniew Rutkowski jest jednym z wielu wychowanków, dla których nauka w Ognisku stanowiła decydujący krok na artystycznej ścieżce."
+    },
+    "relatedLinks": {
+      "title": "Odkryj więcej",
+      "link1": "Państwowe Ognisko Plastyczne",
+      "link2": "Kamienica Glogierów",
+      "link3": "Wacław Dobrowolski"
     },
     "photo1": {
       "alt": "Kamienica Glogierów w Radomiu",
-      "caption": "W tym zabytkowym budynku przez lata mieściło się Państwowe Ognisko Plastyczne. [1]"
+      "caption": "W tym zabytkowym budynku przez lata mieściło się Państwowe Ognisko Plastyczne."
     },
     "photo2": {
       "alt": "Legendarni wykładowcy Ogniska Plastycznego",
-      "caption": "Legendarni wykładowcy: Irena Cichowska i prof. Wacław Dobrowolski. [1]"
+      "caption": "Legendarni wykładowcy: Irena Cichowska i prof. Wacław Dobrowolski."
     },
     "photo3": {
       "alt": "Anna Apanowicz",
@@ -49,6 +59,8 @@
   "exhibitions": {
     "title": "Wystawy i Plenery",
     "description": "Przegląd najważniejszych wystaw, plenerów i wydarzeń artystycznych na przestrzeni niemal 50 lat pracy twórczej.",
+    "Lata 90.": "Lata 90.",
+    "Aktywność Ciągła": "Aktywność Ciągła",
     "exhibition1968": {
       "title": "Pierwsza indywidualna wystawa",
       "location": "Klub 'Łączności', Radom",
@@ -67,7 +79,7 @@
     "exhibitionOngoing": {
       "title": "Stała Aktywność Wystawiennicza",
       "location": "Radom i Kazimierz Dolny",
-      "description": "Cykliczne uczestnictwo w wystawach w radomskich galeriach (WDK, 'ESTERKA', 'RELAKS') oraz częste wystawianie prac w Galerii 'Izdebska-Łazorek' w Kazimierzu Dolnym."
+      "description": "Cykliczne uczestnictwo w wystawach w radomskich galeriach (WDK, 'ESTERKA', 'RELAKS') oraz częste wystawianie prac w Galerii 'Izdebska-Łazorek' w Kazimierzu Dolny."
     },
     "exhibition2013": {
       "title": "Akwarele własne i moich mistrzów",
@@ -94,7 +106,51 @@
     "title": "Odkryj Świat",
     "subtitle": "Malarskiej Poezji",
     "description": "Zanurz się w niezwykłej kolekcji dzieł artysty, gdzie każdy obraz opowiada własną historię",
-    "cta": "Rozpocznij Podróż"
+    "cta": "Rozpocznij Podróż",
+    "artistInfoButton": "Poznaj Artystę"
+  },
+  "gallery": {
+    "heading": "Galeria prac",
+    "noResults": "Nie znaleziono dzieł spełniających kryteria wyszukiwania.",
+    "clearFilters": "Wyczyść filtry"
+  },
+  "home": {
+    "artistDialog": {
+      "name": "Zbigniew Jan Rutkowski",
+      "description": "Malarz akwarelista z niemal 50-letnim doświadczeniem",
+      "alt": "Zbigniew Jan Rutkowski malujący na plenerze",
+      "bornLabel": "Urodzony:",
+      "bornText": "11 czerwca 1952 roku w Radomiu.",
+      "educationLabel": "Edukacja:",
+      "educationText": "W dzieciństwie uczeń Prywatnej Szkoły Pana Wacława Dobrowolskiego. Absolwent Państwowego Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu (1973-75), gdzie ukończył kursy z malarstwa, rysunku, rzeźby i historii sztuki, otrzymując dyplom z wyróżnieniem \"Za wybitne osiągnięcia w dziale malarstwa\".",
+      "careerTitle": "Kariera i osiągnięcia",
+      "career1": {
+        "year": "1968:",
+        "event": "Pierwsza indywidualna wystawa w Klubie \"Łączności\" w Radomiu."
+      },
+      "career2": {
+        "year": "1987:",
+        "event": "Udział w plenerze w Wieliczce; prace zlicytowano na rzecz ratowania kopalni. Otrzymał tytuł \"Honorowego Górnika Kopalni Soli\"."
+      },
+      "career3": {
+        "year": "Lata 90.:",
+        "event": "Namalował 14 stacji \"Drogi Krzyżowej\" (olej) wg J. Mehoffera dla kościoła św. Jadwigi w Radomiu."
+      },
+      "career4": {
+        "event": "Członek Zarządu Towarzystwa Przyjaciół Sztuk Pięknych (Dom Gąski i Esterki), gdzie prowadził \"Klub Plastyka Amatora\"."
+      },
+      "career5": {
+        "event": "Zdobywca I miejsca w dziale malarstwa i wyróżnienia w grafice na przeglądach twórczości w Wojskach Lotniczych (Warszawa, Poznań, Łódź, Tarnów)."
+      },
+      "career6": {
+        "event": "Liczne wystawy indywidualne i zbiorowe, m.in. w WDK, \"Esterce\", \"Relaksie\", Galerii \"Izdebska-Łazorek\" w Kazimierzu Dolnym (Rynek 22), Bibliotece Pedagogicznej (2013) oraz Miejskiej Bibliotece Publicznej w Radomiu (2014)."
+      },
+      "collectionsTitle": "Kolekcje i mecenat",
+      "collectionsText1": "Prace artysty znajdują się w prywatnych kolekcjach w",
+      "collectionsCountries": "Polsce, Szwecji, Argentynie, Austrii, Szwajcarii, Kanadzie i USA",
+      "collectionsText2": "Znaczną część kolekcji stanowią dzieła w posiadaniu wieloletniego przyjaciela i mecenasa artysty, Piotra Drózda (właściciela firmy APM).",
+      "quote": "\"Przez ponad 47 lat malarstwo akwarelowe było i jest moją pasją oraz odskocznią od codziennego życia.\""
+    }
   },
   "filter": {
     "title": "Filtruj Kolekcję",
@@ -154,11 +210,36 @@
     "description": "Poznaj fascynującą historię artysty, którego twórczość przekracza granice konwencji"
   },
   "timeline": {
-    "firstSteps": "Pierwsze Kroki",
-    "firstExhibition": "Pierwsza Wystawa",
-    "breakthrough": "Przełom Artystyczny",
-    "international": "Uznanie Międzynarodowe",
-    "present": "Współczesność"
+    "event1": {
+      "year": "1952",
+      "title": "Narodziny w Radomiu",
+      "description": "Urodził się w Radomiu, mieście z którym pozostaje silnie związany przez całe życie."
+    },
+    "event2": {
+      "year": "1968",
+      "title": "Pierwsza wystawa",
+      "description": "Debiut artystyczny - pierwsza wystawa jeszcze przed Państwowym Ogniskiem Plastycznym w Radomiu."
+    },
+    "event3": {
+      "year": "1973-75",
+      "title": "Dyplom z wyróżnieniem",
+      "description": "Ukończenie Państwowego Ogniska Plastycznego im. Jacka Malczewskiego w Radomiu z dyplomem 'Za wybitne osiągnięcia w dziale malarstwa'."
+    },
+    "event4": {
+      "year": "1987",
+      "title": "Plener w Wieliczce",
+      "description": "Uczestnictwo w plenerze malarskim w Wieliczce, uhonorowany tytułem 'Honorowego Górnika'."
+    },
+    "event5": {
+      "year": "1995",
+      "title": "Droga Krzyżowa",
+      "description": "Namalowanie 14 stacji Drogi Krzyżowej dla kościoła św. Jadwigi Królowej w Radomiu (technika olejna, według Mehoffera)."
+    },
+    "event6": {
+      "year": "2024",
+      "title": "50 lat twórczości",
+      "description": "Kontynuacja aktywnej pracy twórczej. Dzieła w kolekcjach prywatnych w Polsce, Szwecji, Argentynie, Austrii, Szwajcarii, Kanadzie i USA."
+    }
   },
   "artwork": {
     "details": "Szczegóły Techniczne",
@@ -195,7 +276,9 @@
       "privacy": "Zgadzam się na przetwarzanie moich danych osobowych zgodnie z",
       "privacyPolicy": "polityką prywatności",
       "submit": "Wyślij Wiadomość",
+      "successTitle": "Sukces!",
       "success": "Wiadomość została wysłana pomyślnie!",
+      "errorTitle": "Błąd",
       "error": "Wystąpił błąd podczas wysyłania wiadomości."
     },
     "subjects": {
@@ -210,6 +293,21 @@
       "phone": "Telefon",
       "atelier": "Atelier",
       "hours": "Godziny wizyty"
+    },
+    "artistInfo": {
+      "alt": "Zbigniew Jan Rutkowski malujący na plenerze",
+      "name": "Zbigniew Jan Rutkowski",
+      "bio": "Malarz akwarelista, absolwent Państwowego Ogniska Plastycznego w Radomiu. Twórca z niemal 50-letnim doświadczeniem artystycznym.",
+      "contactDetails": "Dane Kontaktowe",
+      "location": {
+        "city": "Radom",
+        "country": "Polska"
+      },
+      "hours": {
+        "days": "Wt-Pt: 10:00-18:00",
+        "weekend": "So: 10:00-14:00"
+      },
+      "socialsTitle": "Znajdź mnie też tutaj"
     }
   },
   "footer": {
@@ -277,10 +375,18 @@
     }
   },
   "404": {
-    "title": "Strona Nie Została Znaleziona",
-    "description": "Przepraszamy, ale szukana przez Ciebie strona nie istnieje. Być może została przeniesiona lub usunięta.",
+    "title": "404 Strona Nie Znaleziona",
+    "description": "Czy zapomniałeś dodać strony do routera?",
     "goHome": "Wróć do Galerii",
     "goBack": "Cofnij"
+  },
+  "validation": {
+    "firstNameMin": "Imię musi mieć co najmniej 2 znaki",
+    "lastNameMin": "Nazwisko musi mieć co najmniej 2 znaki",
+    "emailInvalid": "Nieprawidłowy adres email",
+    "subjectRequired": "Wybierz temat wiadomości",
+    "messageMin": "Wiadomość musi mieć co najmniej 10 znaków",
+    "privacyRequired": "Musisz zaakceptować politykę prywatności"
   },
   "loading": "Ładowanie...",
   "error": "Wystąpił błąd"

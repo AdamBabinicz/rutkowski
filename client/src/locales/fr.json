@@ -5,10 +5,14 @@
     "archive": "La Forge",
     "about": "À propos de l'Artiste",
     "contact": "Contact",
-    "blog": "Blog"
+    "blog": "Blog",
+    "brand": "Atlas Créatif de Zbigniew Rutkowski",
+    "selectLanguage": "Choisir la langue",
+    "toggleTheme": "Changer de thème",
+    "openMenu": "Ouvrir le menu de navigation"
   },
   "site": {
-    "title": "Atlas Créatif",
+    "title": "Atlas Créatif de",
     "fullTitle": "Atlas Créatif de Zbigniew Rutkowski",
     "artistName": "Zbigniew Rutkowski"
   },
@@ -17,17 +21,23 @@
     "description": "Un voyage dans le temps aux débuts du parcours artistique au Centre d'Art de l'État à Radom, un lieu qui a façonné des générations d'artistes.",
     "history": {
       "title": "Histoire du Centre d'Art de l'État à Radom",
-      "paragraph1": "Le Centre d'Art de l'État Jacek Malczewski à Radom est une institution à l'histoire riche, fondée en 1945 par le peintre Wacław Dobrowolski. [1] Pendant des décennies, il a été situé dans l'historique Maison Glogier, devenant le cœur de la vie artistique de la ville. [1] Son objectif a toujours été de dispenser une éducation artistique aux enfants, aux jeunes et aux adultes, de développer leurs talents et de les préparer à des études supérieures dans les universités d'art.",
-      "paragraph2": "La base du Centre était ses éducateurs exceptionnels. Aux côtés du fondateur, le professeur Dobrowolski, des artistes comme Irena Cichowska ont joué un rôle clé, partageant avec passion leurs connaissances et leurs compétences. [1] C'est grâce à eux que le Centre a acquis la réputation d'un lieu où de vrais talents sont nés dans une atmosphère de créativité et de respect de l'art.",
+      "paragraph1": "Le Centre d'Art de l'État Jacek Malczewski à Radom est une institution à l'histoire riche, fondée en 1945 par le peintre Wacław Dobrowolski. Pendant des décennies, il a été situé dans l'historique Maison Glogier, devenant le cœur de la vie artistique de la ville. Son objectif a toujours été de dispenser une éducation artistique aux enfants, aux jeunes et aux adultes, de développer leurs talents et de les préparer à des études supérieures dans les universités d'art.",
+      "paragraph2": "La base du Centre était ses éducateurs exceptionnels. Aux côtés du fondateur, le professeur Dobrowolski, des artistes comme Irena Cichowska ont joué un rôle clé, partageant avec passion leurs connaissances et leurs compétences. C'est grâce à eux que le Centre a acquis la réputation d'un lieu où de vrais talents sont nés dans une atmosphère de créativité et de respect de l'art.",
       "paragraph3": "De nombreux artistes de renom ont franchi les portes de l'école qui a donné naissance au Centre. Entre autres, Andrzej Wajda, futur réalisateur de renommée mondiale et lauréat d'un Oscar, a pris des cours de dessin auprès de Wacław Dobrowolski lui-même. Zbigniew Rutkowski est l'un des nombreux anciens élèves pour qui les études au Centre ont été une étape décisive dans leur parcours artistique."
+    },
+    "relatedLinks": {
+      "title": "Découvrez Plus",
+      "link1": "Centre d'Art de l'État",
+      "link2": "Maison Glogier",
+      "link3": "Wacław Dobrowolski"
     },
     "photo1": {
       "alt": "Maison Glogier à Radom",
-      "caption": "Pendant des années, ce bâtiment historique a abrité le Centre d'Art de l'État. [1]"
+      "caption": "Pendant des années, ce bâtiment historique a abrité le Centre d'Art de l'État."
     },
     "photo2": {
       "alt": "Conférenciers légendaires du Centre d'Art",
-      "caption": "Conférenciers légendaires : Irena Cichowska et le professeur Wacław Dobrowolski. [1]"
+      "caption": "Conférenciers légendaires : Irena Cichowska et le professeur Wacław Dobrowolski."
     },
     "photo3": {
       "alt": "Anna Apanowicz",
@@ -49,6 +59,8 @@
   "exhibitions": {
     "title": "Expositions et Plein Air",
     "description": "Un aperçu des expositions, des séances de peinture en plein air et des événements artistiques les plus importants sur près de 50 ans de travail créatif.",
+    "Lata 90.": "Années 90",
+    "Aktywność Ciągła": "Activité Continue",
     "exhibition1968": {
       "title": "Première Exposition Personnelle",
       "location": "Club 'Łączności', Radom",
@@ -94,7 +106,51 @@
     "title": "Découvrez le Monde",
     "subtitle": "de la Poésie Picturale",
     "description": "Plongez-vous dans une collection extraordinaire d'œuvres d'artiste, où chaque tableau raconte sa propre histoire",
-    "cta": "Commencer le Voyage"
+    "cta": "Commencer le Voyage",
+    "artistInfoButton": "Découvrir l'Artiste"
+  },
+  "gallery": {
+    "heading": "Galerie d'œuvres",
+    "noResults": "Aucune œuvre trouvée correspondant aux critères de recherche.",
+    "clearFilters": "Effacer les filtres"
+  },
+  "home": {
+    "artistDialog": {
+      "name": "Zbigniew Jan Rutkowski",
+      "description": "Peintre aquarelliste avec près de 50 ans d'expérience",
+      "alt": "Zbigniew Jan Rutkowski peignant en plein air",
+      "bornLabel": "Né le :",
+      "bornText": "11 juin 1952, à Radom.",
+      "educationLabel": "Éducation :",
+      "educationText": "Enfant, élève de l'école privée de M. Wacław Dobrowolski. Diplômé du Centre d'Art d'État Jacek Malczewski à Radom (1973-75), où il a suivi des cours de peinture, dessin, sculpture et histoire de l'art, recevant un diplôme avec mention 'Pour réalisations exceptionnelles dans le domaine de la peinture'.",
+      "careerTitle": "Carrière et réalisations",
+      "career1": {
+        "year": "1968 :",
+        "event": "Première exposition personnelle au Club 'Łączności' à Radom."
+      },
+      "career2": {
+        "year": "1987 :",
+        "event": "Participation à un plein air à Wieliczka ; les œuvres ont été vendues aux enchères pour sauver la mine. Il a reçu le titre de 'Mineur Honoraire de la Mine de Sel'."
+      },
+      "career3": {
+        "year": "Années 90 :",
+        "event": "A peint 14 stations du 'Chemin de Croix' (huile) d'après J. Mehoffer pour l'église Sainte-Hedwige à Radom."
+      },
+      "career4": {
+        "event": "Membre du conseil d'administration de la Société des Amis des Beaux-Arts (maisons Gąska et Esterka), où il dirigeait le 'Club de l'Artiste Amateur'."
+      },
+      "career5": {
+        "event": "Lauréat de la 1ère place en peinture et d'une distinction en graphisme lors de revues de la créativité dans l'Armée de l'Air (Varsovie, Poznań, Łódź, Tarnów)."
+      },
+      "career6": {
+        "event": "Nombreuses expositions personnelles et collectives, notamment au WDK, 'Esterka', 'Relaks', Galerie 'Izdebska-Łazorek' à Kazimierz Dolny (Rynek 22), Bibliothèque Pédagogique (2013), et la Bibliothèque Publique Municipale de Radom (2014)."
+      },
+      "collectionsTitle": "Collections et mécénat",
+      "collectionsText1": "Les œuvres de l'artiste se trouvent dans des collections privées en",
+      "collectionsCountries": "Pologne, Suède, Argentine, Autriche, Suisse, Canada et aux États-Unis",
+      "collectionsText2": "Une partie importante de la collection est constituée d'œuvres appartenant à l'ami et mécène de longue date de l'artiste, Piotr Drózd (propriétaire de la société APM).",
+      "quote": "\"Depuis plus de 47 ans, la peinture à l'aquarelle a été et reste ma passion et une évasion de la vie quotidienne.\""
+    }
   },
   "filter": {
     "title": "Filtrer la Collection",
@@ -154,11 +210,36 @@
     "description": "Découvrez l'histoire fascinante d'un artiste dont l'œuvre transcende les frontières conventionnelles"
   },
   "timeline": {
-    "firstSteps": "Premiers Pas",
-    "firstExhibition": "Première Exposition",
-    "breakthrough": "Percée Artistique",
-    "international": "Reconnaissance Internationale",
-    "present": "Présent"
+    "event1": {
+      "year": "1952",
+      "title": "Naissance à Radom",
+      "description": "Né à Radom, une ville à laquelle il reste fortement attaché toute sa vie."
+    },
+    "event2": {
+      "year": "1968",
+      "title": "Première Exposition",
+      "description": "Débuts artistiques - première exposition avant même d'intégrer le Centre d'Art de l'État à Radom."
+    },
+    "event3": {
+      "year": "1973-75",
+      "title": "Diplôme avec Mention",
+      "description": "Diplômé du Centre d'Art d'État Jacek Malczewski à Radom avec un diplôme 'Pour réalisations exceptionnelles dans le domaine de la peinture'."
+    },
+    "event4": {
+      "year": "1987",
+      "title": "Plein-Air à Wieliczka",
+      "description": "Participation à un plein-air de peinture à Wieliczka, honoré du titre de 'Mineur d'Honneur'."
+    },
+    "event5": {
+      "year": "1995",
+      "title": "Chemin de Croix",
+      "description": "A peint 14 stations du Chemin de Croix pour l'église Sainte-Hedwige-la-Reine à Radom (technique à l'huile, d'après Mehoffer)."
+    },
+    "event6": {
+      "year": "2024",
+      "title": "50 Ans de Créativité",
+      "description": "Poursuite d'un travail créatif actif. Œuvres dans des collections privées en Pologne, Suède, Argentine, Autriche, Suisse, Canada et aux États-Unis."
+    }
   },
   "artwork": {
     "details": "Détails Techniques",
@@ -195,7 +276,9 @@
       "privacy": "J'accepte le traitement de mes données personnelles conformément à",
       "privacyPolicy": "politique de confidentialité",
       "submit": "Envoyer le Message",
+      "successTitle": "Succès !",
       "success": "Message envoyé avec succès !",
+      "errorTitle": "Erreur",
       "error": "Une erreur s'est produite lors de l'envoi du message."
     },
     "subjects": {
@@ -210,6 +293,21 @@
       "phone": "Téléphone",
       "atelier": "Atelier",
       "hours": "Heures de visite"
+    },
+    "artistInfo": {
+      "alt": "Zbigniew Jan Rutkowski peignant en plein air",
+      "name": "Zbigniew Jan Rutkowski",
+      "bio": "Aquarelliste, diplômé du Foyer National des Arts Plastiques de Radom. Artiste avec près de 50 ans d'expérience artistique.",
+      "contactDetails": "Coordonnées",
+      "location": {
+        "city": "Radom",
+        "country": "Pologne"
+      },
+      "hours": {
+        "days": "Mar-Ven : 10:00-18:00",
+        "weekend": "Sam : 10:00-14:00"
+      },
+      "socialsTitle": "Retrouvez-moi aussi ici"
     }
   },
   "footer": {
@@ -277,10 +375,18 @@
     }
   },
   "404": {
-    "title": "Page Non Trouvée",
-    "description": "Désolé, mais la page que vous cherchez n'existe pas. Elle a peut-être été déplacée ou supprimée.",
+    "title": "404 Page non trouvée",
+    "description": "Avez-vous oublié d'ajouter la page au routeur ?",
     "goHome": "Retourner à la Galerie",
     "goBack": "Retour"
+  },
+  "validation": {
+    "firstNameMin": "Le prénom doit comporter au moins 2 caractères",
+    "lastNameMin": "Le nom de famille doit comporter au moins 2 caractères",
+    "emailInvalid": "Adresse e-mail invalide",
+    "subjectRequired": "Veuillez sélectionner un sujet",
+    "messageMin": "Le message doit comporter au moins 10 caractères",
+    "privacyRequired": "Vous devez accepter la politique de confidentialité"
   },
   "loading": "Chargement...",
   "error": "Une erreur s'est produite"

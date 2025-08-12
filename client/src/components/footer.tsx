@@ -7,9 +7,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <h3 className="font-poppins font-bold text-xl">
-              {t("site.title")}
-            </h3>
+            <h3 className="font-poppins font-bold text-xl">{t("nav.brand")}</h3>
             <p className="text-gray-300 text-sm leading-relaxed">
               {t("footer.description")}
             </p>
@@ -142,9 +140,9 @@ export default function Footer() {
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-umber"></i>
                 <span>
-                  Radom
+                  {t("contact.artistInfo.location.city")}
                   <br />
-                  Polska
+                  {t("contact.artistInfo.location.country")}
                 </span>
               </div>
             </div>
