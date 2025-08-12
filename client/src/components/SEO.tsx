@@ -40,9 +40,8 @@ export default function SEO({
       : `${title} - ${siteName}`
     : defaultTitle;
   const pageDescription = description || defaultDescription;
-  const canonicalUrl = `${siteUrl}${path || window.location.pathname}`;
+  const canonicalUrl = `${siteUrl}${path || "/"}`;
 
-  // Poprawka: Gwarantuje pełny URL obrazka
   const fullImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 
   const getOgLocale = () => {
@@ -96,7 +95,7 @@ export default function SEO({
           "@type": "Painting",
           name: data.title,
           description: data.description,
-          image: fullImageUrl, // Użycie pełnego URL
+          image: fullImageUrl,
           url: canonicalUrl,
           author: {
             "@type": "Person",

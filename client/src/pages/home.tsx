@@ -1,5 +1,3 @@
-// Plik: home.tsx
-
 import SEO from "@/components/SEO";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
@@ -30,8 +28,6 @@ export default function Home() {
   });
 
   const parsedArtworks = artworksSchema.parse(artworksData);
-
-  // DODAJEMY TĘ LINIĘ: Pobieramy pierwsze dzieło jako "wyróżnione" dla SEO
   const featuredArtwork = parsedArtworks[0];
 
   const filteredArtworks = useMemo(() => {
@@ -76,8 +72,8 @@ export default function Home() {
         title={t("seo.defaultTitle")}
         description={t("seo.defaultDescription")}
         isHomePage={true}
-        // ZMIANA: Jawnie przekazujemy poprawny obrazek dla social mediów
         image={featuredArtwork.ogImageUrl || featuredArtwork.imageUrl}
+        path="/"
         schema={{ type: "website" }}
       />
       <main className="pt-20">
