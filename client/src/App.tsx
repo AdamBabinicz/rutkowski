@@ -1,29 +1,18 @@
-// Plik: App.tsx (WERSJA DIAGNOSTYCZNA)
+// Plik: App.tsx (WERSJA OSTATECZNEJ DIAGNOZY)
 
-import { Switch, Route, useLocation } from "wouter";
+import { Switch, Route } from "wouter";
 import { HelmetProvider } from "react-helmet-async";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
-import Home from "@/pages/home"; // To jest nasz minimalny, testowy home.tsx
+import Home from "@/pages/home";
 import NotFound from "@/pages/not-found";
-
-const ScrollToTopOnNavigate = () => {
-  const [pathname] = useLocation();
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-  return null;
-};
 
 function Router() {
   return (
-    <>
-      <ScrollToTopOnNavigate />
-      <Switch>
-        <Route path="/" component={Home} />
-        <Route component={NotFound} />
-      </Switch>
-    </>
+    <Switch>
+      <Route path="/" component={Home} />
+      <Route component={NotFound} />
+    </Switch>
   );
 }
 
