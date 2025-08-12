@@ -79,7 +79,7 @@
     "exhibitionOngoing": {
       "title": "Stała Aktywność Wystawiennicza",
       "location": "Radom i Kazimierz Dolny",
-      "description": "Cykliczne uczestnictwo w wystawach w radomskich galeriach (WDK, 'ESTERKA', 'RELAKS') oraz częste wystawianie prac w Galerii 'Izdebska-Łazorek' w Kazimierzu Dolny."
+      "description": "Cykliczne uczestnictwo w wystawach w radomskich galeriach (WDK, 'ESTERKA', 'RELAKS') oraz częste wystawianie prac w Galerii 'Izdebska-Łazorek' w Kazimierzu Dolnym."
     },
     "exhibition2013": {
       "title": "Akwarele własne i moich mistrzów",
@@ -292,7 +292,7 @@
       "email": "Email",
       "phone": "Telefon",
       "atelier": "Atelier",
-      "hours": "Godziny wizyty"
+      "hours": "Preferowane godziny kontaktu"
     },
     "artistInfo": {
       "alt": "Zbigniew Jan Rutkowski malujący na plenerze",
