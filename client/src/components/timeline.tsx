@@ -49,7 +49,7 @@ export default function Timeline() {
       side: "left",
     },
     {
-      year: "2024",
+      year: "2025",
       titleKey: "timeline.event6.title",
       descriptionKey: "timeline.event6.description",
       color: "gradient",
