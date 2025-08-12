@@ -17,7 +17,7 @@ interface SEOProps {
 
 const siteUrl = "https://zbigniew-rutkowski.netlify.app";
 const siteName = "Atlas Twórczości Zbigniewa Rutkowskiego";
-const defaultImage = `${siteUrl}/1.avif`;
+const defaultImage = `${siteUrl}/1.jpg`;
 const logoUrl = `${siteUrl}/android-chrome-512x512.png`;
 const facebookProfileUrl = "https://www.facebook.com/zbigniewjan.rutkowski";
 
