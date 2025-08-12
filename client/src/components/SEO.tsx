@@ -42,6 +42,19 @@ export default function SEO({
   const pageDescription = description || defaultDescription;
   const canonicalUrl = `${siteUrl}${path || window.location.pathname}`;
 
+  const getOgLocale = () => {
+    switch (i18n.language) {
+      case "pl":
+        return "pl_PL";
+      case "en":
+        return "en_US";
+      case "fr":
+        return "fr_FR";
+      default:
+        return "pl_PL";
+    }
+  };
+
   const generateSchema = () => {
     if (!schema) return null;
 
@@ -120,14 +133,21 @@ export default function SEO({
       <html lang={i18n.language} />
       <title>{pageTitle}</title>
       <meta name="description" content={pageDescription} />
+
+      <meta property="og:type" content="website" />
       <meta property="og:title" content={pageTitle} />
       <meta property="og:description" content={pageDescription} />
       <meta property="og:image" content={image} />
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
+      <meta property="og:locale" content={getOgLocale()} />
+
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:url" content={canonicalUrl} />
       <meta name="twitter:title" content={pageTitle} />
       <meta name="twitter:description" content={pageDescription} />
       <meta name="twitter:image" content={image} />
+
       <link rel="canonical" href={canonicalUrl} />
       {generateSchema()}
     </Helmet>
