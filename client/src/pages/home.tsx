@@ -1,7 +1,7 @@
+import SEO from "@/components/SEO";
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
 import { useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import {
@@ -67,13 +67,12 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          {t("hero.title")} {t("hero.subtitle")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("hero.description")} />
-      </Helmet>
-
+      <SEO
+        title={t("seo.defaultTitle")}
+        description={t("seo.defaultDescription")}
+        isHomePage={true}
+        schema={{ type: "website" }}
+      />
       <main className="pt-20">
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">

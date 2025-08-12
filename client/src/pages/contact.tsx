@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -82,13 +82,11 @@ export default function Contact() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          {t("contact.title")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("contact.description")} />
-      </Helmet>
-
+      <SEO
+        title={t("contact.title")}
+        description={t("contact.description")}
+        path="/contact"
+      />
       <section className="pt-20 py-20 px-4 bg-gradient-to-br from-watercolor-blue via-background to-watercolor-sage dark:from-watercolor-charcoal-light dark:via-gray-800 dark:to-watercolor-charcoal">
         <div className="max-w-4xl mx-auto">
           <motion.div

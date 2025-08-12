@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 const exhibitionsData = [
   {
@@ -66,13 +66,11 @@ export default function Exhibitions() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          {t("exhibitions.title")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("exhibitions.description")} />
-      </Helmet>
-
+      <SEO
+        title={t("exhibitions.title")}
+        description={t("exhibitions.description")}
+        path="/exhibitions"
+      />
       <main className="pt-20">
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto text-center">

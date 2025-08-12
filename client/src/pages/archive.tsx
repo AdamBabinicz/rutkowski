@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
+
 const archivalPhotos = [
   {
     id: 1,
@@ -39,8 +40,10 @@ const archivalPhotos = [
     captionKey: "archive.photo6.caption",
   },
 ];
+
 export default function Archive() {
   const { t } = useTranslation();
+
   const relatedLinks = [
     {
       name: t("archive.relatedLinks.link1"),
@@ -55,15 +58,14 @@ export default function Archive() {
       url: "https://dobrowolski.netlify.app/",
     },
   ];
+
   return (
     <>
-      <Helmet>
-        <title>
-          {t("archive.title")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("archive.description")} />
-      </Helmet>
-      code Code
+      <SEO
+        title={t("archive.title")}
+        description={t("archive.description")}
+        path="/archive"
+      />
       <main className="pt-20">
         <section className="pt-20 px-4">
           <div className="max-w-4xl mx-auto text-center">

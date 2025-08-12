@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 export default function PrivacyPolicy() {
   const { t } = useTranslation();
 
   return (
     <>
-      <Helmet>
-        <title>
-          {t("privacy.title")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("privacy.description")} />
-      </Helmet>
+      <SEO
+        title={t("privacy.title")}
+        description={t("privacy.description")}
+        path="/privacy-policy"
+      />
       <main className="pt-20">
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto">

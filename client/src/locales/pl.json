@@ -11,6 +11,10 @@
     "toggleTheme": "Zmień motyw",
     "openMenu": "Otwórz menu nawigacji"
   },
+  "seo": {
+    "defaultTitle": "Zbigniew Rutkowski | Malarstwo i Akwarela - Oficjalna Galeria",
+    "defaultDescription": "Oficjalna strona poświęcona życiu i twórczości radomskiego malarza Zbigniewa Rutkowskiego. Odkryj bogatą galerię prac, poznaj biografię i historię wystaw."
+  },
   "site": {
     "title": "Atlas Twórczości",
     "fullTitle": "Atlas Twórczości Zbigniewa Rutkowskiego",
@@ -387,6 +391,15 @@
     "subjectRequired": "Wybierz temat wiadomości",
     "messageMin": "Wiadomość musi mieć co najmniej 10 znaków",
     "privacyRequired": "Musisz zaakceptować politykę prywatności"
+  },
+  "announcement": {
+    "title": "Wspomnienie",
+    "body": "Zmarł Wojciech Stan, od lat dokumentujący Radom i nie tylko, jeden z najbardziej znanych fotografów radomskich. Mówiliśmy sobie per mistrzu (obydwaj) 😆\n\nTo czarno białe zdjęcie zrobiłem niedawno na korytarzu Muzeum im. Jacka Malczewskiego w Radomiu aparatem pochodzącym z lat w których Stan zaczął przygodę z fotografią (przełom lat 1940/1950).\n\nPanie Wojtku, mieliśmy się spotkać, porozmawiać, bardziej się poznać... Ale spokojnie, jeszcze się spotkamy i pogadamy, będziemy wtedy mieli całą wieczność 😇",
+    "imageAlt": "Czarno-białe zdjęcie Wojciecha Stana",
+    "closeButton": "Zamknij",
+    "authorLabel": "Autor:",
+    "authorName": "Szymon Fotak Wykrota",
+    "sourceLabel": "Facebook"
   },
   "loading": "Ładowanie...",
   "error": "Wystąpił błąd"

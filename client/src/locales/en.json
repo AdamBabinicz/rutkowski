@@ -11,6 +11,10 @@
     "toggleTheme": "Toggle theme",
     "openMenu": "Open navigation menu"
   },
+  "seo": {
+    "defaultTitle": "Zbigniew Rutkowski | Painting & Watercolor - Official Gallery",
+    "defaultDescription": "Official website and art gallery of Zbigniew Rutkowski, a painter from Radom, Poland. Explore nearly 50 years of passion in watercolor. View his full biography."
+  },
   "site": {
     "title": "Zbigniew Rutkowski's",
     "fullTitle": "Zbigniew Rutkowski's Creative Atlas",
@@ -387,6 +391,15 @@
     "subjectRequired": "Please select a subject",
     "messageMin": "Message must be at least 10 characters",
     "privacyRequired": "You must accept the privacy policy"
+  },
+  "announcement": {
+    "title": "In Memoriam",
+    "body": "Wojciech Stan, who documented Radom and beyond for years, one of the most famous photographers from Radom, has passed away. We both called each other 'maestro' 😆\n\nI took this black and white photo recently in the hallway of the Jacek Malczewski Museum in Radom with a camera from the era when Stan began his adventure with photography (the turn of the 1940s/1950s).\n\nMr. Wojtek, we were supposed to meet, talk, get to know each other better... But don't worry, we will meet and talk again, and then we will have all of eternity 😇",
+    "imageAlt": "Black and white photo of Wojciech Stan",
+    "closeButton": "Close",
+    "authorLabel": "Author:",
+    "authorName": "Szymon Fotak Wykrota",
+    "sourceLabel": "Facebook"
   },
   "loading": "Loading...",
   "error": "An error occurred"

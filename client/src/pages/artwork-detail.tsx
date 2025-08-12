@@ -2,9 +2,8 @@ import { useState } from "react";
 import { Link, useParams } from "wouter";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
 import { ArrowLeft } from "lucide-react";
-
+import SEO from "@/components/SEO";
 import { Badge } from "@/components/ui/badge";
 import ImageSlider from "@/components/image-slider";
 import ImageModal from "@/components/image-modal";
@@ -55,22 +54,26 @@ export default function ArtworkDetail() {
 
   return (
     <>
-      <Helmet>
-        <title>
-          {getLocalized("title")} - {t("site.fullTitle")}
-        </title>
-        <meta
-          name="description"
-          content={getLocalized("description").substring(0, 160)}
-        />
-        <meta property="og:title" content={getLocalized("title")} />
-        <meta
-          property="og:description"
-          content={getLocalized("description").substring(0, 160)}
-        />
-        <meta property="og:image" content={artwork.imageUrl} />
-      </Helmet>
-
+      <SEO
+        title={getLocalized("title")}
+        description={getLocalized("description").substring(0, 160)}
+        path={`/artwork/${artwork.id}`}
+        image={artwork.imageUrl}
+        schema={{
+          type: "artwork",
+          data: {
+            title: getLocalized("title"),
+            description: getLocalized("description"),
+            image: artwork.imageUrl,
+            year: artwork.year,
+            technique: t(`techniques.${artwork.technique}`),
+            substrate: artwork.substrate
+              ? t(`artwork.substrates.${artwork.substrate}`)
+              : "Papier",
+            dimensions: artwork.dimensions,
+          },
+        }}
+      />
       <section className="pt-20 py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <Link

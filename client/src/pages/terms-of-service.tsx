@@ -1,18 +1,17 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { Helmet } from "react-helmet-async";
+import SEO from "@/components/SEO";
 
 export default function TermsOfService() {
   const { t } = useTranslation();
 
   return (
     <>
-      <Helmet>
-        <title>
-          {t("terms.title")} - {t("site.fullTitle")}
-        </title>
-        <meta name="description" content={t("terms.description")} />
-      </Helmet>
+      <SEO
+        title={t("terms.title")}
+        description={t("terms.description")}
+        path="/terms-of-service"
+      />
       <main className="pt-20">
         <section className="py-20 px-4">
           <div className="max-w-4xl mx-auto">
