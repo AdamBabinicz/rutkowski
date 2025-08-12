@@ -1,5 +1,22 @@
+// Plik: @shared/schema.ts
+
 import { z } from "zod";
 
+// --- Schematy Wiadomości Kontaktowych ---
+export const insertContactMessageSchema = z.object({
+  firstName: z.string().min(1, "Imię jest wymagane"),
+  lastName: z.string().min(1, "Nazwisko jest wymagane"),
+  email: z.string().email("Nieprawidłowy adres email"),
+  subject: z.string().min(1, "Temat jest wymagany"),
+  message: z.string().min(1, "Wiadomość jest wymagana"),
+});
+
+export const contactMessageSchema = insertContactMessageSchema.extend({
+  id: z.string(),
+  createdAt: z.date(),
+});
+
+// --- Schematy Dzieł Sztuki ---
 export const artworkSchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -7,7 +24,7 @@ export const artworkSchema = z.object({
   titleFr: z.string().optional(),
   year: z.number(),
   imageUrl: z.string(),
-  ogImageUrl: z.string().optional(), // <--- DODANA LINIA
+  ogImageUrl: z.string().optional(),
   imageUrls: z.array(z.string()).optional(),
   dimensions: z.string(),
   technique: z.string(),
@@ -26,20 +43,26 @@ export const artworkSchema = z.object({
 
 export const artworksSchema = z.array(artworkSchema);
 
-export const contactMessageSchema = z.object({
-  firstName: z.string().min(1, "Imię jest wymagane"),
-  lastName: z.string().min(1, "Nazwisko jest wymagane"),
-  email: z.string().email("Nieprawidłowy adres email"),
-  subject: z.string().min(1, "Temat jest wymagany"),
-  message: z.string().min(1, "Wiadomość jest wymagana"),
-});
+// --- Schematy Użytkownika (Z POPRAWKAMI) ---
 
-export const userSchema = z.object({
-  id: z.string(),
+// NOWY SCHEMAT: Definiuje dane potrzebne do STWORZENIA użytkownika
+export const insertUserSchema = z.object({
   username: z.string(),
   password: z.string(),
 });
 
+// ZMODYFIKOWANY SCHEMAT: Definiuje pełnego użytkownika, który jest już w bazie (ma ID)
+// Najlepiej zrobić to, rozszerzając schemat 'insert'
+export const userSchema = insertUserSchema.extend({
+  id: z.string(),
+});
+
+// --- Eksporty Typów ---
+
 export type Artwork = z.infer<typeof artworkSchema>;
+
+export type InsertContactMessage = z.infer<typeof insertContactMessageSchema>;
 export type ContactMessage = z.infer<typeof contactMessageSchema>;
+
+export type InsertUser = z.infer<typeof insertUserSchema>; // NOWY TYP
 export type User = z.infer<typeof userSchema>;
