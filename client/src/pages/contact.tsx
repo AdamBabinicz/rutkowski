@@ -275,7 +275,7 @@ export default function Contact() {
             >
               <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-lg rounded-2xl p-6 border border-white/20 dark:border-gray-700/20">
                 <img
-                  src="/2.jpg"
+                  src="/2.avif"
                   alt={t("contact.artistInfo.alt")}
                   className="w-24 h-24 rounded-full object-cover mx-auto mb-4 border-4 border-watercolor-lavender-deep"
                 />

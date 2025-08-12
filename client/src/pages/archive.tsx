@@ -5,25 +5,25 @@ import SEO from "@/components/SEO";
 const archivalPhotos = [
   {
     id: 1,
-    src: "/archive/19.jpg",
+    src: "/archive/19.avif",
     altKey: "archive.photo1.alt",
     captionKey: "archive.photo1.caption",
   },
   {
     id: 2,
-    src: "/archive/3.jpg",
+    src: "/archive/3.avif",
     altKey: "archive.photo2.alt",
     captionKey: "archive.photo2.caption",
   },
   {
     id: 3,
-    src: "/archive/6.jpg",
+    src: "/archive/6.avif",
     altKey: "archive.photo3.alt",
     captionKey: "archive.photo3.caption",
   },
   {
     id: 4,
-    src: "/archive/8.jpg",
+    src: "/archive/8.avif",
     altKey: "archive.photo4.alt",
     captionKey: "archive.photo4.caption",
   },
@@ -35,7 +35,7 @@ const archivalPhotos = [
   },
   {
     id: 6,
-    src: "/archive/1.jpg",
+    src: "/archive/1.avif",
     altKey: "archive.photo6.alt",
     captionKey: "archive.photo6.caption",
   },

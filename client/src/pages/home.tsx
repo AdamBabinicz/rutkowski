@@ -181,7 +181,7 @@ export default function Home() {
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <div className="flex flex-col sm:flex-row gap-4">
                 <img
-                  src="/3.jpg"
+                  src="/3.avif"
                   alt={t("home.artistDialog.alt")}
                   className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
                 />
