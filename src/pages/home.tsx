@@ -15,7 +15,7 @@ import FilterPanel from "@/components/filter-panel";
 import ArtworkCard from "@/components/artwork-card";
 import artworksData from "@/data/artworks.json";
 import { artworksSchema } from "@shared/schema";
-import { useQueryString } from "@/hooks/use-query-string"; // Importujemy nasz nowy hook
+import { useQueryString } from "@/hooks/use-query-string";
 
 function normalize(str: string): string {
   if (!str) return "";
@@ -30,7 +30,6 @@ export default function Home() {
   const [, setLocation] = useLocation();
   const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
 
-  // Zamiast skomplikowanej logiki, używamy naszego hooka
   const searchParams = useQueryString();
 
   const filters = useMemo(() => {
@@ -133,7 +132,7 @@ export default function Home() {
             >
               <h1 className="font-poppins font-bold text-4xl md:text-6xl text-gray-800 dark:text-white mb-6">
                 {t("hero.title")} <br />
-                <span className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[var(--watercolor-ochre-accent)] to-[var(--watercolor-umber-accent)] bg-clip-text text-transparent">
                   {t("hero.subtitle")}
                 </span>
               </h1>
@@ -141,9 +140,10 @@ export default function Home() {
                 {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                {/* CTA – gradient jasny w dark mode → ciemny tekst w dark */}
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white px-8 py-3 rounded-full hover:shadow-lg transition-all duration-300 font-medium"
+                  className="bg-gradient-to-r from-[var(--watercolor-ochre-accent)] to-[var(--watercolor-umber-accent)] text-white dark:!text-[var(--watercolor-charcoal)] hover:shadow-lg transition-all duration-300 font-medium"
                   onClick={() =>
                     document
                       .getElementById("gallery-section")
@@ -153,10 +153,12 @@ export default function Home() {
                 >
                   {t("hero.cta")}
                 </Button>
+
+                {/* Outline – normalnie akcent jako kolor tekstu; w dark → ciemny tekst; na hover w light → biały; w dark → ciemny */}
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-watercolor-ochre-accent text-watercolor-ochre-accent hover:bg-watercolor-ochre-accent hover:text-white px-8 py-3 rounded-full transition-all duration-300 font-medium"
+                  className="border-2 border-[var(--watercolor-ochre-accent)] text-[var(--watercolor-ochre-accent)] dark:!text-[var(--watercolor-charcoal)] hover:bg-[var(--watercolor-ochre-accent)] hover:text-white dark:hover:!text-[var(--watercolor-charcoal)] rounded-full transition-all duration-300 font-medium px-8 py-3"
                   onClick={() => setIsArtistDialogOpen(true)}
                   data-testid="artist-info-button"
                 >
@@ -216,7 +218,7 @@ export default function Home() {
               <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
                 {t("home.artistDialog.name")}
               </DialogTitle>
-              <DialogDescription className="text-lg text-watercolor-ochre-accent font-medium">
+              <DialogDescription className="text-lg text-[var(--watercolor-ochre-accent)] font-medium">
                 {t("home.artistDialog.description")}
               </DialogDescription>
             </DialogHeader>
@@ -225,7 +227,7 @@ export default function Home() {
                 <img
                   src="/3.avif"
                   alt={t("home.artistDialog.alt")}
-                  className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-watercolor-ochre-accent"
+                  className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-[var(--watercolor-ochre-accent)]"
                 />
                 <div className="flex-1">
                   <p className="text-sm leading-relaxed">
@@ -270,11 +272,11 @@ export default function Home() {
                   . {t("home.artistDialog.collectionsText2")}
                 </p>
               </div>
-              <div className="bg-watercolor-cream dark:bg-gray-800 p-4 rounded-xl border border-watercolor-ochre-accent/20">
+              <div className="bg-[var(--watercolor-cream)] dark:bg-gray-800 p-4 rounded-xl border border-[color:var(--watercolor-ochre-accent)]/20">
                 <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
                   "{t("home.artistDialog.quote")}"
                 </p>
-                <p className="text-xs text-center mt-2 text-watercolor-ochre-accent font-medium">
+                <p className="text-xs text-center mt-2 text-[var(--watercolor-ochre-accent)] font-medium">
                   - {t("home.artistDialog.name")}
                 </p>
               </div>

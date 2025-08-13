@@ -66,7 +66,7 @@ export default function ArtworkCard({
               <Badge
                 key={tag}
                 variant="secondary"
-                className="bg-watercolor-sage text-gray-700 dark:text-gray-300 text-xs"
+                className="bg-watercolor-sage text-gray-700 dark:bg-gray-700 dark:text-gray-300 text-xs"
               >
                 {t(`themes.${tag}`, tag) || tag}
               </Badge>

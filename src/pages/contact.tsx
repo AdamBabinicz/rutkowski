@@ -258,7 +258,7 @@ export default function Contact() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-watercolor-lavender-deep to-watercolor-peach-deep text-white py-4 rounded-lg hover:shadow-lg transition-all duration-300 font-medium text-lg"
+                      className="w-full bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white dark:text-watercolor-charcoal py-4 rounded-lg hover:shadow-lg transition-all duration-300 font-medium text-lg"
                       data-testid="submit-contact-form"
                     >
                       <i className="fas fa-paper-plane mr-2"></i>
@@ -359,7 +359,7 @@ export default function Contact() {
                   <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">
                     {t("contact.artistInfo.socialsTitle")}
                   </h3>
-                  <div className="flex space-x-4">
+                  {/* <div className="flex space-x-4">
                     <a
                       href="#"
                       className="w-12 h-12 bg-gradient-to-br from-watercolor-lavender-deep to-watercolor-peach-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
@@ -387,6 +387,30 @@ export default function Contact() {
                       data-testid="social-youtube-contact"
                     >
                       <i className="fab fa-youtube"></i>
+                    </a>
+                  </div> */}
+                  <div className="flex space-x-4">
+                    {/* Link do Facebooka */}
+                    <a
+                      href="https://www.facebook.com/zbigniewjan.rutkowski"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-gradient-to-br from-watercolor-blue-deep to-watercolor-sage-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
+                      data-testid="social-facebook-contact"
+                      aria-label="Facebook"
+                    >
+                      <i className="fab fa-facebook"></i>
+                    </a>
+                    {/* Link do Messengera */}
+                    <a
+                      href="https://m.me/zbigniewjan.rutkowski"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
+                      data-testid="social-messenger-contact"
+                      aria-label="Messenger"
+                    >
+                      <i className="fab fa-facebook-messenger"></i>
                     </a>
                   </div>
                 </div>

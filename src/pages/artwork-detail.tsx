@@ -183,7 +183,7 @@ export default function ArtworkDetail() {
                     <Link key={tag} href={`/?theme=${tag}`}>
                       <Badge
                         variant="secondary"
-                        className="cursor-pointer bg-watercolor-sage text-gray-700 hover:bg-watercolor-sage-accent transition-colors px-3 py-1 rounded-full text-sm font-medium"
+                        className="cursor-pointer bg-watercolor-sage text-gray-700 hover:bg-watercolor-sage-accent dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600 transition-colors px-3 py-1 rounded-full text-sm font-medium"
                       >
                         {t(`themes.${tag}`, tag) as string}
                       </Badge>
