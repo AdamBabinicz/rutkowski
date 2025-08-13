@@ -34,6 +34,7 @@ export default function AnnouncementModal() {
               src="/1.avif"
               alt={t("announcement.imageAlt")}
               className="w-full h-full object-cover"
+              fetchPriority="high"
             />
           </div>
           <div className="p-6 flex flex-col flex-1 overflow-hidden">
