@@ -34,6 +34,7 @@ export default function AnnouncementModal() {
               src="/1.webp"
               alt={t("announcement.imageAlt")}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
           <div className="p-6 flex flex-col flex-1 overflow-hidden">

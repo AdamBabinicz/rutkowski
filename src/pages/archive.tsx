@@ -147,6 +147,7 @@ export default function Archive() {
                       src={photo.src}
                       alt={t(photo.altKey)}
                       className="w-full h-80 object-cover transform group-hover:scale-105 transition-transform duration-300"
+                      loading="lazy"
                     />
                   </div>
                   <p className="p-4 text-sm text-center text-gray-700 dark:text-gray-300 min-h-[70px] flex items-center justify-center">

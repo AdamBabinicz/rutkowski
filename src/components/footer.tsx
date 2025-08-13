@@ -1,17 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { useQueryString } from "@/hooks/use-query-string";
 
 export default function Footer() {
   const { t } = useTranslation();
-  const [, setLocation] = useLocation();
   const searchParams = useQueryString();
 
   const activeTheme = searchParams.get("theme");
-
-  const changeTheme = (theme: string) => {
-    setLocation(theme ? `/?theme=${theme}` : "/");
-  };
 
   const categoryClass = (theme: string, hoverColor: string) =>
     `cursor-pointer text-sm transition-colors ${
@@ -105,60 +100,48 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    changeTheme("landscape");
-                  }}
+                <Link
+                  href="/?theme=landscape"
                   className={categoryClass(
                     "landscape",
                     "hover:text-watercolor-ochre"
                   )}
                 >
                   {t("themes.landscape")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    changeTheme("portrait");
-                  }}
+                <Link
+                  href="/?theme=portrait"
                   className={categoryClass(
                     "portrait",
                     "hover:text-watercolor-sage"
                   )}
                 >
                   {t("themes.portrait")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    changeTheme("architecture");
-                  }}
+                <Link
+                  href="/?theme=architecture"
                   className={categoryClass(
                     "architecture",
                     "hover:text-watercolor-umber"
                   )}
                 >
                   {t("themes.architecture")}
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  onClick={(e) => {
-                    e.preventDefault();
-                    changeTheme("nature");
-                  }}
+                <Link
+                  href="/?theme=nature"
                   className={categoryClass(
                     "nature",
                     "hover:text-watercolor-blue"
                   )}
                 >
                   {t("themes.nature")}
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

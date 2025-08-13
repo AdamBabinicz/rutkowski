@@ -113,6 +113,7 @@ export default function Exhibitions() {
                       src={exhibition.imageUrl}
                       alt={t(exhibition.titleKey)}
                       className="w-full md:w-1/2 rounded-lg shadow-xl"
+                      loading="lazy"
                     />
                     <div className="flex-1">
                       <p className="font-poppins font-semibold text-xl text-watercolor-ochre-accent dark:text-watercolor-ochre">

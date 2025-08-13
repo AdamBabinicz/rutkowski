@@ -227,6 +227,7 @@ export default function Home() {
                     src="/3.avif"
                     alt={t("home.artistDialog.alt")}
                     className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-[var(--watercolor-ochre-accent)]"
+                    loading="lazy"
                   />
                   <div className="flex-1">
                     <p className="text-sm leading-relaxed">

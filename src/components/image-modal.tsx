@@ -83,6 +83,7 @@ export default function ImageModal({
                   scale-[${zoomLevel / 100}]
                 `}
                 data-testid="modal-image"
+                loading="lazy"
               />
             </motion.div>
 

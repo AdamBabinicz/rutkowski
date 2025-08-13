@@ -8,7 +8,11 @@ interface ImageSliderProps {
   onImageClick: (imageUrl: string) => void;
 }
 
-export default function ImageSlider({ images, alt, onImageClick }: ImageSliderProps) {
+export default function ImageSlider({
+  images,
+  alt,
+  onImageClick,
+}: ImageSliderProps) {
   const [activeIndex, setActiveIndex] = useState(0);
   const mainImage = images[activeIndex] || images[0];
 
@@ -21,6 +25,7 @@ export default function ImageSlider({ images, alt, onImageClick }: ImageSliderPr
           className="w-full h-96 object-cover rounded-xl cursor-zoom-in"
           onClick={() => onImageClick(mainImage)}
           data-testid="main-artwork-image"
+          loading="lazy"
         />
         <Button
           variant="secondary"
@@ -35,12 +40,16 @@ export default function ImageSlider({ images, alt, onImageClick }: ImageSliderPr
 
       {/* Thumbnail Navigation */}
       {images.length > 1 && (
-        <div className="flex space-x-2 overflow-x-auto pb-2" data-testid="thumbnail-navigation">
+        <div
+          className="flex space-x-2 overflow-x-auto pb-2"
+          data-testid="thumbnail-navigation"
+        >
           {images.map((image, index) => (
             <img
               key={index}
               src={image}
               alt={`${alt} - miniatura ${index + 1}`}
+              loading="lazy"
               className={`w-16 h-12 object-cover rounded cursor-pointer border-2 transition-colors ${
                 index === activeIndex
                   ? "border-watercolor-lavender-deep"
