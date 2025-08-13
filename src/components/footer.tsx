@@ -31,15 +31,9 @@ export default function Footer() {
             </p>
             <div className="flex space-x-3">
               <a
-                href="#"
-                className="w-8 h-8 bg-watercolor-ochre-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-umber-deep transition-colors"
-                data-testid="social-instagram"
-                aria-label="Odwiedź profil na Instagramie"
-              >
-                <i className="fab fa-instagram text-sm"></i>
-              </a>
-              <a
                 href="https://www.facebook.com/zbigniewjan.rutkowski"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-8 h-8 bg-watercolor-blue-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-sage-deep transition-colors"
                 data-testid="social-facebook"
                 aria-label="Odwiedź profil na Facebooku"
@@ -47,12 +41,14 @@ export default function Footer() {
                 <i className="fab fa-facebook text-sm"></i>
               </a>
               <a
-                href="#"
-                className="w-8 h-8 bg-watercolor-sage-deep rounded-full flex items-center justify-center text-white hover:bg-watercolor-ochre-deep transition-colors"
-                data-testid="social-linkedin"
-                aria-label="Odwiedź profil na LinkedIn"
+                href="https://m.me/zbigniewjan.rutkowski"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white hover:bg-blue-600 transition-colors"
+                data-testid="social-messenger"
+                aria-label="Skontaktuj się przez Messenger"
               >
-                <i className="fab fa-linkedin text-sm"></i>
+                <i className="fab fa-facebook-messenger text-sm"></i>
               </a>
             </div>
           </div>
