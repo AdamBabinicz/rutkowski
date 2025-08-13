@@ -1,5 +1,5 @@
 import SEO from "@/components/SEO";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useLocation } from "wouter";
@@ -14,18 +14,50 @@ import {
 import FilterPanel from "@/components/filter-panel";
 import ArtworkCard from "@/components/artwork-card";
 import artworksData from "@/data/artworks.json";
-import { artworksSchema, type Artwork } from "@shared/schema";
+import { artworksSchema } from "@shared/schema";
+import { useQueryString } from "@/hooks/use-query-string"; // Importujemy nasz nowy hook
+
+function normalize(str: string): string {
+  if (!str) return "";
+  return str
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
 
 export default function Home() {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
   const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
-  const [filters, setFilters] = useState({
-    year: "all",
-    theme: "all",
-    technique: "all",
-    search: "",
-  });
+
+  // Zamiast skomplikowanej logiki, używamy naszego hooka
+  const searchParams = useQueryString();
+
+  const filters = useMemo(() => {
+    return {
+      year: searchParams.get("year") || "all",
+      theme: searchParams.get("theme") || "all",
+      technique: searchParams.get("technique") || "all",
+      search: searchParams.get("search") || "",
+    };
+  }, [searchParams]);
+
+  useEffect(() => {
+    const isAnyFilterActive =
+      filters.theme !== "all" ||
+      filters.year !== "all" ||
+      filters.technique !== "all" ||
+      filters.search !== "";
+
+    if (isAnyFilterActive) {
+      const gallerySection = document.getElementById("gallery-section");
+      if (gallerySection) {
+        setTimeout(() => {
+          gallerySection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 100);
+      }
+    }
+  }, [filters]);
 
   const parsedArtworks = artworksSchema.parse(artworksData);
   const featuredArtwork = parsedArtworks[0];
@@ -34,18 +66,26 @@ export default function Home() {
     return parsedArtworks.filter((artwork) => {
       if (filters.year !== "all" && artwork.year.toString() !== filters.year)
         return false;
-      if (filters.theme !== "all" && !artwork.tags?.includes(filters.theme))
-        return false;
+
       if (
-        filters.technique !== "all" &&
-        artwork.technique !== filters.technique
+        filters.theme !== "all" &&
+        !artwork.tags?.some(
+          (tag) => normalize(tag) === normalize(filters.theme)
+        )
       )
         return false;
+
+      if (
+        filters.technique !== "all" &&
+        normalize(artwork.technique) !== normalize(filters.technique)
+      )
+        return false;
+
       if (filters.search) {
-        const searchTerm = filters.search.toLowerCase();
-        const title = artwork.title.toLowerCase();
-        const description = artwork.description.toLowerCase();
-        const tags = artwork.tags?.join(" ").toLowerCase() || "";
+        const searchTerm = normalize(filters.search);
+        const title = normalize(artwork.title);
+        const description = normalize(artwork.description);
+        const tags = normalize(artwork.tags?.join(" ") || "");
         if (
           !title.includes(searchTerm) &&
           !description.includes(searchTerm) &&
@@ -59,7 +99,14 @@ export default function Home() {
   }, [parsedArtworks, filters]);
 
   const handleFilterChange = (key: string, value: string) => {
-    setFilters((prev) => ({ ...prev, [key]: value }));
+    const newParams = new URLSearchParams(window.location.search);
+    if (value && value !== "all") {
+      newParams.set(key, value);
+    } else {
+      newParams.delete(key);
+    }
+    const newSearch = newParams.toString();
+    setLocation(newSearch ? `?${newSearch}` : "/", { replace: true });
   };
 
   const handleArtworkClick = (id: string) => {
@@ -153,14 +200,7 @@ export default function Home() {
                 <Button
                   variant="outline"
                   className="mt-4"
-                  onClick={() =>
-                    setFilters({
-                      year: "all",
-                      theme: "all",
-                      technique: "all",
-                      search: "",
-                    })
-                  }
+                  onClick={() => setLocation("/")}
                   data-testid="clear-filters"
                 >
                   {t("gallery.clearFilters")}
@@ -180,7 +220,6 @@ export default function Home() {
                 {t("home.artistDialog.description")}
               </DialogDescription>
             </DialogHeader>
-
             <div className="space-y-4 text-gray-700 dark:text-gray-300">
               <div className="flex flex-col sm:flex-row gap-4">
                 <img
@@ -199,7 +238,6 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-
               <div className="space-y-3">
                 <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
                   {t("home.artistDialog.careerTitle")}
@@ -222,7 +260,6 @@ export default function Home() {
                   <li>{t("home.artistDialog.career6.event")}</li>
                 </ul>
               </div>
-
               <div className="space-y-3">
                 <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
                   {t("home.artistDialog.collectionsTitle")}
@@ -233,7 +270,6 @@ export default function Home() {
                   . {t("home.artistDialog.collectionsText2")}
                 </p>
               </div>
-
               <div className="bg-watercolor-cream dark:bg-gray-800 p-4 rounded-xl border border-watercolor-ochre-accent/20">
                 <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
                   "{t("home.artistDialog.quote")}"

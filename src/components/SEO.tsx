@@ -60,7 +60,7 @@ export default function SEO({
   const generateSchema = () => {
     if (!schema) return null;
 
-    let schemaData: object | null = null;
+    let schemaData: any = null; // Zmienione na any, aby można było dynamicznie dodawać właściwości
     const { type, data } = schema;
 
     switch (type) {
@@ -90,11 +90,12 @@ export default function SEO({
         };
         break;
       case "artwork":
+        // Podstawowy schemat, który zawsze jest bezpieczny
         schemaData = {
           "@context": "https://schema.org",
           "@type": "Painting",
-          name: data.title,
-          description: data.description,
+          name: data.title || "",
+          description: data.description || "",
           image: fullImageUrl,
           url: canonicalUrl,
           author: {
@@ -102,23 +103,34 @@ export default function SEO({
             name: "Zbigniew Jan Rutkowski",
             url: `${siteUrl}/about`,
           },
-          dateCreated: data.year,
-          artform: data.technique,
-          material: data.substrate,
-          height: `${data.dimensions.split("x")[0].trim()} cm`,
-          width: `${data.dimensions.split("x")[1].trim()} cm`,
+          dateCreated: data.year || "",
+          artform: data.technique || "",
+          material: data.substrate || "",
         };
+
+        // Warunkowe dodawanie wymiarów TYLKO jeśli istnieją
+        if (data.dimensions && typeof data.dimensions === "string") {
+          const parts = data.dimensions.split("x");
+          if (parts[0] && parts[0].trim()) {
+            schemaData.height = `${parts[0].trim()} cm`;
+          }
+          if (parts[1] && parts[1].trim()) {
+            schemaData.width = `${parts[1].trim()} cm`;
+          }
+        }
         break;
       case "breadcrumbs":
         schemaData = {
           "@context": "https://schema.org",
           "@type": "BreadcrumbList",
-          itemListElement: data.items.map((item: any, index: number) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            name: item.name,
-            item: `${siteUrl}${item.path}`,
-          })),
+          itemListElement: (data.items || []).map(
+            (item: any, index: number) => ({
+              "@type": "ListItem",
+              position: index + 1,
+              name: item.name,
+              item: `${siteUrl}${item.path}`,
+            })
+          ),
         };
         break;
     }

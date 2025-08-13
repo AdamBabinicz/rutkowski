@@ -10,7 +10,7 @@
     "dimensions": "100 × 80 cm",
     "technique": "olej",
     "substrate": "canvas",
-    "tags": ["sztuka sakralna", "Radom", "kościół św. Jadwigi", "Mehoffer"],
+    "tags": ["sacred_art", "radom", "st_jadwiga_church", "mehoffer"],
     "dominantColor": "#5C3D2E",
     "description": "Jedna z 14 stacji Drogi Krzyżowej namalowanych dla kościoła św. Jadwigi Królowej w Radomiu. Praca wykonana w technice olejnej według wzorów Józefa Mehoffera.",
     "descriptionEn": "One of 14 Stations of the Cross painted for the church of St. Jadwiga the Queen in Radom. Work executed in oil technique following the patterns of Józef Mehoffer.",
@@ -31,7 +31,7 @@
     "dimensions": "70 × 50 cm",
     "technique": "akwarela",
     "substrate": "watercolor_paper",
-    "tags": ["pejzaż", "plener", "Uniejów", "zamek", "architektura"],
+    "tags": ["landscape", "plein_air", "uniejow", "castle", "architecture"],
     "dominantColor": "#E8F4FD",
     "description": "Akwarela powstała podczas pamiętnego pobytu w Uniejowie w 2013 roku.",
     "descriptionEn": "A watercolor created during a memorable stay in Uniejów in 2013.",
@@ -52,7 +52,7 @@
     "dimensions": "60 × 40 cm",
     "technique": "akwarela",
     "substrate": "watercolor_paper",
-    "tags": ["pejzaż", "Radom", "miasto rodzinne", "architektura"],
+    "tags": ["landscape", "radom", "hometown", "architecture"],
     "dominantColor": "#F0E6FF",
     "description": "Akwarela przedstawiająca charakterystyczny widok Radomia, miasta rodzinnego artysty. Praca wykonana z głębokim sentymentem do miejsca, które ukształtowało jego wrażliwość artystyczną.",
     "descriptionEn": "Watercolor depicting a characteristic view of Radom, the artist's hometown. Work executed with deep sentiment for the place that shaped his artistic sensitivity.",
@@ -73,7 +73,7 @@
     "dimensions": "50 × 35 cm",
     "technique": "akwarela",
     "substrate": "watercolor_paper",
-    "tags": ["natura", "kwiaty", "plener", "wiosna"],
+    "tags": ["nature", "flowers", "plein_air", "spring"],
     "dominantColor": "#FFE6D9",
     "description": "Delikatna kompozycja kwiatowa wykonana w plenerze. Artysta uchwycił niepowtarzalną świeżość wiosennych kwiatów polnych, wykorzystując technikę akwarelową do oddania ich naturalnej lekkości.",
     "descriptionEn": "Delicate floral composition executed en plein air. The artist captured the unique freshness of spring wildflowers, using watercolor technique to convey their natural lightness.",
@@ -94,7 +94,7 @@
     "dimensions": "40 × 30 cm",
     "technique": "akwarela",
     "substrate": "watercolor_paper",
-    "tags": ["portret", "studium", "światło", "cień"],
+    "tags": ["portrait", "study", "light", "shadow"],
     "dominantColor": "#E8F4FD",
     "description": "Studium portretowe koncentrujące się na grze światła i cienia na twarzy. Praca stanowi dowód mistrzowskiego opanowania techniki akwarelowej w oddawaniu ludzkiej ekspresji.",
     "descriptionEn": "Portrait study focusing on the play of light and shadow on the face. The work demonstrates masterful command of watercolor technique in rendering human expression.",
@@ -115,7 +115,7 @@
     "dimensions": "70 × 50 cm",
     "technique": "akwarela",
     "substrate": "watercolor_paper",
-    "tags": ["pejzaż", "zima", "śnieg", "spokój"],
+    "tags": ["landscape", "winter", "snow", "tranquility"],
     "dominantColor": "#E8F4FD",
     "description": "Spokojna kompozycja zimowa ukazująca ciszę śnieżnego krajobrazu. Delikatne użycie białych i błękitnych tonów oddaje atmosferę zimowego poranka.",
     "descriptionEn": "Peaceful winter composition showing the silence of a snowy landscape. Delicate use of white and blue tones captures the atmosphere of a winter morning.",
@@ -142,7 +142,7 @@
     "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
     "storyEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
     "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
-    "tags": ["pejzaż", "plener", "eksperyment"],
+    "tags": ["landscape", "plein_air", "experiment"],
     "available": 1
   },
   {
@@ -162,7 +162,7 @@
     "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami szkicowania.",
     "storyEn": "This work was created during plein-air sessions in Kazimierz Dolny. The artist experimented with new sketching techniques for the first time.",
     "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté pour la première fois avec de nouvelles techniques d'esquisse.",
-    "tags": ["pejzaż", "plener", "eksperyment"],
+    "tags": ["portrait", "study", "pencil"],
     "available": 1
   },
   {
@@ -182,7 +182,7 @@
     "story": "To dzieło powstało podczas plenerów w Kazimierzu Dolnym. Artysta po raz pierwszy eksperymentował z nowymi technikami mieszania kolorów.",
     "storyEn": "This work was created during outdoor painting sessions in Kazimierz Dolny. The artist experimented with new color mixing techniques for the first time.",
     "storyFr": "Cette œuvre a été créée lors de séances de peinture en plein air à Kazimierz Dolny. L'artiste a expérimenté de nouvelles techniques de mélange de couleurs pour la première fois.",
-    "tags": ["pejzaż", "plener", "eksperyment"],
+    "tags": ["nature", "flowers", "still_life"],
     "available": 1
   }
 ]

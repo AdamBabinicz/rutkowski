@@ -1,7 +1,25 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useQueryString } from "@/hooks/use-query-string";
+
 export default function Footer() {
   const { t } = useTranslation();
+  const [, setLocation] = useLocation();
+  const searchParams = useQueryString();
+
+  const activeTheme = searchParams.get("theme");
+
+  const changeTheme = (theme: string) => {
+    setLocation(theme ? `/?theme=${theme}` : "/");
+  };
+
+  const categoryClass = (theme: string, hoverColor: string) =>
+    `cursor-pointer text-sm transition-colors ${
+      activeTheme === theme
+        ? "text-white font-semibold"
+        : `text-gray-300 ${hoverColor}`
+    }`;
+
   return (
     <footer className="bg-watercolor-umber-accent dark:bg-watercolor-charcoal text-white py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,37 +107,61 @@ export default function Footer() {
             <h4 className="font-poppins font-semibold mb-4">
               {t("footer.categories")}
             </h4>
-            <ul className="space-y-2 text-sm">
+            <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-watercolor-ochre transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    changeTheme("landscape");
+                  }}
+                  className={categoryClass(
+                    "landscape",
+                    "hover:text-watercolor-ochre"
+                  )}
                 >
-                  {t("themes.pejzaz")}
+                  {t("themes.landscape")}
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-watercolor-sage transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    changeTheme("portrait");
+                  }}
+                  className={categoryClass(
+                    "portrait",
+                    "hover:text-watercolor-sage"
+                  )}
                 >
-                  {t("themes.portret")}
+                  {t("themes.portrait")}
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-watercolor-umber transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    changeTheme("architecture");
+                  }}
+                  className={categoryClass(
+                    "architecture",
+                    "hover:text-watercolor-umber"
+                  )}
                 >
-                  {t("themes.abstrakcja")}
+                  {t("themes.architecture")}
                 </a>
               </li>
               <li>
                 <a
-                  href="#"
-                  className="text-gray-300 hover:text-watercolor-blue transition-colors"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    changeTheme("nature");
+                  }}
+                  className={categoryClass(
+                    "nature",
+                    "hover:text-watercolor-blue"
+                  )}
                 >
-                  {t("themes.natura")}
+                  {t("themes.nature")}
                 </a>
               </li>
             </ul>
@@ -148,7 +190,6 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm">{t("footer.copyright")}</p>

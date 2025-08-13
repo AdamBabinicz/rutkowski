@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ZoomOut, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -39,11 +39,12 @@ export default function ImageModal({
     }
   };
 
-  useState(() => {
+  // Poprawka: Użyj useEffect do resetowania zoomu przy otwieraniu modala
+  useEffect(() => {
     if (isOpen) {
       setZoomLevel(100);
     }
-  });
+  }, [isOpen]);
 
   return (
     <AnimatePresence>
@@ -76,11 +77,11 @@ export default function ImageModal({
               <img
                 src={imageUrl}
                 alt={alt}
-                className="rounded-lg object-contain max-w-[90vw] max-h-[85vh]"
-                style={{
-                  transform: `scale(${zoomLevel / 100})`,
-                  transition: "transform 0.3s",
-                }}
+                className={`
+                  rounded-lg object-contain max-w-[90vw] max-h-[85vh]
+                  transition-transform duration-300
+                  scale-[${zoomLevel / 100}]
+                `}
                 data-testid="modal-image"
               />
             </motion.div>

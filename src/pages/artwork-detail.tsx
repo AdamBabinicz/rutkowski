@@ -9,7 +9,7 @@ import ImageSlider from "@/components/image-slider";
 import ImageModal from "@/components/image-modal";
 import NotFound from "@/pages/not-found";
 import artworksData from "@/data/artworks.json";
-import { artworksSchema, type Artwork } from "@shared/schema";
+import { artworksSchema, type Artwork } from "../../shared/schema";
 
 export default function ArtworkDetail() {
   const { id } = useParams();
@@ -27,7 +27,6 @@ export default function ArtworkDetail() {
   const getLocalized = (field: "title" | "description" | "story") => {
     const lang = i18n.language;
     let key: keyof Artwork;
-
     switch (lang) {
       case "en":
         key = `${field}En` as keyof Artwork;
@@ -39,7 +38,7 @@ export default function ArtworkDetail() {
         key = field;
         break;
     }
-    return (artwork[key] || artwork[field]) as string;
+    return (artwork[key] || artwork[field] || "") as string;
   };
 
   const handleImageClick = (imageUrl: string) => {
@@ -50,27 +49,39 @@ export default function ArtworkDetail() {
   const images =
     artwork.imageUrls && artwork.imageUrls.length > 0
       ? artwork.imageUrls
-      : [artwork.imageUrl];
+      : [artwork.imageUrl || ""];
+
+  // Tworzenie "bezpiecznych" zmiennych, które nigdy nie będą `undefined`
+  const safeTitle = getLocalized("title");
+  const safeDescription = getLocalized("description");
+  const safeStory = getLocalized("story");
+  const safeId = artwork.id || "";
+  const mainImage = artwork.imageUrl || "";
+  const ogImage = artwork.ogImageUrl || mainImage;
+  const safeYear = artwork.year ? String(artwork.year) : "";
+  const safeTechnique = artwork.technique || "";
+  const safeSubstrate = artwork.substrate || "";
+  const safeDimensions = artwork.dimensions || "";
 
   return (
     <>
       <SEO
-        title={getLocalized("title")}
-        description={getLocalized("description").substring(0, 160)}
-        path={`/artwork/${artwork.id}`}
-        image={artwork.ogImageUrl || artwork.imageUrl}
+        title={safeTitle}
+        description={safeDescription.substring(0, 160)}
+        path={`/artwork/${safeId}`}
+        image={ogImage}
         schema={{
           type: "artwork",
           data: {
-            title: getLocalized("title"),
-            description: getLocalized("description"),
-            image: artwork.ogImageUrl || artwork.imageUrl,
-            year: artwork.year,
-            technique: t(`techniques.${artwork.technique}`),
-            substrate: artwork.substrate
-              ? t(`artwork.substrates.${artwork.substrate}`)
+            title: safeTitle,
+            description: safeDescription,
+            image: ogImage,
+            year: safeYear,
+            technique: t(`techniques.${safeTechnique}`, safeTechnique),
+            substrate: safeSubstrate
+              ? t(`artwork.substrates.${safeSubstrate}`, safeSubstrate)
               : "Papier",
-            dimensions: artwork.dimensions,
+            dimensions: safeDimensions,
           },
         }}
       />
@@ -93,8 +104,8 @@ export default function ArtworkDetail() {
             <div className="lg:sticky lg:top-24 h-fit">
               <div className="bg-gray-100 dark:bg-gray-900/50 rounded-lg flex items-center justify-center max-h-[85vh] p-4">
                 <ImageSlider
-                  images={images}
-                  alt={getLocalized("title")}
+                  images={images.filter(Boolean)}
+                  alt={safeTitle}
                   onImageClick={handleImageClick}
                 />
               </div>
@@ -103,10 +114,10 @@ export default function ArtworkDetail() {
             <div className="space-y-6">
               <div>
                 <h2 className="font-poppins font-bold text-3xl text-gray-800 dark:text-white mb-2">
-                  {getLocalized("title")}
+                  {safeTitle}
                 </h2>
                 <p className="text-watercolor-ochre-accent dark:text-watercolor-ochre font-medium text-lg">
-                  {artwork.year} • {t(`techniques.${artwork.technique}`)}
+                  {safeYear} • {t(`techniques.${safeTechnique}`, safeTechnique)}
                 </p>
               </div>
 
@@ -120,7 +131,7 @@ export default function ArtworkDetail() {
                       {t("artwork.dimensions")}:
                     </span>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      {artwork.dimensions}
+                      {safeDimensions || "N/A"}
                     </p>
                   </div>
                   <div>
@@ -128,18 +139,18 @@ export default function ArtworkDetail() {
                       {t("artwork.technique")}:
                     </span>
                     <p className="font-medium text-gray-800 dark:text-white">
-                      {t(`techniques.${artwork.technique}`)}
+                      {t(`techniques.${safeTechnique}`, safeTechnique)}
                     </p>
                   </div>
-                  {artwork.substrate && (
+                  {safeSubstrate && (
                     <div>
                       <span className="text-gray-600 dark:text-gray-400">
                         {t("artwork.substrate")}:
                       </span>
                       <p className="font-medium text-gray-800 dark:text-white">
                         {t(
-                          `artwork.substrates.${artwork.substrate}`,
-                          artwork.substrate
+                          `artwork.substrates.${safeSubstrate}`,
+                          safeSubstrate
                         )}
                       </p>
                     </div>
@@ -169,13 +180,14 @@ export default function ArtworkDetail() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {artwork.tags?.map((tag: string) => (
-                    <Badge
-                      key={tag}
-                      variant="secondary"
-                      className="bg-watercolor-sage text-gray-700 px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                      {t(`themes.${tag}`, tag) as string}
-                    </Badge>
+                    <Link key={tag} href={`/?theme=${tag}`}>
+                      <Badge
+                        variant="secondary"
+                        className="cursor-pointer bg-watercolor-sage text-gray-700 hover:bg-watercolor-sage-accent transition-colors px-3 py-1 rounded-full text-sm font-medium"
+                      >
+                        {t(`themes.${tag}`, tag) as string}
+                      </Badge>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -185,18 +197,18 @@ export default function ArtworkDetail() {
                   {t("artwork.description")}
                 </h3>
                 <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                  {getLocalized("description")}
+                  {safeDescription}
                 </p>
               </div>
 
-              {getLocalized("story") && (
+              {safeStory && (
                 <div className="bg-gradient-to-r from-watercolor-ochre/30 to-watercolor-umber/30 dark:from-gray-700/30 dark:to-gray-600/30 rounded-xl p-4 border-l-4 border-watercolor-ochre-accent">
                   <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-2">
                     <i className="fas fa-quote-left text-watercolor-ochre-accent mr-2"></i>
                     {t("artwork.story")}
                   </h3>
                   <p className="text-gray-700 dark:text-gray-300 italic">
-                    "{getLocalized("story")}"
+                    "{safeStory}"
                   </p>
                 </div>
               )}
@@ -209,7 +221,7 @@ export default function ArtworkDetail() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         imageUrl={modalImageUrl}
-        alt={getLocalized("title")}
+        alt={safeTitle}
       />
     </>
   );
