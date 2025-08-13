@@ -31,7 +31,7 @@ export default function AnnouncementModal() {
         <div className="flex flex-col sm:flex-row overflow-hidden">
           <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
             <img
-              src="/1.webp"
+              src="/1.avif"
               alt={t("announcement.imageAlt")}
               className="w-full h-full object-cover"
             />
