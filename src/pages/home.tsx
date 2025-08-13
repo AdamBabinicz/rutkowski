@@ -140,7 +140,6 @@ export default function Home() {
                 {t("hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                {/* CTA – gradient jasny w dark mode → ciemny tekst w dark */}
                 <Button
                   size="lg"
                   className="bg-gradient-to-r from-[var(--watercolor-ochre-accent)] to-[var(--watercolor-umber-accent)] text-white dark:!text-[var(--watercolor-charcoal)] hover:shadow-lg transition-all duration-300 font-medium"
@@ -154,11 +153,10 @@ export default function Home() {
                   {t("hero.cta")}
                 </Button>
 
-                {/* Outline – normalnie akcent jako kolor tekstu; w dark → ciemny tekst; na hover w light → biały; w dark → ciemny */}
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-[var(--watercolor-ochre-accent)] text-[var(--watercolor-ochre-accent)] dark:!text-[var(--watercolor-charcoal)] hover:bg-[var(--watercolor-ochre-accent)] hover:text-white dark:hover:!text-[var(--watercolor-charcoal)] rounded-full transition-all duration-300 font-medium px-8 py-3"
+                  className="border-2 border-[var(--watercolor-ochre-accent)] text-[var(--watercolor-ochre-accent)] hover:bg-[var(--watercolor-ochre-accent)] hover:text-white dark:hover:!text-[var(--watercolor-charcoal)] rounded-full transition-all duration-300 font-medium px-8 py-3"
                   onClick={() => setIsArtistDialogOpen(true)}
                   data-testid="artist-info-button"
                 >
@@ -213,72 +211,76 @@ export default function Home() {
         </section>
 
         <Dialog open={isArtistDialogOpen} onOpenChange={setIsArtistDialogOpen}>
-          <DialogContent className="max-w-2xl max-h-[80vh] overflow-y-auto">
-            <DialogHeader>
-              <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
-                {t("home.artistDialog.name")}
-              </DialogTitle>
-              <DialogDescription className="text-lg text-[var(--watercolor-ochre-accent)] font-medium">
-                {t("home.artistDialog.description")}
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-4 text-gray-700 dark:text-gray-300">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <img
-                  src="/3.avif"
-                  alt={t("home.artistDialog.alt")}
-                  className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-[var(--watercolor-ochre-accent)]"
-                />
-                <div className="flex-1">
+          <DialogContent className="max-w-2xl">
+            <div className="max-h-[80vh] overflow-y-auto p-8 lg:p-10 lg:px-12">
+              <DialogHeader>
+                <DialogTitle className="font-poppins text-2xl text-gray-800 dark:text-white mb-2">
+                  {t("home.artistDialog.name")}
+                </DialogTitle>
+                <DialogDescription className="text-lg text-[var(--watercolor-ochre-accent)] font-medium">
+                  {t("home.artistDialog.description")}
+                </DialogDescription>
+              </DialogHeader>
+              <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <img
+                    src="/3.avif"
+                    alt={t("home.artistDialog.alt")}
+                    className="w-32 h-32 rounded-full object-cover mx-auto sm:mx-0 border-4 border-[var(--watercolor-ochre-accent)]"
+                  />
+                  <div className="flex-1">
+                    <p className="text-sm leading-relaxed">
+                      <strong>{t("home.artistDialog.bornLabel")}</strong>{" "}
+                      {t("home.artistDialog.bornText")}
+                    </p>
+                    <p className="text-sm leading-relaxed mt-2">
+                      <strong>{t("home.artistDialog.educationLabel")}</strong>{" "}
+                      {t("home.artistDialog.educationText")}
+                    </p>
+                  </div>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                    {t("home.artistDialog.careerTitle")}
+                  </h4>
+                  <ul className="space-y-2 text-sm list-disc list-inside">
+                    <li>
+                      <strong>{t("home.artistDialog.career1.year")}</strong>{" "}
+                      {t("home.artistDialog.career1.event")}
+                    </li>
+                    <li>
+                      <strong>{t("home.artistDialog.career2.year")}</strong>{" "}
+                      {t("home.artistDialog.career2.event")}
+                    </li>
+                    <li>
+                      <strong>{t("home.artistDialog.career3.year")}</strong>{" "}
+                      {t("home.artistDialog.career3.event")}
+                    </li>
+                    <li>{t("home.artistDialog.career4.event")}</li>
+                    <li>{t("home.artistDialog.career5.event")}</li>
+                    <li>{t("home.artistDialog.career6.event")}</li>
+                  </ul>
+                </div>
+                <div className="space-y-3">
+                  <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
+                    {t("home.artistDialog.collectionsTitle")}
+                  </h4>
                   <p className="text-sm leading-relaxed">
-                    <strong>{t("home.artistDialog.bornLabel")}</strong>{" "}
-                    {t("home.artistDialog.bornText")}
-                  </p>
-                  <p className="text-sm leading-relaxed mt-2">
-                    <strong>{t("home.artistDialog.educationLabel")}</strong>{" "}
-                    {t("home.artistDialog.educationText")}
+                    {t("home.artistDialog.collectionsText1")}{" "}
+                    <strong>
+                      {t("home.artistDialog.collectionsCountries")}
+                    </strong>
+                    . {t("home.artistDialog.collectionsText2")}
                   </p>
                 </div>
-              </div>
-              <div className="space-y-3">
-                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
-                  {t("home.artistDialog.careerTitle")}
-                </h4>
-                <ul className="space-y-2 text-sm list-disc list-inside">
-                  <li>
-                    <strong>{t("home.artistDialog.career1.year")}</strong>{" "}
-                    {t("home.artistDialog.career1.event")}
-                  </li>
-                  <li>
-                    <strong>{t("home.artistDialog.career2.year")}</strong>{" "}
-                    {t("home.artistDialog.career2.event")}
-                  </li>
-                  <li>
-                    <strong>{t("home.artistDialog.career3.year")}</strong>{" "}
-                    {t("home.artistDialog.career3.event")}
-                  </li>
-                  <li>{t("home.artistDialog.career4.event")}</li>
-                  <li>{t("home.artistDialog.career5.event")}</li>
-                  <li>{t("home.artistDialog.career6.event")}</li>
-                </ul>
-              </div>
-              <div className="space-y-3">
-                <h4 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white">
-                  {t("home.artistDialog.collectionsTitle")}
-                </h4>
-                <p className="text-sm leading-relaxed">
-                  {t("home.artistDialog.collectionsText1")}{" "}
-                  <strong>{t("home.artistDialog.collectionsCountries")}</strong>
-                  . {t("home.artistDialog.collectionsText2")}
-                </p>
-              </div>
-              <div className="bg-[var(--watercolor-cream)] dark:bg-gray-800 p-4 rounded-xl border border-[color:var(--watercolor-ochre-accent)]/20">
-                <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
-                  "{t("home.artistDialog.quote")}"
-                </p>
-                <p className="text-xs text-center mt-2 text-[var(--watercolor-ochre-accent)] font-medium">
-                  - {t("home.artistDialog.name")}
-                </p>
+                <div className="bg-[var(--watercolor-cream)] dark:bg-gray-800 p-4 rounded-xl border border-[color:var(--watercolor-ochre-accent)]/20">
+                  <p className="text-sm italic text-center text-gray-600 dark:text-gray-400">
+                    "{t("home.artistDialog.quote")}"
+                  </p>
+                  <p className="text-xs text-center mt-2 text-[var(--watercolor-ochre-accent)] font-medium">
+                    - {t("home.artistDialog.name")}
+                  </p>
+                </div>
               </div>
             </div>
           </DialogContent>

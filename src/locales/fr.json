@@ -285,7 +285,8 @@
       "successTitle": "Succès !",
       "success": "Message envoyé avec succès !",
       "errorTitle": "Erreur",
-      "error": "Une erreur s'est produite lors de l'envoi du message."
+      "error": "Une erreur s'est produite lors de l'envoi du message.",
+      "sendAnother": "Envoyer un autre message"
     },
     "subjects": {
       "purchase": "Achat d'œuvre",

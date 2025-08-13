@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { useForm, ValidationError } from "@formspree/react";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,69 +14,36 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
-import type { TFunction } from "i18next";
-
-const getContactSchema = (t: TFunction) =>
-  z.object({
-    firstName: z.string().min(2, t("validation.firstNameMin")),
-    lastName: z.string().min(2, t("validation.lastNameMin")),
-    email: z.string().email(t("validation.emailInvalid")),
-    subject: z.string().min(1, t("validation.subjectRequired")),
-    message: z.string().min(10, t("validation.messageMin")),
-    privacy: z
-      .boolean()
-      .refine((val) => val === true, t("validation.privacyRequired")),
-  });
+import { Label } from "@/components/ui/label";
 
 export default function Contact() {
   const { t } = useTranslation();
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit, reset] = useForm("mblkwnpz");
 
-  const contactSchema = getContactSchema(t);
-  type ContactFormData = z.infer<typeof contactSchema>;
-
-  const form = useForm<ContactFormData>({
-    resolver: zodResolver(contactSchema),
-    defaultValues: {
-      firstName: "",
-      lastName: "",
-      email: "",
-      subject: "",
-      message: "",
-      privacy: false,
-    },
-  });
-
-  const onSubmit = async (data: ContactFormData) => {
-    setIsSubmitting(true);
-    try {
-      await apiRequest("POST", "/api/contact", data);
-      toast({
-        title: t("contact.form.successTitle"),
-        description: t("contact.form.success"),
-      });
-      form.reset();
-    } catch (error) {
-      toast({
-        title: t("contact.form.errorTitle"),
-        description: t("contact.form.error"),
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  if (state.succeeded) {
+    return (
+      <main className="pt-20">
+        <section className="py-20 px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="max-w-4xl mx-auto text-center py-16"
+          >
+            <h2 className="font-poppins font-bold text-3xl text-gray-800 dark:text-white mb-4">
+              {t("contact.form.successTitle")}
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+              {t("contact.form.success")}
+            </p>
+            <Button variant="outline" onClick={reset}>
+              {t("contact.form.sendAnother")}
+            </Button>
+          </motion.div>
+        </section>
+      </main>
+    );
+  }
 
   return (
     <>
@@ -115,157 +80,110 @@ export default function Contact() {
                   {t("contact.form.title")}
                 </h3>
 
-                <Form {...form}>
-                  <form
-                    onSubmit={form.handleSubmit(onSubmit)}
-                    className="space-y-6"
-                  >
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      <FormField
-                        control={form.control}
-                        name="firstName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>{t("contact.form.firstName")}</FormLabel>
-                            <FormControl>
-                              <Input {...field} data-testid="input-firstName" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
-                      <FormField
-                        control={form.control}
-                        name="lastName"
-                        render={({ field }) => (
-                          <FormItem>
-                            <FormLabel>{t("contact.form.lastName")}</FormLabel>
-                            <FormControl>
-                              <Input {...field} data-testid="input-lastName" />
-                            </FormControl>
-                            <FormMessage />
-                          </FormItem>
-                        )}
-                      />
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="firstName">
+                        {t("contact.form.firstName")}
+                      </Label>
+                      <Input id="firstName" name="firstName" required />
                     </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="lastName">
+                        {t("contact.form.lastName")}
+                      </Label>
+                      <Input id="lastName" name="lastName" required />
+                    </div>
+                  </div>
 
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.email")}</FormLabel>
-                          <FormControl>
-                            <Input
-                              type="email"
-                              {...field}
-                              data-testid="input-email"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+                  <div className="space-y-2">
+                    <Label htmlFor="email">{t("contact.form.email")}</Label>
+                    <Input id="email" type="email" name="email" required />
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                      className="text-sm font-medium text-destructive"
                     />
+                  </div>
 
-                    <FormField
-                      control={form.control}
-                      name="subject"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.subject")}</FormLabel>
-                          <Select
-                            onValueChange={field.onChange}
-                            value={field.value}
-                          >
-                            <FormControl>
-                              <SelectTrigger data-testid="select-subject">
-                                <SelectValue
-                                  placeholder={t("contact.form.selectSubject")}
-                                />
-                              </SelectTrigger>
-                            </FormControl>
-                            <SelectContent>
-                              <SelectItem value="purchase">
-                                {t("contact.subjects.purchase")}
-                              </SelectItem>
-                              <SelectItem value="commission">
-                                {t("contact.subjects.commission")}
-                              </SelectItem>
-                              <SelectItem value="exhibition">
-                                {t("contact.subjects.exhibition")}
-                              </SelectItem>
-                              <SelectItem value="general">
-                                {t("contact.subjects.general")}
-                              </SelectItem>
-                              <SelectItem value="press">
-                                {t("contact.subjects.press")}
-                              </SelectItem>
-                            </SelectContent>
-                          </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
+                  <div className="space-y-2">
+                    <Label htmlFor="subject">{t("contact.form.subject")}</Label>
+                    <Select name="subject" required>
+                      <SelectTrigger id="subject" data-testid="select-subject">
+                        <SelectValue
+                          placeholder={t("contact.form.selectSubject")}
+                        />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="purchase">
+                          {t("contact.subjects.purchase")}
+                        </SelectItem>
+                        <SelectItem value="commission">
+                          {t("contact.subjects.commission")}
+                        </SelectItem>
+                        <SelectItem value="exhibition">
+                          {t("contact.subjects.exhibition")}
+                        </SelectItem>
+                        <SelectItem value="general">
+                          {t("contact.subjects.general")}
+                        </SelectItem>
+                        <SelectItem value="press">
+                          {t("contact.subjects.press")}
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
 
-                    <FormField
-                      control={form.control}
+                  <div className="space-y-2">
+                    <Label htmlFor="message">{t("contact.form.message")}</Label>
+                    <Textarea
+                      id="message"
                       name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>{t("contact.form.message")}</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              {...field}
-                              rows={5}
-                              placeholder={t("contact.form.messagePlaceholder")}
-                              className="resize-none"
-                              data-testid="textarea-message"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+                      required
+                      rows={5}
+                      placeholder={t("contact.form.messagePlaceholder")}
+                      className="resize-none"
                     />
-
-                    <FormField
-                      control={form.control}
-                      name="privacy"
-                      render={({ field }) => (
-                        <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                          <FormControl>
-                            <Checkbox
-                              checked={field.value}
-                              onCheckedChange={field.onChange}
-                              data-testid="checkbox-privacy"
-                            />
-                          </FormControl>
-                          <div className="space-y-1 leading-none">
-                            <FormLabel className="text-sm">
-                              {t("contact.form.privacy")}{" "}
-                              <a
-                                href="/privacy-policy"
-                                className="text-watercolor-lavender-deep hover:underline"
-                              >
-                                {t("contact.form.privacyPolicy")}
-                              </a>
-                            </FormLabel>
-                            <FormMessage />
-                          </div>
-                        </FormItem>
-                      )}
+                    <ValidationError
+                      prefix="Message"
+                      field="message"
+                      errors={state.errors}
+                      className="text-sm font-medium text-destructive"
                     />
+                  </div>
 
-                    <Button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="w-full bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white dark:text-watercolor-charcoal py-4 rounded-lg hover:shadow-lg transition-all duration-300 font-medium text-lg"
-                      data-testid="submit-contact-form"
-                    >
-                      <i className="fas fa-paper-plane mr-2"></i>
-                      {isSubmitting ? t("loading") : t("contact.form.submit")}
-                    </Button>
-                  </form>
-                </Form>
+                  <div className="flex items-start space-x-3">
+                    <Checkbox id="privacy" required />
+                    <div className="grid gap-1.5 leading-none">
+                      <Label htmlFor="privacy" className="text-sm">
+                        {t("contact.form.privacy")}{" "}
+                        <a
+                          href="/privacy-policy"
+                          className="text-watercolor-lavender-deep hover:underline"
+                        >
+                          {t("contact.form.privacyPolicy")}
+                        </a>
+                      </Label>
+                    </div>
+                  </div>
+
+                  {state.errors && (
+                    <div className="text-sm font-medium text-destructive">
+                      {t("contact.form.error")}
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="w-full bg-gradient-to-r from-watercolor-ochre-accent to-watercolor-umber-accent text-white dark:text-watercolor-charcoal py-4 rounded-lg hover:shadow-lg transition-all duration-300 font-medium text-lg"
+                    data-testid="submit-contact-form"
+                  >
+                    <i className="fas fa-paper-plane mr-2"></i>
+                    {state.submitting ? t("loading") : t("contact.form.submit")}
+                  </Button>
+                </form>
               </motion.div>
 
               <motion.div
@@ -359,38 +277,7 @@ export default function Contact() {
                   <h3 className="font-poppins font-semibold text-lg text-gray-800 dark:text-white mb-4">
                     {t("contact.artistInfo.socialsTitle")}
                   </h3>
-                  {/* <div className="flex space-x-4">
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-gradient-to-br from-watercolor-lavender-deep to-watercolor-peach-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
-                      data-testid="social-instagram-contact"
-                    >
-                      <i className="fab fa-instagram"></i>
-                    </a>
-                    <a
-                      href="https://www.facebook.com/zbigniewjan.rutkowski"
-                      className="w-12 h-12 bg-gradient-to-br from-watercolor-blue-deep to-watercolor-sage-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
-                      data-testid="social-facebook-contact"
-                    >
-                      <i className="fab fa-facebook"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-gradient-to-br from-watercolor-sage-deep to-watercolor-lavender-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
-                      data-testid="social-linkedin-contact"
-                    >
-                      <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a
-                      href="#"
-                      className="w-12 h-12 bg-gradient-to-br from-watercolor-peach-deep to-watercolor-blue-deep rounded-lg flex items-center justify-center text-white hover:shadow-lg transition-all duration-300 watercolor-hover"
-                      data-testid="social-youtube-contact"
-                    >
-                      <i className="fab fa-youtube"></i>
-                    </a>
-                  </div> */}
                   <div className="flex space-x-4">
-                    {/* Link do Facebooka */}
                     <a
                       href="https://www.facebook.com/zbigniewjan.rutkowski"
                       target="_blank"
@@ -401,7 +288,6 @@ export default function Contact() {
                     >
                       <i className="fab fa-facebook"></i>
                     </a>
-                    {/* Link do Messengera */}
                     <a
                       href="https://m.me/zbigniewjan.rutkowski"
                       target="_blank"
