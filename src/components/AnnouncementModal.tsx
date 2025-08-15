@@ -57,7 +57,7 @@ export default function AnnouncementModal() {
                     href="https://a-g.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline dark:text-blue-400"
+                    className="text-blue-600 underline hover:no-underline dark:text-blue-400"
                   >
                     {t("announcement.authorName")}
                   </a>
