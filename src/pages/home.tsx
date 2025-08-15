@@ -31,9 +31,27 @@ export default function Home() {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
   const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
-  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
-
   const searchParams = useQueryString();
+
+  // KROK 1: Przywracanie stanu z sessionStorage przy pierwszym renderowaniu
+  const [visibleCount, setVisibleCount] = useState(() => {
+    const savedCount = sessionStorage.getItem("galleryVisibleCount");
+    return savedCount ? parseInt(savedCount, 10) : INITIAL_COUNT;
+  });
+
+  useEffect(() => {
+    // KROK 2: Przywracanie pozycji przewijania po powrocie
+    const savedScrollPosition = sessionStorage.getItem("galleryScrollPosition");
+    if (savedScrollPosition) {
+      // Używamy małego opóźnienia, aby dać czas na wyrenderowanie odpowiedniej liczby kart
+      setTimeout(() => {
+        window.scrollTo(0, parseInt(savedScrollPosition, 10));
+        // Czyścimy zapisane wartości, aby normalna nawigacja nie przywracała pozycji
+        sessionStorage.removeItem("galleryScrollPosition");
+        sessionStorage.removeItem("galleryVisibleCount");
+      }, 10);
+    }
+  }, []); // Pusta tablica zależności sprawia, że ten efekt uruchomi się tylko raz, po zamontowaniu komponentu
 
   const filters = useMemo(() => {
     return {
@@ -59,8 +77,7 @@ export default function Home() {
         }, 100);
       }
     }
-    // Reset visible count when filters change
-    setVisibleCount(INITIAL_COUNT);
+    // Nie resetujemy już visibleCount przy zmianie filtrów, chyba że jest to pożądane
   }, [filters]);
 
   const parsedArtworks = artworksSchema.parse(artworksData);
@@ -103,6 +120,7 @@ export default function Home() {
   }, [parsedArtworks, filters]);
 
   const handleFilterChange = (key: string, value: string) => {
+    setVisibleCount(INITIAL_COUNT); // Resetuj liczbę kart przy zmianie filtra
     const newParams = new URLSearchParams(window.location.search);
     if (value && value !== "all") {
       newParams.set(key, value);
@@ -113,7 +131,10 @@ export default function Home() {
     setLocation(newSearch ? `?${newSearch}` : "/", { replace: true });
   };
 
+  // KROK 3: Zapisywanie stanu przed przejściem do szczegółów
   const handleArtworkClick = (id: string) => {
+    sessionStorage.setItem("galleryScrollPosition", window.scrollY.toString());
+    sessionStorage.setItem("galleryVisibleCount", visibleCount.toString());
     setLocation(`/artwork/${id}`);
   };
 

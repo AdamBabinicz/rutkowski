@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useParams } from "wouter";
+import { useParams } from "wouter";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { ArrowLeft } from "lucide-react";
@@ -10,6 +10,7 @@ import ImageModal from "@/components/image-modal";
 import NotFound from "@/pages/not-found";
 import artworksData from "@/data/artworks.json";
 import { artworksSchema, type Artwork } from "../../shared/schema";
+import { Link } from "wouter"; // Link jest nadal potrzebny do tagów
 
 export default function ArtworkDetail() {
   const { id } = useParams();
@@ -51,7 +52,6 @@ export default function ArtworkDetail() {
       ? artwork.imageUrls
       : [artwork.imageUrl || ""];
 
-  // Tworzenie "bezpiecznych" zmiennych, które nigdy nie będą `undefined`
   const safeTitle = getLocalized("title");
   const safeDescription = getLocalized("description");
   const safeStory = getLocalized("story");
@@ -87,13 +87,17 @@ export default function ArtworkDetail() {
       />
       <section className="pt-20 py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <Link
+          <a
             href="/"
-            className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-watercolor-ochre-accent dark:hover:text-watercolor-ochre transition-colors mb-8"
+            onClick={(e) => {
+              e.preventDefault();
+              window.history.back();
+            }}
+            className="inline-flex items-center text-gray-600 dark:text-gray-300 hover:text-watercolor-ochre-accent dark:hover:text-watercolor-ochre transition-colors mb-8 cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             {t("artwork.backToGallery")}
-          </Link>
+          </a>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}

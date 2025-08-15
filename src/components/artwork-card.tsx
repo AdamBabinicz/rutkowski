@@ -42,7 +42,7 @@ export default function ArtworkCard({
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: index * 0.1 }}
+      transition={{ duration: 0.5, delay: index * 0.05 }}
       className="watercolor-hover cursor-pointer"
       onClick={onClick}
       data-testid={`artwork-card-${artwork.id}`}
