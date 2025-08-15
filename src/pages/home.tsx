@@ -17,6 +17,8 @@ import artworksData from "@/data/artworks.json";
 import { artworksSchema } from "@shared/schema";
 import { useQueryString } from "@/hooks/use-query-string";
 
+const INITIAL_COUNT = 8;
+
 function normalize(str: string): string {
   if (!str) return "";
   return str
@@ -29,6 +31,7 @@ export default function Home() {
   const { t } = useTranslation();
   const [, setLocation] = useLocation();
   const [isArtistDialogOpen, setIsArtistDialogOpen] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
 
   const searchParams = useQueryString();
 
@@ -56,6 +59,8 @@ export default function Home() {
         }, 100);
       }
     }
+    // Reset visible count when filters change
+    setVisibleCount(INITIAL_COUNT);
   }, [filters]);
 
   const parsedArtworks = artworksSchema.parse(artworksData);
@@ -179,19 +184,54 @@ export default function Home() {
               {t("gallery.heading")}
             </h2>
             {filteredArtworks.length > 0 ? (
-              <div
-                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
-                data-testid="gallery-grid"
-              >
-                {filteredArtworks.map((artwork, index) => (
-                  <ArtworkCard
-                    key={artwork.id}
-                    artwork={artwork}
-                    index={index}
-                    onClick={() => handleArtworkClick(artwork.id)}
-                  />
-                ))}
-              </div>
+              <>
+                <div
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
+                  data-testid="gallery-grid"
+                >
+                  {filteredArtworks
+                    .slice(0, visibleCount)
+                    .map((artwork, index) => (
+                      <ArtworkCard
+                        key={artwork.id}
+                        artwork={artwork}
+                        index={index}
+                        onClick={() => handleArtworkClick(artwork.id)}
+                      />
+                    ))}
+                </div>
+
+                <div className="text-center mt-12">
+                  {visibleCount < filteredArtworks.length && (
+                    <Button
+                      size="lg"
+                      onClick={() =>
+                        setVisibleCount((prev) => prev + INITIAL_COUNT)
+                      }
+                      data-testid="load-more-button"
+                      className="bg-gradient-to-r from-[var(--watercolor-ochre-accent)] to-[var(--watercolor-umber-accent)] text-white dark:!text-[var(--watercolor-charcoal)] hover:shadow-lg transition-all duration-300 font-medium"
+                    >
+                      {t("gallery.loadMore")}
+                    </Button>
+                  )}
+                  {visibleCount > INITIAL_COUNT && (
+                    <Button
+                      size="lg"
+                      variant="ghost"
+                      className="ml-4"
+                      onClick={() => {
+                        setVisibleCount(INITIAL_COUNT);
+                        document
+                          .getElementById("gallery-section")
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      data-testid="show-less-button"
+                    >
+                      {t("gallery.showLess")}
+                    </Button>
+                  )}
+                </div>
+              </>
             ) : (
               <div className="text-center py-16" data-testid="no-results">
                 <div className="text-gray-500 dark:text-gray-400 text-lg">

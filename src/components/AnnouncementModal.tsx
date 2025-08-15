@@ -31,7 +31,7 @@ export default function AnnouncementModal() {
         <div className="flex flex-col sm:flex-row overflow-hidden">
           <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
             <img
-              src="/1.avif"
+              src="/4.avif"
               alt={t("announcement.imageAlt")}
               className="w-full h-full object-cover"
               fetchPriority="high"
@@ -54,7 +54,7 @@ export default function AnnouncementModal() {
                 <p className="text-xs italic text-gray-500 dark:text-gray-400">
                   {t("announcement.authorLabel")}{" "}
                   <a
-                    href="https://www.facebook.com/szymon.fotak.wykrota/posts/pfbid0cDd8cmG1T1BxLcoDxuweYJwWjZJ8wftAWtMcizduDuia3ijHU7sLRCFqRmuH49Ywl"
+                    href="https://a-g.netlify.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-600 hover:underline dark:text-blue-400"

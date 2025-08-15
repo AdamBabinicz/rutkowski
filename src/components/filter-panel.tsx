@@ -41,7 +41,18 @@ export default function FilterPanel({
     new Set(parsedArtworks.flatMap((artwork) => artwork.tags || []))
   );
 
-  const techniques = ["akwarela", "olej", "grafika", "ołówek"];
+  const techniques = [
+    "akwarela",
+    "olej",
+    "grafika",
+    "ołówek",
+    "długopis",
+    "węgiel",
+    "rysunek_lawowany",
+    "rysunek_piorkiem",
+    "kredki_akwarelowe",
+    "monotypia",
+  ];
 
   return (
     <section className="px-4 mb-12" aria-labelledby="filter-panel-heading">
