@@ -1,4 +1,4 @@
-// Plik: AnnouncementModal.tsx (Wersja finalna, która działa)
+// Plik: AnnouncementModal.tsx (Wersja ostateczna, prosta i działająca)
 
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
@@ -23,75 +23,62 @@ export default function AnnouncementModal({
   const { t } = useTranslation();
 
   return (
-    <>
-      {/* 1. Tło jest renderowane warunkowo, ma stały kolor i jest "przezroczyste" dla kliknięć */}
-      {isOpen && (
-        <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm pointer-events-none" />
-      )}
+    // 1. Wracamy do podstaw. `onOpenChange` jest potrzebny, aby przycisk 'x' i klawisz ESC działały.
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogContent
+        // 2. NAJWAŻNIEJSZA ZMIANA: Ta linijka zapobiega zamknięciu okna
+        //    przy interakcji z banerem ciasteczkowym, który jest "na zewnątrz".
+        onInteractOutside={(e) => {
+          e.preventDefault();
+        }}
+        className="w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]"
+      >
+        <div className="flex flex-col sm:flex-row overflow-hidden">
+          <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
+            <img
+              src="/4.avif"
+              alt={t("announcement.imageAlt")}
+              className="w-full h-full object-cover"
+              fetchPriority="high"
+            />
+          </div>
+          <div className="p-6 flex flex-col flex-1 overflow-hidden">
+            <DialogHeader className="flex-shrink-0">
+              <DialogTitle className="font-poppins text-2xl mb-2 text-gray-800 dark:text-white">
+                {t("announcement.title")}
+              </DialogTitle>
+            </DialogHeader>
 
-      {/*
-        2. KRYTYCZNA ZMIANA: Usuwamy `onOpenChange`!
-        To zatrzymuje automatyczne zamykanie się pop-upu przy interakcji z banerem.
-        Zachowujemy `modal={false}`, aby baner był klikalny.
-      */}
-      <Dialog open={isOpen} modal={false}>
-        <DialogContent
-          onInteractOutside={(e) => {
-            e.preventDefault();
-          }}
-          onEscapeKeyDown={(e) => {
-            e.preventDefault();
-          }}
-          className="z-50 w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]"
-        >
-          <div className="flex flex-col sm:flex-row overflow-hidden">
-            <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
-              <img
-                src="/4.avif"
-                alt={t("announcement.imageAlt")}
-                className="w-full h-full object-cover"
-                fetchPriority="high"
-              />
-            </div>
-            <div className="p-6 flex flex-col flex-1 overflow-hidden">
-              <DialogHeader className="flex-shrink-0">
-                <DialogTitle className="font-poppins text-2xl mb-2 text-gray-800 dark:text-white">
-                  {t("announcement.title")}
-                </DialogTitle>
-              </DialogHeader>
-
-              <div className="flex-grow overflow-y-auto pr-4 space-y-4">
-                <DialogDescription asChild>
-                  <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
-                    <p>{t("announcement.body")}</p>
-                  </div>
-                </DialogDescription>
-                <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
-                  <p className="text-xs italic text-gray-500 dark:text-gray-400">
-                    {t("announcement.authorLabel")}{" "}
-                    <a
-                      href="https://a-g.netlify.app"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-blue-600 underline hover:no-underline dark:text-blue-400"
-                    >
-                      {t("announcement.authorName")}
-                    </a>
-                    , {t("announcement.sourceLabel")}
-                  </p>
+            <div className="flex-grow overflow-y-auto pr-4 space-y-4">
+              <DialogDescription asChild>
+                <div className="text-gray-700 dark:text-gray-300 whitespace-pre-wrap leading-relaxed">
+                  <p>{t("announcement.body")}</p>
                 </div>
+              </DialogDescription>
+              <div className="pt-4 border-t border-gray-200 dark:border-gray-700">
+                <p className="text-xs italic text-gray-500 dark:text-gray-400">
+                  {t("announcement.authorLabel")}{" "}
+                  <a
+                    href="https://a-g.netlify.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 underline hover:no-underline dark:text-blue-400"
+                  >
+                    {t("announcement.authorName")}
+                  </a>
+                  , {t("announcement.sourceLabel")}
+                </p>
               </div>
+            </div>
 
-              {/* 3. Ten przycisk jest teraz jedynym sposobem na zamknięcie okna */}
-              <div className="mt-4 text-right flex-shrink-0">
-                <Button variant="outline" onClick={() => setIsOpen(false)}>
-                  {t("announcement.closeButton")}
-                </Button>
-              </div>
+            <div className="mt-4 text-right flex-shrink-0">
+              <Button variant="outline" onClick={() => setIsOpen(false)}>
+                {t("announcement.closeButton")}
+              </Button>
             </div>
           </div>
-        </DialogContent>
-      </Dialog>
-    </>
+        </div>
+      </DialogContent>
+    </Dialog>
   );
 }
