@@ -2,7 +2,12 @@ import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { useQueryString } from "@/hooks/use-query-string";
 
-export default function Footer() {
+// 1. Definiujemy, że komponent przyjmuje nową właściwość (prop)
+interface FooterProps {
+  onAnnouncementClick: () => void;
+}
+
+export default function Footer({ onAnnouncementClick }: FooterProps) {
   const { t } = useTranslation();
   const searchParams = useQueryString();
 
@@ -172,7 +177,17 @@ export default function Footer() {
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-300 text-sm">{t("footer.copyright")}</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+            <div className="flex items-center space-x-6 mt-4 md:mt-0">
+              {/* 2. JEDYNA ZMIANA JEST TUTAJ: Dodajemy nowy, klikalny przycisk */}
+              <button
+                onClick={onAnnouncementClick}
+                className="text-gray-300 hover:text-white text-sm transition-colors flex items-center"
+                aria-label={t("footer.announcementAriaLabel")}
+              >
+                <i className="fas fa-bullhorn mr-2"></i>
+                <span>{t("footer.announcement")}</span>
+              </button>
+
               <Link
                 href="/privacy-policy"
                 className="text-gray-300 hover:text-white text-sm transition-colors"

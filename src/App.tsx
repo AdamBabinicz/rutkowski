@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
-import { Suspense, useEffect, useState } from "react"; // Dodano useState
+import { Suspense, useEffect, useState } from "react";
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -53,16 +53,8 @@ function Router() {
 }
 
 function App() {
-  // 1. Stan i logika `useEffect` zostały przeniesione tutaj z AnnouncementModal.
+  // 1. Stan do zarządzania modalem pozostaje, ale `useEffect` znika.
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
-
-  useEffect(() => {
-    const announcementShown = sessionStorage.getItem("announcementShown_v1");
-    if (!announcementShown) {
-      setIsAnnouncementOpen(true);
-      sessionStorage.setItem("announcementShown_v1", "true");
-    }
-  }, []);
 
   return (
     <HelmetProvider>
@@ -74,9 +66,10 @@ function App() {
               <Suspense fallback={<div>Ładowanie...</div>}>
                 <Router />
               </Suspense>
-              <Footer />
+              {/* 2. Przekazujemy do stopki funkcję, która otwiera modal */}
+              <Footer onAnnouncementClick={() => setIsAnnouncementOpen(true)} />
               <ScrollToTopButton />
-              {/* 2. Przekazujemy stan i funkcję do jego zmiany jako propsy */}
+              {/* 3. Modal jest wciąż tutaj, gotowy do otwarcia */}
               <AnnouncementModal
                 isOpen={isAnnouncementOpen}
                 setIsOpen={setIsAnnouncementOpen}
