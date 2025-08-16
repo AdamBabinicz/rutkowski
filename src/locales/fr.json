@@ -491,11 +491,11 @@
     "privacyRequired": "Vous devez accepter la politique de confidentialité"
   },
   "announcement": {
-    "title": "Note de l'Auteur",
-    "body": "Ce site web, dédié à Zbigniew Rutkowski, artiste estimé et figure de la culture de Radom, a été créé par Adam Gierczak. Passionné de programmation autodidacte et \"Jan Matejko en herbe\" autoproclamé, il perfectionne ses compétences en développement full-stack depuis 21 ans.\n\nLui et Zbigniew Rutkowski se sont croisés dans les couloirs du Centre d'Art de Radom entre 1974 et 1975, bien qu'ils fussent dans des groupes différents et ne se connaissaient que de vue.\n\nCe site a été réalisé avec des technologies telles que React (Vite), TypeScript et Tailwind CSS, avec une aide significative de l'intelligence artificielle.",
+    "title": "Note de l'auteur",
+    "body": "L'auteur du site dédié à Zbigniew Rutkowski, artiste émérite et figure bien connue de la culture de Radom, est Adam Gierczak. Passionné de langages de programmation, autodidacte et un \"Jan Matejko\" en herbe, il développe ses compétences en développement full-stack depuis 21 ans.\n\nIl a croisé Zbigniew Rutkowski dans les couloirs du Foyer des Arts Plastiques de Radom en 1974-1975, bien qu'à l'époque, étant dans des groupes différents, ils ne se connaissaient tout au plus que de vue.\n\nLe site a été créé à l'aide de technologies telles que React (Vite), TypeScript et Tailwind CSS, avec un soutien important de l'intelligence artificielle.",
     "imageAlt": "Photo de l'auteur du site, Adam Gierczak",
     "closeButton": "Fermer",
-    "authorLabel": "Site de l'Auteur :",
+    "authorLabel": "Site de l'auteur :",
     "authorName": "Adam Gierczak",
     "sourceLabel": "Portfolio"
   },

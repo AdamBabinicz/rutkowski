@@ -492,10 +492,10 @@
   },
   "announcement": {
     "title": "From the Author",
-    "body": "This website, dedicated to Zbigniew Rutkowski, an esteemed artist and figure in Radom's culture, was created by Adam Gierczak. A self-taught programming enthusiast and a self-proclaimed \"would-be Jan Matejko,\" he has been honing his skills in full-stack development for 21 years.\n\nHe and Zbigniew Rutkowski crossed paths in the corridors of the Radom Art Center between 1974 and 1975, though they were in different groups and knew each other only by sight.\n\nThis site was built using technologies like React (Vite), TypeScript, and Tailwind CSS, with significant assistance from artificial intelligence.",
+    "body": "The author of the site dedicated to Zbigniew Rutkowski, a distinguished artist and a well-known figure in Radom's culture, is Adam Gierczak. A programming language enthusiast, self-taught, and an aspiring \"Jan Matejko\", he has been developing his skills in full-stack development for 21 years.\n\nHe met Zbigniew Rutkowski in the corridors of the Radom Art Center in 1974-1975, although at the time, being in different groups, they knew each other at most by sight.\n\nThe site was created using technologies such as React (Vite), TypeScript, and Tailwind CSS, with significant support from artificial intelligence.",
     "imageAlt": "Photo of the site's author, Adam Gierczak",
     "closeButton": "Close",
-    "authorLabel": "Author's Website:",
+    "authorLabel": "Author's Site:",
     "authorName": "Adam Gierczak",
     "sourceLabel": "Portfolio"
   },

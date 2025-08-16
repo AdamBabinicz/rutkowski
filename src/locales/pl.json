@@ -492,7 +492,7 @@
   },
   "announcement": {
     "title": "Od Autora",
-    "body": "Autorem strony poświęconej Zbigniewowi Rutkowskiemu, zasłużonemu artyście i postaci radomskiej kultury, jest Adam Gierczak. Entuzjasta języków programowania, samouk i niedoszły \"Jan Matejko\", od 21 lat rozwija swoje umiejętności w obszarze full-stack development.\n\nZe Zbigniewem Rutkowskim spotykał się w korytarzach radomskiego Ogniska Plastycznego w latach 1974-1975, choć wtedy, będąc w różnych grupach, znali się co najwyżej z widzenia.\n\nStrona została stworzona w oparciu o technologie takie jak React (Vite), TypeScript i Tailwind CSS, przy znaczącym wsparciu sztucznej inteligencji.",
+    "body": "Autorem strony poświęconej Zbigniewowi Rutkowskiemu, zasłużonemu artyście i znanej postaci radomskiej kultury, jest Adam Gierczak. Entuzjasta języków programowania, samouk i niedoszły \"Jan Matejko\", od 21 lat rozwija swoje umiejętności w obszarze full-stack development.\n\nZe Zbigniewem Rutkowskim spotykał się w korytarzach radomskiego Ogniska Plastycznego w latach 1974-1975, choć wtedy, będąc w różnych grupach, znali się co najwyżej z widzenia.\n\nStrona została stworzona w oparciu o technologie takie jak React (Vite), TypeScript i Tailwind CSS, przy znaczącym wsparciu sztucznej inteligencji.",
     "imageAlt": "Zdjęcie autora strony, Adama Gierczaka",
     "closeButton": "Zamknij",
     "authorLabel": "Strona Autora:",
