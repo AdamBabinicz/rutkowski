@@ -1,4 +1,4 @@
-// Plik: AnnouncementModal.tsx (Wersja z warunkowym renderowaniem tła)
+// Plik: AnnouncementModal.tsx (Wersja finalna, która działa)
 
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,16 +24,17 @@ export default function AnnouncementModal({
 
   return (
     <>
-      {/*
-        JEDYNA ZMIANA JEST TUTAJ:
-        Otaczamy nasze tło warunkiem `{isOpen && ...}`.
-        Teraz tło będzie renderowane tylko wtedy, gdy `isOpen` jest `true`.
-      */}
+      {/* 1. Tło jest renderowane warunkowo, ma stały kolor i jest "przezroczyste" dla kliknięć */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm pointer-events-none" />
+        <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm pointer-events-none" />
       )}
 
-      <Dialog open={isOpen} onOpenChange={setIsOpen} modal={false}>
+      {/*
+        2. KRYTYCZNA ZMIANA: Usuwamy `onOpenChange`!
+        To zatrzymuje automatyczne zamykanie się pop-upu przy interakcji z banerem.
+        Zachowujemy `modal={false}`, aby baner był klikalny.
+      */}
+      <Dialog open={isOpen} modal={false}>
         <DialogContent
           onInteractOutside={(e) => {
             e.preventDefault();
@@ -81,6 +82,7 @@ export default function AnnouncementModal({
                 </div>
               </div>
 
+              {/* 3. Ten przycisk jest teraz jedynym sposobem na zamknięcie okna */}
               <div className="mt-4 text-right flex-shrink-0">
                 <Button variant="outline" onClick={() => setIsOpen(false)}>
                   {t("announcement.closeButton")}
