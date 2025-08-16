@@ -205,7 +205,6 @@
 .animate-watercolor {
   animation: watercolor 3s ease-in-out infinite;
 }
-#cookiescript_injected {
-  position: relative !important;
-  z-index: 9999 !important;
+[data-radix-dialog-overlay] {
+  z-index: 40 !important;
 }
