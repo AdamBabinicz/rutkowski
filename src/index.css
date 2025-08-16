@@ -1,3 +1,5 @@
+/* Plik: index.css (Ostateczna, poprawna wersja dla Twojego projektu) */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap");
 @tailwind base;
 @tailwind components;
@@ -130,7 +132,9 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
+    /* KLUCZOWA ZMIANA - Dodane klasy z App.tsx */
+    @apply min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light;
     width: 100%;
     overflow-x: hidden;
   }

@@ -1,3 +1,5 @@
+// Plik: App.tsx (Ostateczna, poprawna wersja dla Twojego projektu)
+
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -53,7 +55,6 @@ function Router() {
 }
 
 function App() {
-  // 1. Stan do zarządzania modalem pozostaje, ale `useEffect` znika.
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
 
   return (
@@ -61,15 +62,14 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <TooltipProvider>
-            <div className="min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light transition-all duration-300">
+            {/* KLUCZOWA ZMIANA - Ten div jest teraz prosty */}
+            <div className="transition-all duration-300">
               <Navbar />
               <Suspense fallback={<div>Ładowanie...</div>}>
                 <Router />
               </Suspense>
-              {/* 2. Przekazujemy do stopki funkcję, która otwiera modal */}
               <Footer onAnnouncementClick={() => setIsAnnouncementOpen(true)} />
               <ScrollToTopButton />
-              {/* 3. Modal jest wciąż tutaj, gotowy do otwarcia */}
               <AnnouncementModal
                 isOpen={isAnnouncementOpen}
                 setIsOpen={setIsAnnouncementOpen}
