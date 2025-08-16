@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import {
   Dialog,
@@ -9,25 +9,28 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 
-export default function AnnouncementModal() {
+interface AnnouncementModalProps {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function AnnouncementModal({
+  isOpen,
+  setIsOpen,
+}: AnnouncementModalProps) {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
-
-  useEffect(() => {
-    const announcementShown = sessionStorage.getItem("announcementShown_v1");
-    if (!announcementShown) {
-      setIsOpen(true);
-      sessionStorage.setItem("announcementShown_v1", "true");
-    }
-  }, []);
-
-  if (!isOpen) {
-    return null;
-  }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogContent className="w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]">
+      <DialogContent
+        onInteractOutside={(e) => {
+          e.preventDefault();
+        }}
+        onEscapeKeyDown={(e) => {
+          e.preventDefault();
+        }}
+        className="w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]"
+      >
         <div className="flex flex-col sm:flex-row overflow-hidden">
           <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
             <img
