@@ -205,6 +205,6 @@
 .animate-watercolor {
   animation: watercolor 3s ease-in-out infinite;
 }
-#usercentrics-root {
+#cookiescript_injected {
   z-index: 9999 !important;
 }
