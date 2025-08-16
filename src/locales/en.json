@@ -418,7 +418,9 @@
     "copyright": "© 2025 Zbigniew Rutkowski's Creative Atlas. All rights reserved.",
     "privacy": "Privacy Policy",
     "terms": "Terms",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "announcement": "Announcement",
+    "announcementAriaLabel": "Open announcement window"
   },
   "privacy": {
     "title": "Privacy Policy",

@@ -418,7 +418,9 @@
     "copyright": "© 2025 Atlas Twórczości Zbigniewa Rutkowskiego. Wszystkie prawa zastrzeżone.",
     "privacy": "Polityka Prywatności",
     "terms": "Regulamin",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "announcement": "Ogłoszenie",
+    "announcementAriaLabel": "Otwórz okno ogłoszenia"
   },
   "privacy": {
     "title": "Polityka Prywatności",

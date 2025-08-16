@@ -418,7 +418,9 @@
     "copyright": "© 2025 Atlas Créatif de Zbigniew Rutkowski. Tous droits réservés.",
     "privacy": "Politique de Confidentialité",
     "terms": "Conditions",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "announcement": "Annonce",
+    "announcementAriaLabel": "Ouvrir la fenêtre d'annonce"
   },
   "privacy": {
     "title": "Politique de Confidentialité",
