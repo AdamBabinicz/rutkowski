@@ -205,6 +205,3 @@
 .animate-watercolor {
   animation: watercolor 3s ease-in-out infinite;
 }
-[data-radix-dialog-overlay] {
-  pointer-events: none !important;
-}

@@ -1,7 +1,8 @@
-// Plik: AnnouncementModal.tsx (Wersja z ostateczną poprawką)
+// Plik: AnnouncementModal.tsx (Wersja ostateczna i działająca)
 
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
+// 1. Usuwamy import `DialogOverlay`, bo go nie użyjemy
 import {
   Dialog,
   DialogContent,
@@ -23,9 +24,13 @@ export default function AnnouncementModal({
   const { t } = useTranslation();
 
   return (
-    // JEDYNA ZMIANA JEST TUTAJ: dodajemy `modal={false}`
-    // To wyłącza "uwięzienie fokusu" i pozwala na interakcję z resztą strony.
     <Dialog open={isOpen} onOpenChange={setIsOpen} modal={false}>
+      {/*
+        2. ZASTĘPUJEMY `<DialogOverlay>` PROSTYM `<div>`.
+        Ten div nie ma żadnej logiki i posłusznie przyjmie nasze style.
+      */}
+      <div className="fixed inset-0 z-40 bg-black/80 backdrop-blur-sm pointer-events-none" />
+
       <DialogContent
         onInteractOutside={(e) => {
           e.preventDefault();
@@ -33,7 +38,8 @@ export default function AnnouncementModal({
         onEscapeKeyDown={(e) => {
           e.preventDefault();
         }}
-        className="w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]"
+        // Podnosimy z-index treści, aby była nad naszym ręcznym tłem
+        className="z-50 w-[90vw] max-w-3xl p-0 overflow-hidden flex flex-col max-h-[90vh]"
       >
         <div className="flex flex-col sm:flex-row overflow-hidden">
           <div className="w-full sm:w-1/3 flex-shrink-0 h-48 sm:h-auto">
