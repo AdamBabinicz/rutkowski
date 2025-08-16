@@ -206,5 +206,5 @@
   animation: watercolor 3s ease-in-out infinite;
 }
 [data-radix-dialog-overlay] {
-  z-index: 40 !important;
+  z-index: 1 !important;
 }
