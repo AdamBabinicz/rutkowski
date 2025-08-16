@@ -1,3 +1,5 @@
+// Plik: AnnouncementModal.tsx (Wersja z ostateczną poprawką)
+
 import { Dispatch, SetStateAction } from "react";
 import { useTranslation } from "react-i18next";
 import {
@@ -21,7 +23,9 @@ export default function AnnouncementModal({
   const { t } = useTranslation();
 
   return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+    // JEDYNA ZMIANA JEST TUTAJ: dodajemy `modal={false}`
+    // To wyłącza "uwięzienie fokusu" i pozwala na interakcję z resztą strony.
+    <Dialog open={isOpen} onOpenChange={setIsOpen} modal={false}>
       <DialogContent
         onInteractOutside={(e) => {
           e.preventDefault();
