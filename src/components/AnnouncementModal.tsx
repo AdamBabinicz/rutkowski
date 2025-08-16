@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { Dispatch, SetStateAction } from "react"; // Dodano import typów
 import { useTranslation } from "react-i18next";
 import {
   Dialog,
@@ -9,21 +9,22 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "./ui/button";
 
-export default function AnnouncementModal() {
+// 1. Definiujemy, jakie propsy komponent przyjmuje
+interface AnnouncementModalProps {
+  isOpen: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+}
+
+export default function AnnouncementModal({
+  isOpen,
+  setIsOpen,
+}: AnnouncementModalProps) {
   const { t } = useTranslation();
-  const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const announcementShown = sessionStorage.getItem("announcementShown_v1");
-    if (!announcementShown) {
-      setIsOpen(true);
-      sessionStorage.setItem("announcementShown_v1", "true");
-    }
-  }, []);
+  // 2. Usunęliśmy wewnętrzny stan (useState) i logikę (useEffect).
+  //    Komponent jest teraz w 100% sterowany przez propsy z App.tsx.
 
-  if (!isOpen) {
-    return null;
-  }
+  // 3. Usunęliśmy `if (!isOpen) return null;` - komponent Dialog sam zarządza widocznością.
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>

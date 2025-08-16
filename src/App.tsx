@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react"; // Dodano useState
 
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
@@ -53,7 +53,7 @@ function Router() {
 }
 
 function App() {
-  // Stan i logika zostały przeniesione tutaj
+  // 1. Stan i logika `useEffect` zostały przeniesione tutaj z AnnouncementModal.
   const [isAnnouncementOpen, setIsAnnouncementOpen] = useState(false);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function App() {
               </Suspense>
               <Footer />
               <ScrollToTopButton />
-              {/* Przekazanie stanu i funkcji jako props. Tu pojawiał się błąd. */}
+              {/* 2. Przekazujemy stan i funkcję do jego zmiany jako propsy */}
               <AnnouncementModal
                 isOpen={isAnnouncementOpen}
                 setIsOpen={setIsAnnouncementOpen}
