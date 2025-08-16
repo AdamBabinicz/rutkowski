@@ -1,5 +1,3 @@
-// Plik: App.tsx (Ostateczna, poprawna wersja dla Twojego projektu)
-
 import { Switch, Route, useLocation } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -8,7 +6,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HelmetProvider } from "react-helmet-async";
 import { Suspense, useEffect, useState } from "react";
-
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Home from "@/pages/home";
@@ -62,7 +59,6 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <TooltipProvider>
-            {/* KLUCZOWA ZMIANA - Ten div jest teraz prosty */}
             <div className="transition-all duration-300">
               <Navbar />
               <Suspense fallback={<div>Ładowanie...</div>}>
