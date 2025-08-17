@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { Link } from "wouter";
 import { useQueryString } from "@/hooks/use-query-string";
 
-// 1. Definiujemy, że komponent przyjmuje nową właściwość (prop)
 interface FooterProps {
   onAnnouncementClick: () => void;
 }
@@ -12,6 +11,11 @@ export default function Footer({ onAnnouncementClick }: FooterProps) {
   const searchParams = useQueryString();
 
   const activeTheme = searchParams.get("theme");
+
+  const startYear = 2025;
+  const currentYear = new Date().getFullYear();
+  const copyrightDate =
+    currentYear > startYear ? `${startYear} - ${currentYear}` : `${startYear}`;
 
   const categoryClass = (theme: string, hoverColor: string) =>
     `cursor-pointer text-sm transition-colors ${
@@ -157,11 +161,21 @@ export default function Footer({ onAnnouncementClick }: FooterProps) {
             <div className="space-y-3 text-sm text-gray-300">
               <div className="flex items-center">
                 <i className="fas fa-envelope w-4 mr-3 text-watercolor-ochre"></i>
-                <span>Zbyszior52@wp.pl</span>
+                <a
+                  href="mailto:Zbyszior52@wp.pl"
+                  className="hover:text-white transition-colors"
+                >
+                  Zbyszior52@wp.pl
+                </a>
               </div>
               <div className="flex items-center">
                 <i className="fas fa-phone w-4 mr-3 text-watercolor-sage"></i>
-                <span>600 252 658</span>
+                <a
+                  href="tel:600252658"
+                  className="hover:text-white transition-colors"
+                >
+                  600 252 658
+                </a>
               </div>
               <div className="flex items-start">
                 <i className="fas fa-map-marker-alt w-4 mr-3 mt-0.5 text-watercolor-umber"></i>
@@ -176,9 +190,10 @@ export default function Footer({ onAnnouncementClick }: FooterProps) {
         </div>
         <div className="border-t border-gray-700 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-300 text-sm">{t("footer.copyright")}</p>
+            <p className="text-gray-300 text-sm">
+              {`${copyrightDate} ${t("footer.copyright")}`}
+            </p>
             <div className="flex items-center space-x-6 mt-4 md:mt-0">
-              {/* 2. JEDYNA ZMIANA JEST TUTAJ: Dodajemy nowy, klikalny przycisk */}
               <button
                 onClick={onAnnouncementClick}
                 className="text-gray-300 hover:text-white text-sm transition-colors flex items-center"
@@ -187,7 +202,6 @@ export default function Footer({ onAnnouncementClick }: FooterProps) {
                 <i className="fas fa-bullhorn mr-2"></i>
                 <span>{t("footer.announcement")}</span>
               </button>
-
               <Link
                 href="/privacy-policy"
                 className="text-gray-300 hover:text-white text-sm transition-colors"

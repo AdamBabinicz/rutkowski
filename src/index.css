@@ -62,60 +62,60 @@
 }
 
 .dark {
-  --background: hsl(220, 25%, 8%);
-  --foreground: hsl(45, 20%, 95%);
-  --card: hsl(220, 20%, 12%);
-  --card-foreground: hsl(45, 20%, 95%);
-  --popover: hsl(220, 25%, 8%);
-  --popover-foreground: hsl(45, 20%, 95%);
-  --primary: hsl(35, 70%, 80%);
-  --primary-foreground: hsl(220, 25%, 8%);
-  --secondary: hsl(210, 55%, 80%);
-  --secondary-foreground: hsl(220, 25%, 8%);
-  --muted: hsl(220, 20%, 15%);
-  --muted-foreground: hsl(45, 25%, 90%);
-  --accent: hsl(85, 25%, 35%);
-  --accent-foreground: hsl(45, 20%, 95%);
+  --background: hsl(30, 20%, 22%);
+  --foreground: hsl(35, 30%, 92%);
+  --card: hsl(30, 20%, 28%);
+  --card-foreground: hsl(35, 30%, 92%);
+  --popover: hsl(30, 20%, 22%);
+  --popover-foreground: hsl(35, 30%, 92%);
+  --primary: hsl(35, 80%, 68%);
+  --primary-foreground: hsl(25, 35%, 15%);
+  --secondary: hsl(28, 75%, 70%);
+  --secondary-foreground: hsl(25, 35%, 15%);
+  --muted: hsl(30, 18%, 35%);
+  --muted-foreground: hsl(35, 20%, 75%);
+  --accent: hsl(15, 70%, 65%);
+  --accent-foreground: hsl(35, 20%, 95%);
   --destructive: hsl(0, 70%, 70%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(220, 15%, 25%);
-  --input: hsl(220, 18%, 14%);
-  --ring: hsl(35, 65%, 75%);
-  --chart-1: hsl(210, 45%, 65%);
-  --chart-2: hsl(35, 65%, 65%);
-  --chart-3: hsl(25, 50%, 55%);
-  --chart-4: hsl(85, 30%, 60%);
-  --chart-5: hsl(45, 20%, 80%);
-  --sidebar: hsl(220, 20%, 12%);
-  --sidebar-foreground: hsl(45, 20%, 95%);
-  --sidebar-primary: hsl(35, 70%, 80%);
-  --sidebar-primary-foreground: hsl(220, 25%, 8%);
-  --sidebar-accent: hsl(85, 25%, 35%);
-  --sidebar-accent-foreground: hsl(45, 20%, 95%);
-  --sidebar-border: hsl(220, 15%, 25%);
-  --sidebar-ring: hsl(35, 65%, 75%);
+  --border: hsl(30, 15%, 40%);
+  --input: hsl(30, 20%, 25%);
+  --ring: hsl(35, 75%, 65%);
+  --chart-1: hsl(35, 75%, 68%);
+  --chart-2: hsl(15, 70%, 65%);
+  --chart-3: hsl(28, 75%, 70%);
+  --chart-4: hsl(45, 60%, 65%);
+  --chart-5: hsl(30, 30%, 75%);
+  --sidebar: hsl(30, 20%, 28%);
+  --sidebar-foreground: hsl(35, 30%, 92%);
+  --sidebar-primary: hsl(35, 80%, 68%);
+  --sidebar-primary-foreground: hsl(25, 35%, 15%);
+  --sidebar-accent: hsl(15, 70%, 65%);
+  --sidebar-accent-foreground: hsl(35, 20%, 95%);
+  --sidebar-border: hsl(30, 15%, 40%);
+  --sidebar-ring: hsl(35, 75%, 65%);
   --font-sans: "Inter", sans-serif;
   --font-serif: "Georgia", serif;
   --font-mono: "Menlo", monospace;
   --font-poppins: "Poppins", sans-serif;
   --font-playfair: "Playfair Display", serif;
 
-  --watercolor-blue: hsl(210, 35%, 85%);
-  --watercolor-blue-deep: hsl(210, 45%, 65%);
-  --watercolor-blue-accent: hsl(210, 55%, 80%);
-  --watercolor-ochre: hsl(35, 60%, 85%);
-  --watercolor-ochre-deep: hsl(35, 65%, 65%);
-  --watercolor-ochre-accent: hsl(35, 70%, 80%);
-  --watercolor-umber: hsl(25, 45%, 75%);
-  --watercolor-umber-deep: hsl(25, 50%, 55%);
-  --watercolor-umber-accent: hsl(25, 55%, 70%);
-  --watercolor-sage: hsl(85, 25%, 80%);
-  --watercolor-sage-deep: hsl(85, 30%, 60%);
-  --watercolor-sage-accent: hsl(85, 35%, 75%);
-  --watercolor-cream: hsl(48, 30%, 90%);
-  --watercolor-warm-white: hsl(45, 20%, 95%);
-  --watercolor-charcoal: hsl(220, 20%, 12%);
-  --watercolor-charcoal-light: hsl(220, 20%, 15%);
+  --watercolor-blue: hsl(30, 30%, 75%);
+  --watercolor-blue-deep: hsl(28, 40%, 55%);
+  --watercolor-blue-accent: hsl(25, 50%, 65%);
+  --watercolor-ochre: hsl(38, 65%, 85%);
+  --watercolor-ochre-deep: hsl(35, 70%, 68%);
+  --watercolor-ochre-accent: hsl(35, 75%, 80%);
+  --watercolor-umber: hsl(28, 50%, 80%);
+  --watercolor-umber-deep: hsl(25, 55%, 60%);
+  --watercolor-umber-accent: hsl(25, 60%, 75%);
+  --watercolor-sage: hsl(30, 25%, 70%);
+  --watercolor-sage-deep: hsl(35, 30%, 60%);
+  --watercolor-sage-accent: hsl(30, 35%, 75%);
+  --watercolor-cream: hsl(40, 40%, 94%);
+  --watercolor-warm-white: hsl(35, 30%, 96%);
+  --watercolor-charcoal: hsl(30, 20%, 22%);
+  --watercolor-charcoal-light: hsl(30, 18%, 32%);
 }
 
 @layer base {
@@ -132,7 +132,7 @@
   }
   body {
     @apply font-sans antialiased text-foreground;
-    @apply min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-gray-900 dark:to-watercolor-charcoal-light;
+    @apply min-h-screen bg-gradient-to-br from-watercolor-warm-white via-background to-watercolor-sage dark:from-watercolor-charcoal dark:via-background dark:to-watercolor-charcoal-light;
     width: 100%;
     overflow-x: hidden;
   }
@@ -149,7 +149,7 @@
   }
 
   .dark .watercolor-hover:hover {
-    @apply shadow-white/5;
+    @apply shadow-amber-900/10;
   }
 
   .glass-effect {
@@ -158,7 +158,7 @@
   }
 
   .dark .glass-effect {
-    background: rgba(45, 55, 72, 0.3);
+    background: rgba(87, 78, 66, 0.3);
   }
 
   .font-poppins {
