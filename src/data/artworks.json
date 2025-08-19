@@ -1,12 +1,12 @@
 [
   {
     "id": "1995-droga-krzyzowa-stacja-iv",
-    "title": "Droga Krzyżowa - Stacja IV",
-    "titleEn": "Stations of the Cross - Station IV",
-    "titleFr": "Chemin de croix - Station IV",
+    "title": "Droga Krzyżowa - Stacja VIII",
+    "titleEn": "Stations of the Cross - Station VIII",
+    "titleFr": "Chemin de croix - Station VIII",
     "year": 1995,
-    "imageUrl": "/attached_assets/1.avif",
-    "imageUrls": ["/attached_assets/1.avif"],
+    "imageUrl": "/attached_assets/droga.avif",
+    "imageUrls": ["/attached_assets/droga.avif", "/attached_assets/1.avif"],
     "dimensions": "100 × 80 cm",
     "technique": "olej",
     "substrate": "canvas",
